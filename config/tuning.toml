@@ -1,0 +1,16 @@
+cpu_workers = 14
+io_workers = 16
+fold_device = "mps"
+fold_dtype = "bfloat16"
+fold_dtype_status = "provisional (set by smoke test)"
+fold_instances = 1
+fold_bucket_width = 50
+iqtree_threads = "-T AUTO --threads-max 16"
+p2rank_threads = 14
+memory_headroom_gb = 24
+max_compute_hours = 96
+
+[env]
+PYTORCH_ENABLE_MPS_FALLBACK = "1"
+TOKENIZERS_PARALLELISM = "false"
+OMP_NUM_THREADS = "14"

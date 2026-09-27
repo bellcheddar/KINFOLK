@@ -1,0 +1,12 @@
+.pixi/
+.venv/
+__pycache__/
+*.pyc
+data/pdb/raw/
+data/afdb/raw/
+data/esm2/models/
+data/**/*.cif
+data/**/*.cif.gz
+app/data/structures/
+qc/screens/*.png
+.DS_Store

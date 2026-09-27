@@ -1,0 +1,43 @@
+[workspace]
+name = "kinfolk"
+version = "1.0.0"
+description = "KINFOLK: Kinase INventory of Folds, Occluded Ligand sites and Kryptic pockets"
+authors = ["Marc C. Deller"]
+channels = ["conda-forge", "bioconda"]
+platforms = ["osx-arm64"]
+
+[dependencies]
+python = "3.12.*"
+biotite = "*"
+gemmi = "*"
+numpy = "*"
+scipy = "*"
+pandas = "*"
+pyarrow = "*"
+python-duckdb = "*"
+hmmer = "*"
+mafft = "*"
+iqtree = ">=2"
+fasttree = "*"
+mmseqs2 = "*"
+openjdk = "17.*"
+scikit-bio = "*"
+biopython = "*"
+requests = "*"
+tenacity = "*"
+tqdm = "*"
+rich = "*"
+pytest = "*"
+tomli-w = "*"
+setuptools = "<82"
+
+[pypi-dependencies]
+esm = ">=3.4.1"
+tmtools = "*"
+kinfolk = { path = "pipeline", editable = true }
+
+[tasks]
+probe = "python tools/hwprobe.py"
+smoke = "python tools/smoke_fold.py"
+test = "pytest pipeline/tests -q"
+fix-openmp = "bash tools/fix_openmp.sh"

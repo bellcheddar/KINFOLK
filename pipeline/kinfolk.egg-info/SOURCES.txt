@@ -1,0 +1,7 @@
+pyproject.toml
+kinfolk/__init__.py
+kinfolk.egg-info/PKG-INFO
+kinfolk.egg-info/SOURCES.txt
+kinfolk.egg-info/dependency_links.txt
+kinfolk.egg-info/entry_points.txt
+kinfolk.egg-info/top_level.txt

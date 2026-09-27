@@ -1,0 +1,2 @@
+[console_scripts]
+kinfolk = kinfolk.cli:main

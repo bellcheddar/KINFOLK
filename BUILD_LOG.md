@@ -1,0 +1,36 @@
+# KINFOLK build log
+
+- 2026-09-27 19:27  Phase 0 started: repo initialised, skeleton created
+- 2026-09-27 19:37  catalogue: 521 KLIFS human entries with pockets, 517 UniProt entries
+- 2026-09-27 19:37  catalogue: 521 KLIFS human entries with pockets, 517 UniProt entries
+- 2026-09-27 19:37  catalogue: 4 UniProt kinase domains without KLIFS entry mapped by hmmalign
+- 2026-09-27 19:37  catalogue: skipped 1 KLIFS entries with obsolete or missing UniProt records: PRKY (O43930)
+- 2026-09-27 19:37  catalogue: 7 KLIFS pockets map below 80% identity to UniProt canonical: DNAPK (0.25), TRRAP (0.77), HRI (0.75), PEK (0.57), GCK (0.31), PDGFRa (0.78), PDGFRb (0.76)
+- 2026-09-27 19:37  catalogue: pseudokinase flag disagreements with UniProt text: 33
+- 2026-09-27 19:38  catalogue: wrote 524 domains; pseudokinases 57, dark 190; groups {'Other': 85, 'TK': 94, 'TKL': 43, 'Atypical': 27, 'AGC': 63, 'CAMK': 82, 'CMGC': 64, 'CK1': 12, 'STE': 49, 'RGC': 5}
+- 2026-09-27 19:40  catalogue: 521 KLIFS human entries with pockets, 517 UniProt entries
+- 2026-09-27 19:40  catalogue: 521 KLIFS human entries with pockets, 517 UniProt entries
+- 2026-09-27 19:40  catalogue: collapsed 1 duplicate domain rows
+- 2026-09-27 19:40  catalogue: 4 UniProt kinase domains without KLIFS entry mapped by hmmalign
+- 2026-09-27 19:40  catalogue: KLIFS accessions reassigned by pocket identity: GCK: P35557 (0.19) -> Q12851 (1.00)
+- 2026-09-27 19:40  catalogue: skipped 1 KLIFS entries with obsolete or missing UniProt records: PRKY (O43930)
+- 2026-09-27 19:40  catalogue: 7 KLIFS pockets map below 80% identity to UniProt canonical: RSKL2 (0.75), DNAPK (0.24), TRRAP (0.76), HRI (0.73), PEK (0.56), PDGFRa (0.75), PDGFRb (0.76)
+- 2026-09-27 19:40  catalogue: pseudokinase flag disagreements with UniProt text: 36
+- 2026-09-27 19:40  catalogue: wrote 523 domains; pseudokinases 60, dark 190; groups {'Other': 85, 'TK': 94, 'TKL': 43, 'Atypical': 27, 'AGC': 63, 'CAMK': 82, 'CMGC': 64, 'CK1': 12, 'STE': 48, 'RGC': 5}
+- 2026-09-27 19:40  catalogue: 521 KLIFS human entries with pockets, 517 UniProt entries
+- 2026-09-27 19:40  catalogue: collapsed 1 duplicate domain rows
+- 2026-09-27 19:40  catalogue: 4 UniProt kinase domains without KLIFS entry mapped by hmmalign
+- 2026-09-27 19:40  catalogue: KLIFS accessions reassigned by pocket identity: GCK: P35557 (0.19) -> Q12851 (1.00)
+- 2026-09-27 19:40  catalogue: skipped 2 KLIFS entries with obsolete or missing UniProt records: PRKY (O43930), DNAPK (Q9H6X2, pocket identity 0.24: wrong accession)
+- 2026-09-27 19:40  catalogue: 6 KLIFS pockets map below 80% identity to UniProt canonical: RSKL2 (0.75), TRRAP (0.76), HRI (0.73), PEK (0.56), PDGFRa (0.75), PDGFRb (0.76)
+- 2026-09-27 19:40  catalogue: pseudokinase flag disagreements with UniProt text: 36
+- 2026-09-27 19:40  catalogue: wrote 522 domains; pseudokinases 60, dark 190; groups {'Other': 85, 'TK': 94, 'TKL': 43, 'Atypical': 26, 'AGC': 63, 'CAMK': 82, 'CMGC': 64, 'CK1': 12, 'STE': 48, 'RGC': 5}
+- 2026-09-27 19:41  catalogue: 521 KLIFS human entries with pockets, 517 UniProt entries
+- 2026-09-27 19:41  catalogue: collapsed 1 duplicate domain rows
+- 2026-09-27 19:41  catalogue: 4 UniProt kinase domains without KLIFS entry mapped by hmmalign
+- 2026-09-27 19:41  catalogue: KLIFS accessions reassigned by pocket identity: GCK: P35557 (0.19) -> Q12851 (1.00)
+- 2026-09-27 19:41  catalogue: skipped 2 KLIFS entries with obsolete or missing UniProt records: PRKY (O43930), DNAPK (Q9H6X2, pocket identity 0.24: wrong accession)
+- 2026-09-27 19:41  catalogue: 6 KLIFS pockets map below 80% identity to UniProt canonical: RSKL2 (0.75), TRRAP (0.76), HRI (0.73), PEK (0.56), PDGFRa (0.75), PDGFRb (0.76)
+- 2026-09-27 19:41  catalogue: pseudokinase flag disagreements with UniProt text: 33
+- 2026-09-27 19:41  catalogue: wrote 522 domains; pseudokinases 57, dark 190; groups {'Other': 85, 'TK': 94, 'TKL': 43, 'Atypical': 26, 'AGC': 63, 'CAMK': 82, 'CMGC': 64, 'CK1': 12, 'STE': 48, 'RGC': 5}
+- 2026-09-27 19:41  Phase 1 complete: acceptance passed (522 domains; TRIB1 DFG→SLE, ERBB3 HRD→HRN, KSR2 K→R)
