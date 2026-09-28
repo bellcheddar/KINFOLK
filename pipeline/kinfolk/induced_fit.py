@@ -43,6 +43,7 @@ def select() -> pd.DataFrame:
            & ((ch.kincore_spatial == "DFGout") | (ch.DFG == "out"))
            & ~ch.ligand.astype(str).isin(["0", "", "None"])].copy()
     c["kincore_type2"] = (c.pdb.str.upper() + c.chain).isin(t2)
+    c = c.drop_duplicates(["pdb", "chain", "ligand"])  # KLIFS lists alternate locations separately
     c["res"] = pd.to_numeric(c.resolution_rcsb.fillna(c.resolution), errors="coerce")
     c = c.sort_values(["kincore_type2", "res"], ascending=[False, True])
     first = c.drop_duplicates("domain_id")
@@ -73,14 +74,14 @@ def select() -> pd.DataFrame:
                 continue
             seq, cs = construct(cat.loc[dom])
             fh.write(json.dumps({"domain_id": dom, "tag": "q6apo", "pass": "Q6", "sequence": seq,
-                                 "construct_start": cs, "n_samples": SAMPLES, "ligands": []}) + "\n")
+                                 "construct_start": int(cs), "n_samples": SAMPLES, "ligands": []}) + "\n")
         for _, r in pick.iterrows():
             tag = f"holo_{r.pdb.upper()}{r.chain}_{r.ligand}"
             if (r.domain_id, tag) in existing:
                 continue
             seq, cs = construct(cat.loc[r.domain_id])
             fh.write(json.dumps({"domain_id": r.domain_id, "tag": tag, "pass": "Q6", "sequence": seq,
-                                 "construct_start": cs, "n_samples": SAMPLES, "ligands": [str(r.ligand)]}) + "\n")
+                                 "construct_start": int(cs), "n_samples": SAMPLES, "ligands": [str(r.ligand)]}) + "\n")
     decision("Q6 fold order", "Pass Q6 (apo + holo, 8 samples each) runs after the minimum viable set and T2, "
              "before the extra T3 samples", "Strict tier order (T4 last)",
              "Q6 is a headline question; extra T3 samples only refine ensembles", "Move pass Q6 in foldqueue.build_jobs")

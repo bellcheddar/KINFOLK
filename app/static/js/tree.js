@@ -50,18 +50,21 @@
     });
     // Group of each leaf, and folded "pure" clades (all leaves one group, >= 3 leaves).
     root.leaves().forEach((l) => (l.grp = (kin.get(l.data.name) || {}).grp || "Other"));
+    // Fold maximal clades that are >= 85% one group (and >= 3 leaves); intruders stay listed in the tooltip.
     root.eachAfter((n) => {
       if (n.children) {
-        const gs = new Set(n.children.map((c) => c.pure));
-        n.pure = gs.size === 1 && ![...gs][0].startsWith("~") ? [...gs][0] : "~mixed";
+        n.tally = new Map();
+        n.children.forEach((c) => c.tally.forEach((v, g) => n.tally.set(g, (n.tally.get(g) || 0) + v)));
         n.count = d3.sum(n.children, (c) => c.count);
       } else {
-        n.pure = n.grp;
+        n.tally = new Map([[n.grp, 1]]);
         n.count = 1;
       }
+      const [g, v] = [...n.tally].sort((a, b) => b[1] - a[1])[0];
+      n.pure = v / n.count >= 0.85 ? g : "~mixed";
     });
     root.each((n) => {
-      n.foldable = n.children && !n.pure.startsWith("~") && n.count >= 3 && (!n.parent || n.parent.pure.startsWith("~"));
+      n.foldable = !!n.children && !n.pure.startsWith("~") && n.count >= 3 && (!n.parent || n.parent.pure.startsWith("~"));
     });
   }
 
@@ -70,7 +73,7 @@
     const copy = root.copy();
     copy.each((n) => {
       n.src = origIndex.get(n.data);
-      if (n.src && n.src.foldable && !expanded.has(n.src.pure)) {
+      if (n.src && n.src.foldable && !expanded.has(n.src.pure) && !expanded.has(cladeKey(n.src))) {
         n.folded = true;
         n.children = null;
       }
@@ -78,6 +81,7 @@
     return copy;
   }
   const origIndex = new Map();
+  const cladeKey = (n) => `${n.pure}:${n.leaves()[0].data.name}`;
 
   // ------------------------------------------------------------ layout
   function compute() {
@@ -88,15 +92,17 @@
     });
     const lv = vt.leaves();
     const width = Math.max(600, lv.length * SPACING);
-    const maxLen = d3.max(lv, (l) => l.len) || 1;
+    const lens = lv.map((l) => l.len).sort(d3.ascending);
+    const maxLen = Math.max(1e-6, d3.quantile(lens, 0.98) || d3.max(lens) || 1);
+    vt.each((n) => { n.clipped = n.len > maxLen * 1.02; });
     const maxDepth = d3.max(lv, (l) => l.depth) || 1;
     d3.cluster().size([width, DEPTH]).separation((a, b) => (a.folded || b.folded ? 2.2 : 1))(vt);
     vt.each((n) => {
       const across = n.x;
-      const down = layout === "phylo" ? (n.len / maxLen) * DEPTH : (n.depth / maxDepth) * DEPTH;
+      const down = layout === "phylo" ? (Math.min(n.len, maxLen * 1.02) / maxLen) * DEPTH : (n.depth / maxDepth) * DEPTH;
       if (layout === "radial") {
         const a = (across / width) * 2 * Math.PI - Math.PI / 2;
-        const r = 40 + (n.len / maxLen) * DEPTH;
+        const r = 40 + (Math.min(n.len, maxLen * 1.02) / maxLen) * DEPTH;
         n.px = Math.cos(a) * r;
         n.py = Math.sin(a) * r;
         n.angle = a;
@@ -131,9 +137,10 @@
       if (n.folded) {
         const w = Math.min(60, 8 + n.src.count * 1.2);
         g.append("path").attr("d", `M0,0L${-w / 2},${34}H${w / 2}Z`).attr("fill", "#E9EDE2").attr("stroke", C.ink);
-        g.append("text").attr("class", "grp-label").attr("y", 50).attr("text-anchor", "middle")
-          .attr("font-family", "Instrument Serif, serif").attr("font-style", "italic").attr("font-size", 15)
-          .attr("fill", C.ink).text(`${n.src.pure} (${n.src.count})`);
+        if (n.src.count >= 8 || zoomK >= LABEL_ZOOM)
+          g.append("text").attr("class", "grp-label").attr("transform", "translate(0,42) rotate(90)")
+            .attr("font-family", "Instrument Serif, serif").attr("font-style", "italic").attr("font-size", 14)
+            .attr("fill", C.ink).text(`${n.src.pure} (${n.src.count})`);
         return;
       }
       const k = kin.get(n.data.name);
@@ -179,6 +186,7 @@
     const links = gLinks.selectAll("path").data(vt.links(), (d) => keyOf(d.target));
     links.exit().remove();
     links.enter().append("path").attr("d", linkPath).attr("opacity", 0).merge(links)
+      .attr("stroke-dasharray", (d) => (d.target.clipped && layout === "phylo" ? "4 3" : null))
       .transition(t).attr("opacity", 1).attr("d", linkPath);
 
     const nodes = gNodes.selectAll("g.node").data(vt.descendants().filter((n) => !n.children || n.folded || support === "on"), (d) => keyOf(d));
@@ -255,10 +263,10 @@
   // ------------------------------------------------------------ interaction
   function onClick(d) {
     if (d.folded) {
-      expanded.add(d.src.pure);
+      expanded.add(cladeKey(d.src));
       K.state.set({ open: [...expanded].join(",") });
       render();
-      announce(`Opened ${d.src.pure}, ${d.src.count} kinases`);
+      announce(`Opened a ${d.src.pure} clade, ${d.src.count} kinases`);
       return;
     }
     if (!d.children) select(d.data.name, true);
@@ -303,7 +311,10 @@
   function hover(e, d) {
     if (hoverTip) { hoverTip.remove(); hoverTip = null; }
     if (!e || !d || zoomK >= LABEL_ZOOM) return;
-    const label = d.folded ? `${d.src.pure} (${d.src.count} kinases): click to open` : d.data.name;
+    const label = d.folded
+      ? `${d.src.pure} clade, ${d.src.count} kinases` + ([...d.src.tally].length > 1
+        ? ` (with ${[...d.src.tally].filter(([g]) => g !== d.src.pure).map(([g, v]) => `${v} ${g}`).join(", ")})` : "") + ": click to open"
+      : d.data.name;
     if (!label) return;
     const [mx, my] = d3.pointer(e, wrap);
     hoverTip = d3.select(wrap).append("div").attr("class", "tree-tooltip").style("pointer-events", "none")
@@ -417,6 +428,12 @@
     });
   }
 
+  K.json("/api/trees").then((have) => {
+    [["pocket_pdb", "tree_pocket_pdb"], ["pocket_esm", "tree_pocket_esm"]].forEach(([v, id]) => {
+      const opt = srcSel.querySelector(`option[value="${v}"]`);
+      if (opt && !have.includes(id)) { opt.disabled = true; opt.textContent += " (pending)"; }
+    });
+  }).catch(() => {});
   (K.state.get("open", "") || "").split(",").filter(Boolean).forEach((g) => expanded.add(g));
   K.kinases().then((rows) => {
     kin = new Map(rows.map((r) => [r.domain_id, r]));

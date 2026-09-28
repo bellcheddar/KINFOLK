@@ -42,7 +42,7 @@
 <section class="plate" aria-labelledby="ribbon-title">
   <div class="plate-head"><h2 id="ribbon-title">KLIFS ribbon</h2><span class="qtag">Q1</span></div>
   <p class="lede">Cα deviation at each of the 85 KLIFS pocket positions from the nearest PDB state representative, in the pocket-core frame. Hover a cell to find it in the viewer; click a residue in the viewer to find it here.</p>
-  <div class="ribbon" id="ribbon"></div>
+  <div class="ribbon" id="ribbon" tabindex="0" role="region" aria-label="KLIFS ribbon, scrollable"></div>
 </section>
 
 <section class="plate" aria-labelledby="mol-title">
@@ -52,7 +52,7 @@
       <select id="mol-esm" aria-label="ESMFold2 sample shown"></select>
     </div>
   </div>
-  <div class="molstar-host" id="molstar" aria-label="3D overlay of PDB representative, AlphaFold DB and ESMFold2 models"></div>
+  <div class="molstar-host" id="molstar" role="region" aria-label="3D overlay of PDB representative, AlphaFold DB and ESMFold2 models"></div>
   <div class="legend-inline" id="mol-legend"></div>
 </section>
 

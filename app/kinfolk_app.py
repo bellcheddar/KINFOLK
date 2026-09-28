@@ -103,6 +103,10 @@ def create_app() -> Flask:
     def api_kinases():
         return js(rows("SELECT * FROM kinase_tips ORDER BY domain_id"))
 
+    @app.get("/api/trees")
+    def api_trees():
+        return js([r["tree_id"] for r in rows("SELECT tree_id FROM tree")])
+
     @app.get("/api/similar/<domain_id>")
     def api_similar(domain_id: str):
         return js(rows("SELECT domain_b, source, kissim_sim, davis_coinhib FROM similarity "

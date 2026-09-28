@@ -23,6 +23,11 @@
     const el = document.getElementById("tangle");
     el.innerHTML = "";
     let seq, poc;
+    const have = await K.json("/api/trees").catch(() => []);
+    if (!have.includes(`tree_pocket_${src}`)) {
+      el.innerHTML = `<p class="muted" style="padding:16px">The ${src === "pdb" ? "PDB" : "ESMFold2"} pocket tree is not built yet (Phase 6).</p>`;
+      return;
+    }
     try {
       [seq, poc] = await Promise.all([K.json("/static/data/tree_sequence.json"), K.json(`/static/data/tree_pocket_${src}.json`)]);
     } catch (e) {

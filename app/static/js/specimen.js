@@ -151,6 +151,11 @@
     return null;
   }
 
+  function pdbLabel(id) {
+    const p = (data.compass.pdb || []).find((x) => x.id === id);
+    return p ? `${p.pdb} ${p.chain}` : "n/a";
+  }
+
   function structuresToLoad() {
     const s = data.structures || {};
     const ids = Object.keys(s);
@@ -180,7 +185,7 @@
     esmSel.addEventListener("change", () => loadSet(set.pdb, set.afdb, esmSel.value));
     subscribeClicks();
     document.getElementById("mol-legend").innerHTML =
-      `<span>○ grey: PDB ${K.escape(set.pdb || "n/a")}</span><span>■ amber: AlphaFold DB</span><span>▲ coral: ESMFold2</span>`;
+      `<span>○ grey: PDB ${K.escape(pdbLabel(set.pdb))}</span><span>■ amber: AlphaFold DB</span><span>▲ coral: ESMFold2</span>`;
   }
 
   async function loadSet(pdb, afdb, esm) {

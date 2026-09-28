@@ -68,6 +68,8 @@ h3 { font-size: 1.3rem; }
 
 /* controls */
 .controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 12px; }
+.controls > * { min-width: 0; max-width: 100%; }
+select { max-width: 100%; }
 .seg { display: inline-flex; border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
 .seg button {
   min-height: var(--touch); padding: 0 14px; border: 0; background: transparent; color: var(--ink); font: inherit; cursor: pointer;
@@ -86,7 +88,7 @@ select, .btn, input[type="number"] {
 input[type="range"] { width: 100%; min-height: var(--touch); accent-color: var(--ink); }
 
 /* tables */
-.table-wrap { overflow-x: auto; max-width: 100%; }
+.table-wrap { overflow-x: auto; max-width: 100%; position: relative; }
 table { border-collapse: collapse; width: 100%; font-size: .9rem; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
 th { font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-muted); }
@@ -122,10 +124,10 @@ td.num, th.num { text-align: right; font-family: var(--font-mono); }
 .spec-head .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
 .field-marks { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
 .field-marks div { border: 1px solid var(--rule); border-radius: var(--radius); padding: 10px 12px; }
-.field-marks dt { font-size: .75rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .05em; }
+.field-marks dt { font-size: .8rem; color: var(--ink-muted); letter-spacing: .02em; }
 .field-marks dd { margin: 2px 0 0; font-family: var(--font-mono); font-size: 1.05rem; }
 .note { font-family: var(--font-display); font-style: italic; font-size: 1.25rem; line-height: 1.35; border-left: 3px solid var(--ink); padding-left: 14px; margin: 0; }
-.ribbon { overflow-x: auto; }
+.ribbon { overflow-x: auto; position: relative; }
 .ribbon svg { display: block; }
 .molstar-host { position: relative; height: 460px; border: 1px solid var(--rule); border-radius: var(--radius); background: #fff; overflow: hidden; }
 .molstar-host .msp-plugin { position: absolute; inset: 0; }

@@ -1,0 +1,177 @@
+{
+ "results": [
+  {
+   "plate": "I",
+   "path": "/",
+   "viewport": "desktop",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 492,
+   "label_overlaps": 0,
+   "screenshot": "qc/screens/plate_I_desktop.png",
+   "axe_serious_critical": [],
+   "console_errors": []
+  },
+  {
+   "plate": "II",
+   "path": "/k/ABL1",
+   "viewport": "desktop",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 144,
+   "molstar_initialised": true,
+   "screenshot": "qc/screens/plate_II_desktop.png",
+   "axe_serious_critical": [],
+   "console_errors": []
+  },
+  {
+   "plate": "III",
+   "path": "/resemblance",
+   "viewport": "desktop",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 136,
+   "screenshot": "qc/screens/plate_III_desktop.png",
+   "axe_serious_critical": [],
+   "console_errors": []
+  },
+  {
+   "plate": "IV",
+   "path": "/rooms",
+   "viewport": "desktop",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 140,
+   "screenshot": "qc/screens/plate_IV_desktop.png",
+   "axe_serious_critical": [],
+   "console_errors": []
+  },
+  {
+   "plate": "V",
+   "path": "/black-sheep",
+   "viewport": "desktop",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 248,
+   "screenshot": "qc/screens/plate_V_desktop.png",
+   "axe_serious_critical": [],
+   "console_errors": []
+  },
+  {
+   "plate": "VI",
+   "path": "/dark",
+   "viewport": "desktop",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 240,
+   "screenshot": "qc/screens/plate_VI_desktop.png",
+   "axe_serious_critical": [],
+   "console_errors": []
+  },
+  {
+   "plate": "VII",
+   "path": "/almanac",
+   "viewport": "desktop",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 168,
+   "screenshot": "qc/screens/plate_VII_desktop.png",
+   "axe_serious_critical": [],
+   "console_errors": []
+  },
+  {
+   "plate": "About",
+   "path": "/about",
+   "viewport": "desktop",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 144,
+   "screenshot": "qc/screens/plate_About_desktop.png",
+   "axe_serious_critical": [],
+   "console_errors": []
+  },
+  {
+   "plate": "I",
+   "path": "/",
+   "viewport": "mobile",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 220,
+   "label_overlaps": 0,
+   "screenshot": "qc/screens/plate_I_mobile.png",
+   "console_errors": []
+  },
+  {
+   "plate": "II",
+   "path": "/k/ABL1",
+   "viewport": "mobile",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 44,
+   "molstar_initialised": true,
+   "screenshot": "qc/screens/plate_II_mobile.png",
+   "console_errors": []
+  },
+  {
+   "plate": "III",
+   "path": "/resemblance",
+   "viewport": "mobile",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 48,
+   "screenshot": "qc/screens/plate_III_mobile.png",
+   "console_errors": []
+  },
+  {
+   "plate": "IV",
+   "path": "/rooms",
+   "viewport": "mobile",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 56,
+   "screenshot": "qc/screens/plate_IV_mobile.png",
+   "console_errors": []
+  },
+  {
+   "plate": "V",
+   "path": "/black-sheep",
+   "viewport": "mobile",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 68,
+   "screenshot": "qc/screens/plate_V_mobile.png",
+   "console_errors": []
+  },
+  {
+   "plate": "VI",
+   "path": "/dark",
+   "viewport": "mobile",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 52,
+   "screenshot": "qc/screens/plate_VI_mobile.png",
+   "console_errors": []
+  },
+  {
+   "plate": "VII",
+   "path": "/almanac",
+   "viewport": "mobile",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 40,
+   "screenshot": "qc/screens/plate_VII_mobile.png",
+   "console_errors": []
+  },
+  {
+   "plate": "About",
+   "path": "/about",
+   "viewport": "mobile",
+   "status": 200,
+   "horizontal_scroll": false,
+   "fcp_ms": 68,
+   "screenshot": "qc/screens/plate_About_mobile.png",
+   "console_errors": []
+  }
+ ],
+ "failures": []
+}

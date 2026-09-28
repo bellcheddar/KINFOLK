@@ -352,8 +352,8 @@ def run() -> dict:
         if col not in s:
             s[col] = None
     # AKT1 PH + kinase samples are scanned as part of AKT1.
-    man = Manifest("pockets")
-    done = {r["id"]: r for r in man.records() if r["status"] == "done"}
+    man = Manifest("pocket_structs")      # one line per scanned structure (resumable, incremental)
+    scanned = man.done()
     store = PK / "pockets.parquet"
     old = pd.read_parquet(store) if store.exists() else pd.DataFrame()
     tasks = []
@@ -363,23 +363,23 @@ def run() -> dict:
             for _, r in s[(s.domain_id == "AKT1") & (s.get("tag") == "phkd") & (s.status == "done")].iterrows():
                 structs.append({"struct_id": r.struct_id, "source": "esm2", "path": r.file_path, "chain": None,
                                 "offset": int(r.construct_start) - 1, "crop": None})
-        key = f"{d.domain_id}:{len(structs)}"
-        if key in done:
-            continue
-        tasks.append((d.to_dict(), structs))
+        todo = [x for x in structs if x["struct_id"] not in scanned]
+        if todo:
+            tasks.append((d.to_dict(), todo))
+    log(f"pockets: {sum(len(t[1]) for t in tasks)} new structures to scan over {len(tasks)} domains")
     rows, n = [], 0
     with ProcessPoolExecutor(max(1, int(tuning().get("cpu_workers", 4)) // 4)) as ex:
-        for dom, r, err in ex.map(_scan, tasks):
+        for (d, todo), (dom, r, err) in zip(tasks, ex.map(_scan, tasks)):
             rows += r
             n += 1
-            key = next(f"{t[0]['domain_id']}:{len(t[1])}" for t in tasks if t[0]["domain_id"] == dom)
-            man.add(key, status="done" if err is None else f"failed:{err}", n_pockets=len(r))
+            for x in todo:
+                man.add(x["struct_id"], status="done" if err is None else f"failed:{err}", domain_id=dom)
             if n % 25 == 0:
                 log(f"pockets: scanned {n}/{len(tasks)} domains")
     new = pd.DataFrame(rows)
-    if len(old) and len(new):
-        old = old[~old.domain_id.isin(set(new.domain_id))]
     pockets = pd.concat([old, new], ignore_index=True) if len(old) else new
+    if len(pockets):
+        pockets = pockets.drop_duplicates(["struct_id", "tool", "rank"], keep="last")
     pockets.to_parquet(store, index=False)
 
     sites = []

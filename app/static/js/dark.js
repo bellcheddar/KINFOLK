@@ -49,8 +49,8 @@
   document.querySelectorAll("#dk-table thead button").forEach((b) => b.addEventListener("click", () => {
     dir = sortKey === b.dataset.k ? -dir : 1;
     sortKey = b.dataset.k;
-    document.querySelectorAll("#dk-table thead button").forEach((x) => x.removeAttribute("aria-sort"));
-    b.setAttribute("aria-sort", dir > 0 ? "ascending" : "descending");
+    document.querySelectorAll("#dk-table thead button").forEach((x) => x.closest("th").removeAttribute("aria-sort"));
+    b.closest("th").setAttribute("aria-sort", dir > 0 ? "ascending" : "descending");
     table();
   }));
   ["dk-group", "dk-q"].forEach((id) => document.getElementById(id).addEventListener("input", table));

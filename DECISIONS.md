@@ -98,3 +98,15 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: gobsmacked.mdeller.com is live but none of its scripts (stages.js, viewer.js, clip.js, sequence_track.js) read query parameters, so ?uniprot=&pocket= is ignored (checked 2026-09-27)
 - How to reverse: Change needed in GOBSMACKED: on load, read URLSearchParams uniprot (UniProt accession) and pocket (comma-separated UniProt residue numbers), fetch the AFDB model for the accession and pre-select those residues as the pocket. Then set GOBSMACKED_LINK_ENABLED = True in app/static/js/specimen.js
 
+## 2026-09-27 20:34  Q6 fold order
+- Decision: Pass Q6 (apo + holo, 8 samples each) runs after the minimum viable set and T2, before the extra T3 samples
+- Alternatives: Strict tier order (T4 last)
+- Reason: Q6 is a headline question; extra T3 samples only refine ensembles
+- How to reverse: Move pass Q6 in foldqueue.build_jobs
+
+## 2026-09-27 20:34  Q6 fold order
+- Decision: Pass Q6 (apo + holo, 8 samples each) runs after the minimum viable set and T2, before the extra T3 samples
+- Alternatives: Strict tier order (T4 last)
+- Reason: Q6 is a headline question; extra T3 samples only refine ensembles
+- How to reverse: Move pass Q6 in foldqueue.build_jobs
+

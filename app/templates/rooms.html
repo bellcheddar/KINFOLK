@@ -52,7 +52,7 @@
         <th scope="col" class="num"><button type="button" data-k="recovery">Recovery</button></th>
         <th scope="col" class="num"><button type="button" data-k="p2rank_max">P2Rank</button></th>
         <th scope="col" class="num"><button type="button" data-k="vol_max">Volume (Å³)</button></th>
-        <th scope="col" class="num"><button type="button" data-k="rank_score" aria-sort="descending">Score</button></th>
+        <th scope="col" class="num" aria-sort="descending"><button type="button" data-k="rank_score">Score</button></th>
         <th scope="col"><span class="sr-only">View</span></th>
       </tr></thead>
       <tbody></tbody>
@@ -65,7 +65,7 @@
     <div class="plate-head"><h2 id="viewer-title">Site viewer</h2><span class="mono muted" id="viewer-label">choose a site</span></div>
     <label class="ctl-label" for="thresh">Recovery threshold: <span id="thresh-val">0.25</span></label>
     <input type="range" id="thresh" min="0" max="1" step="0.05" value="0.25">
-    <div class="molstar-host" id="site-molstar" aria-label="ESMFold2 model with pocket sites as translucent surfaces"></div>
+    <div class="molstar-host" id="site-molstar" role="region" aria-label="ESMFold2 model with pocket sites as translucent surfaces"></div>
     <div class="legend-inline" id="site-legend"></div>
   </section>
   <section class="plate" aria-labelledby="sun-title">

@@ -166,7 +166,7 @@ def write_domain_structures(args) -> dict:
                     model.remove_chain(c)
             # crop protein to the domain +/- PAD (in each file's own numbering)
             if kmap:
-                lo, hi = min(kmap.values()) - 40, max(kmap.values()) + 40
+                lo, hi = min(kmap.values()) - 25, max(kmap.values()) + 25
                 for c in model:
                     for i in range(len(c) - 1, -1, -1):
                         res = c[i]
@@ -281,7 +281,7 @@ def specimen_json(k: dict, d: dict, s_dom: pd.DataFrame, fam_pts: list, ribbon: 
             "family": fam_pts,
             "pdb": [{"id": r.struct_id, "pdb": r.pdb_id, "chain": r.chain, "d1": _f(r.d1, 1), "d2": _f(r.d2, 1),
                      "state": r.state, "lig": None if str(r.ligand) in ("0", "None", "") else str(r.ligand),
-                     "rep": bool(r.get("is_rep"))} for r in pdb.itertuples()][:400],
+                     "rep": _b(getattr(r, "is_rep", None)) == 1} for r in pdb.itertuples()][:400],
             "afdb": [{"id": r.struct_id, "d1": _f(r.d1, 1), "d2": _f(r.d2, 1), "state": r.state,
                       "plddt": _f(r.mean_plddt, 1)} for r in af.itertuples()],
             "esm": [{"id": r.struct_id, "i": int(r.sample_idx), "d1": _f(r.d1, 1), "d2": _f(r.d2, 1),
@@ -500,7 +500,10 @@ def run() -> dict:
         if len(fp) > 500:
             fp = fp.iloc[rng.choice(len(fp), 500, replace=False)]
         fam_pts = [[round(float(a), 1), round(float(b), 1)] for a, b in fp.values]
-        dd = dom.loc[k.domain_id].to_dict() if k.domain_id in dom.index else {}
+        dd = {c: (None if isinstance(v, float) and np.isnan(v) else v)
+              for c, v in (dom.loc[k.domain_id].to_dict() if k.domain_id in dom.index else {}).items()}
+        if dd.get("pdb_states") is not None:
+            dd["pdb_states"] = list(dd["pdb_states"])
         ks = sites[sites.domain_id == k.domain_id].sort_values("rank_score", ascending=False) if len(sites) else pd.DataFrame()
         site_list = [{"id": r.site_id, "recovery": _f(r.recovery), "p2rank": _f(r.p2rank_max), "subpocket": r.subpocket,
                       "known": bool(r.known_in_pdb), "candidate": bool(r.candidate),

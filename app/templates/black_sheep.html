@@ -19,7 +19,7 @@
 
 <dialog id="bs-dialog" aria-labelledby="bs-dialog-title" style="width:min(900px,94vw);border:1px solid var(--ink);border-radius:4px;padding:16px;background:var(--card)">
   <div class="plate-head"><h2 id="bs-dialog-title">3D view</h2><button class="btn" type="button" id="bs-close">Close</button></div>
-  <div class="molstar-host" id="bs-molstar"></div>
+  <div class="molstar-host" id="bs-molstar" role="region" aria-label="3D view of the selected pseudokinase"></div>
   <p class="muted" id="bs-dialog-note" style="font-size:.85rem"></p>
 </dialog>
 {% endblock %}

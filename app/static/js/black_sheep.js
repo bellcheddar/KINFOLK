@@ -22,7 +22,7 @@
           <p class="mono" style="font-size:1.15rem;line-height:1.6">${K.escape(r.pseudo_evidence || "").split("; ").join("<br>")}</p>
           <button class="btn" type="button" data-flip aria-label="Show the geometry for ${K.escape(r.domain_id)}">Show geometry</button>
         </div>
-        <div class="flip-face flip-back" aria-hidden="true">
+        <div class="flip-face flip-back" inert>
           <h3>${K.escape(r.domain_id)}</h3>
           <ul style="list-style:none;padding:0;margin:0 0 8px;display:grid;gap:4px">${calls}</ul>
           ${errs || '<p class="muted">Geometry pending.</p>'}
@@ -46,8 +46,8 @@
       const f2 = b.closest(".flip");
       const on = f2.dataset.flipped !== "true";
       f2.dataset.flipped = String(on);
-      f2.querySelector(".flip-face:not(.flip-back)").setAttribute("aria-hidden", String(on));
-      f2.querySelector(".flip-back").setAttribute("aria-hidden", String(!on));
+      f2.querySelector(".flip-face:not(.flip-back)").inert = on;
+      f2.querySelector(".flip-back").inert = !on;
       (on ? f2.querySelector(".flip-back [data-flip]") : f2.querySelector(".flip-face [data-flip]")).focus();
     }));
     grid.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => view(b.dataset.view, b.closest(".flip").dataset.id)));

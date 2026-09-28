@@ -120,8 +120,8 @@
     const k = b.dataset.k;
     sortDir = sortKey === k ? -sortDir : -1;
     sortKey = k;
-    document.querySelectorAll("#sites thead button").forEach((x) => x.removeAttribute("aria-sort"));
-    b.setAttribute("aria-sort", sortDir < 0 ? "descending" : "ascending");
+    document.querySelectorAll("#sites thead button").forEach((x) => x.closest("th").removeAttribute("aria-sort"));
+    b.closest("th").setAttribute("aria-sort", sortDir < 0 ? "descending" : "ascending");
     table();
   }));
   ["f-group", "f-sub", "f-cand"].forEach((id) => document.getElementById(id).addEventListener("change", table));

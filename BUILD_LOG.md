@@ -83,3 +83,34 @@
 - 2026-09-27 20:32  pdb: novel AF2 116, novel ESM 51 (MMseqs2, < 40% identity at >= 50% query coverage)
 - 2026-09-27 20:32  tiers: 10 domains promoted to T1 (blind + novel for ESMFold2)
 - 2026-09-27 20:33  Phase 2 complete: AFDB 517 + 5 absent (100% covered); 12032 quality PDB chains; blind/novel flags populated; T1 = 10 domains; fold queue running
+- 2026-09-27 20:33  annotate: 50/522 domains
+- 2026-09-27 20:33  annotate: 100/522 domains
+- 2026-09-27 20:33  annotate: 150/522 domains
+- 2026-09-27 20:33  annotate: 200/522 domains
+- 2026-09-27 20:33  annotate: 250/522 domains
+- 2026-09-27 20:33  annotate: 300/522 domains
+- 2026-09-27 20:33  annotate: PLK5 failed: IndexError: index 1 is out of bounds for axis 0 with size 1
+- 2026-09-27 20:33  annotate: 350/522 domains
+- 2026-09-27 20:33  annotate: 400/522 domains
+- 2026-09-27 20:33  annotate: 450/522 domains
+- 2026-09-27 20:33  annotate: TAF1_C failed: IndexError: index 1 is out of bounds for axis 0 with size 1
+- 2026-09-27 20:33  annotate: TAF1_N failed: IndexError: index 1 is out of bounds for axis 0 with size 1
+- 2026-09-27 20:33  annotate: 500/522 domains
+- 2026-09-27 20:33  annotate: 12664 structures ({'pdb': np.int64(12022), 'afdb': np.int64(514), 'esm2': np.int64(128)}), 0 failed
+- 2026-09-27 20:33  annotate: 12667 structures ({'pdb': np.int64(12022), 'afdb': np.int64(517), 'esm2': np.int64(128)}), 0 failed
+- 2026-09-27 20:34  catalogue: PLK5, TAF1_C, TAF1_N have unmappable pockets (hmmalign could not place them); kept with AFDB only, excluded from KLIFS-based metrics
+- 2026-09-27 20:34  induced fit: 103 candidate blind DFG-out type II chains over 18 kinases; selected 30
+- 2026-09-27 20:34  induced fit: 103 candidate blind DFG-out type II chains over 18 kinases; selected 30
+- 2026-09-27 20:34  induced fit: 62 candidate blind DFG-out type II chains over 18 kinases; selected 30
+- 2026-09-27 20:34  pockets: 2536 new structures to scan over 519 domains
+- 2026-09-27 20:35  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'pending': np.int64(519), 'partial': np.int64(2), 'disagree': np.int64(1)}; PCI pending; motif repair rows 107
+- 2026-09-27 20:36  bundle: SQLite 6.2 MB, structures 0.06 GB, total 0.07 GB; 0 specimen JSON files over 150 KB
+- 2026-09-27 20:36  pockets: scanned 25/519 domains
+- 2026-09-27 20:36  pockets: scanned 50/519 domains
+- 2026-09-27 20:37  pockets: scanned 75/519 domains
+- 2026-09-27 20:37  pockets: scanned 100/519 domains
+- 2026-09-27 20:38  pockets: scanned 125/519 domains
+- 2026-09-27 20:39  pockets: scanned 150/519 domains
+- 2026-09-27 20:40  pockets: scanned 175/519 domains
+- 2026-09-27 20:41  pockets: scanned 200/519 domains
+- 2026-09-27 20:41  pockets: scanned 225/519 domains

@@ -63,6 +63,8 @@ def map_pocket_to_sequence(pocket: str, sequence: str, offset: int = 1) -> dict[
 
     positions = [i + 1 for i, c in enumerate(pocket) if c not in "_-"]
     residues = "".join(c for c in pocket if c not in "_-")
+    if not residues or not sequence:
+        return {}  # unmappable pocket (e.g. hmmalign could not place an atypical domain)
     clean = "".join(c if c in "ACDEFGHIKLMNPQRSTVWY" else "X" for c in residues)
     target = "".join(c if c in "ACDEFGHIKLMNPQRSTVWY" else "X" for c in sequence)
     matrix = SubstitutionMatrix.std_protein_matrix()
