@@ -26,6 +26,7 @@ PLATES = [
 def create_app() -> Flask:
     app = Flask(__name__, static_folder="static", template_folder="templates")
     app.config["JSON_SORT_KEYS"] = False
+    app.jinja_env.filters["fromjson"] = lambda v: orjson.loads(v) if v else {}
 
     def db() -> sqlite3.Connection:
         if "db" not in g:
@@ -133,9 +134,12 @@ def create_app() -> Flask:
 
     @app.get("/structures/<path:name>")
     def structures(name: str):
+        """Serve pre-gzipped mmCIF with Content-Encoding so viewers receive plain text."""
         if not name.endswith(".cif.gz"):
             abort(404)
-        resp = send_from_directory(STRUCT_DIR, name, mimetype="chemical/x-mmcif", max_age=86400)
+        resp = send_from_directory(STRUCT_DIR, name, mimetype="text/plain", max_age=86400)
+        resp.headers["Content-Encoding"] = "gzip"
+        resp.headers["Vary"] = "Accept-Encoding"
         return resp
 
     @app.errorhandler(404)

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='vendor/molstar/molstar.5.11.0.css') }}">
+{% endblock %}
+{% block content %}
+<section class="plate" aria-labelledby="bs-title">
+  <div class="plate-head">
+    <div><div class="eyebrow">Plate V</div><h1 id="bs-title">Black Sheep</h1></div>
+    <span class="qtag">Q3</span>
+  </div>
+  <p class="lede">Pseudokinases lack at least one catalytic residue: the β3 lysine, the HRD aspartate or the DFG aspartate. Does a predictor quietly "repair" the degraded motif by placing the substitute residue where a catalytic one would sit? Each card flips from the sequence evidence to the geometry call: <b>restored</b> (within 1.5 Å of the canonical position in the closest active homologue), <b>partial</b> (1.5 to 3 Å) or <b>faithful</b> (further than 3 Å).</p>
+  <div class="controls">
+    <div><label class="ctl-label" for="bs-filter">Show</label>
+      <select id="bs-filter"><option value="">All pseudokinases</option><option value="restored">Any model restored</option><option value="faithful">Faithful only</option><option value="pdb">With a PDB structure</option></select></div>
+    <p class="muted" id="bs-count" style="margin:0"></p>
+  </div>
+  <div class="grid-3" id="bs-grid"></div>
+</section>
+
+<dialog id="bs-dialog" aria-labelledby="bs-dialog-title" style="width:min(900px,94vw);border:1px solid var(--ink);border-radius:4px;padding:16px;background:var(--card)">
+  <div class="plate-head"><h2 id="bs-dialog-title">3D view</h2><button class="btn" type="button" id="bs-close">Close</button></div>
+  <div class="molstar-host" id="bs-molstar"></div>
+  <p class="muted" id="bs-dialog-note" style="font-size:.85rem"></p>
+</dialog>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/molstar/molstar.5.11.0.js') }}"></script>
+<script src="{{ url_for('static', filename='js/black_sheep.js') }}"></script>
+{% endblock %}

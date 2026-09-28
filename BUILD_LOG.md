@@ -66,3 +66,20 @@
 - 2026-09-27 20:16  fold queue: started on mps float32, loops 3, steps 100
 - 2026-09-27 20:17  pdb: downloaded 7000/12032 KLIFS complexes
 - 2026-09-27 20:18  pdb: downloaded 7500/12032 KLIFS complexes
+- 2026-09-27 20:19  phylo: MSA 522 x 262 match columns; trimmed 9 columns with > 50% gaps
+- 2026-09-27 20:20  pdb: downloaded 8000/12032 KLIFS complexes
+- 2026-09-27 20:20  phylo: rooted rerooted on the edge maximising ePK group purity (5.26 / 7 vs midpoint 4.46; 100% non-ePK on the outgroup side); non-monophyletic groups: Atypical (468 intruders), CAMK (7 intruders), CK1 (1 intruders), CMGC (5 intruders), Other (437 intruders), STE (192 intruders), TKL (104 intruders)
+- 2026-09-27 20:21  phylo: monophyletic AGC, TK, RGC. Known exceptions: CAMK (+CAMKK1/2, TBK1/IKBKE, SBK1-3; group assignment quirks), CMGC (+TAF1, TRRAP, UHMK1, CDK11A; atypical or poorly aligned domains), CK1 (+PI4K2B, long branch), STE (STE11/MEKK subfamily and EIF2AK4_N outside the main clade), TKL (paraphyletic: STKR, IRAK, RIPK, LISK, LRRK subfamilies split from RAF/MLK), Other and Atypical (not expected to be monophyletic)
+- 2026-09-27 20:21  pdb: downloaded 8500/12032 KLIFS complexes
+- 2026-09-27 20:22  pdb: downloaded 9000/12032 KLIFS complexes
+- 2026-09-27 20:24  pdb: downloaded 9500/12032 KLIFS complexes
+- 2026-09-27 20:26  pdb: downloaded 10000/12032 KLIFS complexes
+- 2026-09-27 20:27  pdb: downloaded 10500/12032 KLIFS complexes
+- 2026-09-27 20:28  pdb: downloaded 11000/12032 KLIFS complexes
+- 2026-09-27 20:30  references: 13 DOIs resolved via Crossref; dropped 1: tdc (10.48550/arXiv.2102.09548: HTTP 404)
+- 2026-09-27 20:30  pdb: downloaded 11500/12032 KLIFS complexes
+- 2026-09-27 20:32  pdb: downloaded 12000/12032 KLIFS complexes
+- 2026-09-27 20:32  pdb: 13278 human KLIFS chains, 12032 pass the quality filter; blind AF2 4817, blind ESM 1387
+- 2026-09-27 20:32  pdb: novel AF2 116, novel ESM 51 (MMseqs2, < 40% identity at >= 50% query coverage)
+- 2026-09-27 20:32  tiers: 10 domains promoted to T1 (blind + novel for ESMFold2)
+- 2026-09-27 20:33  Phase 2 complete: AFDB 517 + 5 absent (100% covered); 12032 quality PDB chains; blind/novel flags populated; T1 = 10 domains; fold queue running

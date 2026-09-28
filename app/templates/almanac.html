@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="plate" aria-labelledby="alm-title">
+  <div class="plate-head">
+    <div><div class="eyebrow">Plate VII</div><h1 id="alm-title">The Almanac</h1></div>
+    <span class="qtag">Q1 to Q6</span>
+  </div>
+  <p class="lede">Six questions, answered from the atlas behind these pages. Every figure is drawn from the same data the other plates use; numbers carry 95% bootstrap intervals over kinases where a statistic is pooled.</p>
+</section>
+
+<article class="story">
+  <section class="plate" id="q1" aria-labelledby="q1-title">
+    <div class="plate-head"><h2 id="q1-title">Q1 · How faithful is each motif?</h2><span class="qtag">Q1</span></div>
+    <p class="lede" data-finding="q1"></p>
+    <div id="fig-q1" class="chart" role="img" aria-label="Median Cα deviation per KLIFS motif for AlphaFold DB and ESMFold2"></div>
+  </section>
+
+  <section class="plate" id="q2" aria-labelledby="q2-title">
+    <div class="plate-head"><h2 id="q2-title">Q2 · Do predictors collapse the kinome onto one state?</h2><span class="qtag">Q2</span></div>
+    <p class="lede" data-finding="q2"></p>
+    <label class="ctl-label" for="pci-slider">Source: <span id="pci-label">PDB</span></label>
+    <input type="range" id="pci-slider" min="0" max="3" step="1" value="0" aria-valuetext="PDB">
+    <div id="fig-q2" class="chart" role="img" aria-label="Kincore state distribution across the kinome for the selected source"></div>
+    <div id="pci-table"></div>
+  </section>
+
+  <section class="plate" id="q3" aria-labelledby="q3-title">
+    <div class="plate-head"><h2 id="q3-title">Q3 · Novel sequences and structures</h2><span class="qtag">Q3</span></div>
+    <p class="lede" data-finding="q3"></p>
+    <div id="fig-q3" class="chart" role="img" aria-label="Pocket RMSD to the nearest PDB state for training-era and blind structures"></div>
+  </section>
+
+  <section class="plate" id="q4" aria-labelledby="q4-title">
+    <div class="plate-head"><h2 id="q4-title">Q4 · Cryptic pockets</h2><span class="qtag">Q4</span></div>
+    <p class="lede" data-finding="q4"></p>
+    <div id="fig-q4" class="chart" role="img" aria-label="Positive-control recovery for ESMFold2 ensembles and AlphaFold DB"></div>
+    <p><a href="/rooms">Open the Hidden Rooms atlas</a></p>
+  </section>
+
+  <section class="plate" id="q5" aria-labelledby="q5-title">
+    <div class="plate-head"><h2 id="q5-title">Q5 · Selectivity from predicted pockets</h2><span class="qtag">Q5</span></div>
+    <p class="lede" data-finding="q5"></p>
+    <p><a href="/resemblance">Open Family Resemblance</a></p>
+  </section>
+
+  <section class="plate" id="q6" aria-labelledby="q6-title">
+    <div class="plate-head"><h2 id="q6-title">Q6 · Does a type II ligand pull DFG out?</h2><span class="qtag">Q6</span></div>
+    <p class="lede" data-finding="q6"></p>
+    <div id="fig-q6" class="chart" role="img" aria-label="Fraction of ESMFold2 samples in DFG-out, apo against holo, per complex"></div>
+  </section>
+</article>
+<script id="alm-data" type="application/json">{{ {"findings": findings, "pci": pci, "q5": q5} | tojson }}</script>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/d3/d3.v7.9.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/almanac.js') }}"></script>
+{% endblock %}

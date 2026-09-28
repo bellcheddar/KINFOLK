@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="plate" aria-labelledby="dk-title">
+  <div class="plate-head">
+    <div><div class="eyebrow">Plate VI</div><h1 id="dk-title">Distant Relatives</h1></div>
+    <span class="qtag">Q3 · Q4</span>
+  </div>
+  <p class="lede">The dark kinome: catalytic domains with no PDB chain covering 70% of the domain. With no experiment to check against, agreement between two independent predictors is the best available confidence signal. A small ESMFold2 to AlphaFold DB pocket RMSD and a low ensemble entropy mean the two methods tell the same story.</p>
+  <div class="controls">
+    <div><label class="ctl-label" for="dk-group">Group</label><select id="dk-group"><option value="">All groups</option></select></div>
+    <div><label class="ctl-label" for="dk-q">Filter</label><input id="dk-q" type="search" placeholder="Gene or family" style="min-height:44px;border:1px solid var(--rule);border-radius:4px;padding:0 12px;font:inherit"></div>
+    <p class="muted" id="dk-count" style="margin:0"></p>
+  </div>
+  <div class="grid-2" style="margin-bottom:16px">
+    <div id="dk-scatter" class="chart" role="img" aria-label="Scatter of ESMFold2 to AlphaFold DB pocket RMSD against ESMFold2 ensemble entropy for dark kinases"></div>
+    <div class="muted" style="font-size:.9rem;align-self:center">
+      <p><b>Reading the scatter.</b> Bottom left: both predictors agree and the ensemble is settled. Top right: the models disagree and ESMFold2 samples several states, so treat any single model with caution. Point size shows the number of candidate cryptic sites.</p>
+    </div>
+  </div>
+  <div class="table-wrap" style="max-height:560px;overflow:auto">
+    <table id="dk-table">
+      <caption class="sr-only">Dark kinome domains, sortable</caption>
+      <thead><tr>
+        <th scope="col"><button type="button" data-k="domain_id">Domain</button></th>
+        <th scope="col"><button type="button" data-k="grp">Group</button></th>
+        <th scope="col"><button type="button" data-k="family">Family</button></th>
+        <th scope="col" class="num"><button type="button" data-k="esm_afdb_rmsd" aria-sort="ascending">ESMFold2 vs AFDB (Å)</button></th>
+        <th scope="col" class="num"><button type="button" data-k="esm_entropy">State entropy (bits)</button></th>
+        <th scope="col" class="num"><button type="button" data-k="afdb_plddt">AFDB pLDDT</button></th>
+        <th scope="col" class="num"><button type="button" data-k="esm_plddt">ESMFold2 pLDDT</button></th>
+        <th scope="col">Top site</th>
+        <th scope="col" class="num"><button type="button" data-k="n_candidates">Candidates</button></th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/d3/d3.v7.9.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dark.js') }}"></script>
+{% endblock %}

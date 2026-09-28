@@ -60,18 +60,48 @@ def run_iqtree(aln: str) -> tuple[str, str]:
     return str(tree), method
 
 
+EPK_GROUPS = ("AGC", "CAMK", "CK1", "CMGC", "STE", "TK", "TKL")
+
+
+def _purity(tree: Tree, groups: dict[str, str]) -> float:
+    """Sum over ePK groups of (members / leaves under their MRCA): 7.0 = all monophyletic."""
+    score = 0.0
+    for g in EPK_GROUPS:
+        leaves = [t for t in tree.get_terminals() if groups.get(t.name) == g]
+        if len(leaves) >= 2:
+            score += len(leaves) / tree.common_ancestor(leaves).count_terminals()
+    return score
+
+
 def root_tree(tree: Tree, groups: dict[str, str]) -> tuple[Tree, str]:
+    """Root on the edge that best separates the ePK groups from the atypicals.
+
+    Every edge is tried as the root; the winner maximises ePK group purity
+    (members / leaves under each group's MRCA, summed), ties broken by the
+    atypical fraction of the smaller root side.
+    """
+    import copy
+
     tree.root_at_midpoint()
-    atyp = [t for t in tree.get_terminals() if groups.get(t.name) == "Atypical"]
-    choice = "midpoint"
-    if atyp:
-        mrca = tree.common_ancestor(atyp)
-        leaves = mrca.get_terminals()
-        frac_other = 1 - len(atyp) / len(leaves)
-        if frac_other <= 0.2 and len(leaves) < 0.5 * tree.count_terminals():
-            tree.root_with_outgroup(mrca)
-            choice = f"rerooted on the atypical clade ({len(leaves)} leaves, {frac_other:.0%} non-atypical)"
-    return tree, choice
+    base = _purity(tree, groups)
+    best = (base, -1.0, None)
+    clades = [c for c in tree.find_clades() if c is not tree.root]
+    n = tree.count_terminals()
+    for i, c in enumerate(clades):
+        t = copy.deepcopy(tree)
+        target = list(t.find_clades())[list(tree.find_clades()).index(c)]
+        t.root_with_outgroup(target)
+        side = target.get_terminals()
+        small = side if len(side) <= n / 2 else [x for x in t.get_terminals() if x not in side]
+        atyp = sum(groups.get(x.name) not in EPK_GROUPS for x in small) / max(1, len(small))
+        s = _purity(t, groups)
+        if (s, atyp) > best[:2]:
+            best = (s, atyp, i)
+    if best[2] is None:
+        return tree, f"midpoint (ePK purity {base:.2f} / 7)"
+    tree.root_with_outgroup(clades[best[2]])
+    return tree, (f"rerooted on the edge maximising ePK group purity ({best[0]:.2f} / 7 vs midpoint {base:.2f}; "
+                  f"{best[1]:.0%} non-ePK on the outgroup side)")
 
 
 def monophyly(tree: Tree, groups: dict[str, str]) -> dict[str, dict]:

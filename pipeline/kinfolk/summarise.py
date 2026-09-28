@@ -81,8 +81,7 @@ def domain_table(s: pd.DataFrame, cat: pd.DataFrame) -> pd.DataFrame:
                      esm_best_rmsd=best.pocket_rmsd_nearest, esm_entropy=round(entropy(p), 3),
                      esm_state_fracs=json.dumps({k: round(float(v), 3) for k, v in zip(STATES, p) if v > 0}),
                      esm_agreement=classify(best.state, best.pocket_rmsd_nearest, pdb_states, ens_states),
-                     ensemble_rescue=bool(pdb_states and ((ens_states & pdb_states) - {r.get("afdb_state")})),
-                     esm_afdb_rmsd=None)
+                     ensemble_rescue=bool(pdb_states and ((ens_states & pdb_states) - {r.get("afdb_state")})))
         else:
             r.update(esm_n=0, esm_agreement="pending")
         rows.append(r)
@@ -214,13 +213,60 @@ def motif_repair(s: pd.DataFrame, cat: pd.DataFrame, dom: pd.DataFrame) -> pd.Da
     return pd.DataFrame(rows)
 
 
+def _pair_rmsd(args):
+    from .annotate import dev_stats, pocket_array
+    from .mapping import load_mapped
+    a_row, b_row, dom = args
+    try:
+        ca, ka = load_mapped(a_row, dom)
+        cb, kb = load_mapped(b_row, dom)
+        A, B = pocket_array(ca, ka), pocket_array(cb, kb)
+        fit = core_fit(A, B)
+        return a_row["domain_id"], (None if fit is None else round(float(dev_stats(fit, B)[0]), 3))
+    except Exception:  # noqa: BLE001
+        return a_row["domain_id"], None
+
+
+def esm_afdb_rmsd(s: pd.DataFrame, cat: pd.DataFrame, dom: pd.DataFrame) -> dict[str, float]:
+    """Pocket (85 Ca) RMSD between the AFDB model and the best ESMFold2 sample, core frame."""
+    from concurrent.futures import ProcessPoolExecutor
+    from .config import tuning
+    ok = s[s.status == "done"].set_index("struct_id")
+    catd = cat.set_index("domain_id")
+    jobs = []
+    for _, d in dom.dropna(subset=["esm_best"]).iterrows():
+        af = f"afdb:{d.domain_id}"
+        if af in ok.index and d.esm_best in ok.index:
+            jobs.append((ok.loc[af].to_dict() | {"struct_id": af}, ok.loc[d.esm_best].to_dict() | {"struct_id": d.esm_best},
+                         catd.loc[d.domain_id].to_dict()))
+    with ProcessPoolExecutor(int(tuning().get("cpu_workers", 4))) as ex:
+        return {k: v for k, v in ex.map(_pair_rmsd, jobs, chunksize=8)}
+
+
+def motif_summary(s: pd.DataFrame, dom: pd.DataFrame) -> dict:
+    """Q1: per-motif deviation (median, IQR) for AFDB and the best ESMFold2 sample."""
+    m = pd.read_parquet(ANN / "motif_dev.parquet")
+    best = set(dom.esm_best.dropna()) if "esm_best" in dom else set()
+    out = {}
+    for src, ids in (("afdb", set(s[s.source == "afdb"].struct_id)), ("esm2_best", best)):
+        sub = m[m.struct_id.isin(ids)].dropna(subset=["rmsd"])
+        out[src] = {mo: {"median": round(float(g.rmsd.median()), 3), "q1": round(float(g.rmsd.quantile(.25)), 3),
+                         "q3": round(float(g.rmsd.quantile(.75)), 3), "n": int(len(g)),
+                         "plddt_median": round(float(g.mean_plddt.median()), 1) if g.mean_plddt.notna().any() else None}
+                    for mo, g in sub.groupby("motif")}
+    return out
+
+
 def run() -> dict:
     cat = pd.read_parquet(DATA / "catalogue" / "kinases.parquet")
     s = pd.read_parquet(ANN / "structures.parquet")
     if "tag" not in s:
         s["tag"] = None
     dom = domain_table(s, cat)
+    rm = esm_afdb_rmsd(s, cat, dom) if "esm_best" in dom else {}
+    dom["esm_afdb_rmsd"] = dom.domain_id.map(rm)
     dom.to_parquet(ANN / "domains.parquet", index=False)
+    (ANN / "motif_summary.json").write_text(json.dumps(motif_summary(s, dom), indent=1))
     p = pci(s, cat, dom)
     (ANN / "pci.json").write_text(json.dumps(p, indent=1))
     mr = motif_repair(s, cat, dom)

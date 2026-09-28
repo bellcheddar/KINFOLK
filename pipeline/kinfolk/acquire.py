@@ -210,6 +210,12 @@ def acquire_pdb() -> pd.DataFrame:
     log(f"pdb: novel AF2 {int(st.novel_af2.sum())}, novel ESM {int(st.novel_esm.sum())} "
         "(MMseqs2, < 40% identity at >= 50% query coverage)")
     download_klifs_complexes(st[st.passes_quality])
+    for col in ("resolution", "rmsd1", "rmsd2", "quality_score", "missing_residues", "missing_atoms",
+                "Grich_distance", "Grich_angle", "Grich_rotation", "resolution_rcsb"):
+        if col in st:
+            st[col] = pd.to_numeric(st[col], errors="coerce")
+    for col in ("ligand", "allosteric_ligand", "alt", "chain", "pdb"):
+        st[col] = st[col].astype(str)
     st.to_parquet(PDB_DIR / "chains.parquet", index=False)
     return st
 

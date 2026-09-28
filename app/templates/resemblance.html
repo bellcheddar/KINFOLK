@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="plate" aria-labelledby="res-title">
+  <div class="plate-head">
+    <div><div class="eyebrow">Plate III</div><h1 id="res-title">Family Resemblance</h1></div>
+    <span class="qtag">Q5</span>
+  </div>
+  <p class="lede">Do kinases that look alike in sequence also look alike in the pocket? The left tree is the sequence phylogeny; the right tree clusters KLIFS pockets by KiSSim-lite fingerprint distance. Lines join the same kinase; heavier lines mark kinases that move furthest between the two orderings.</p>
+  <div class="controls">
+    <div>
+      <label class="ctl-label" for="tg-src">Pocket tree from</label>
+      <select id="tg-src">
+        <option value="pdb">PDB representatives</option>
+        <option value="esm">ESMFold2 best samples</option>
+      </select>
+    </div>
+    <p class="muted" id="tg-stats" style="margin:0"></p>
+  </div>
+  <div id="tangle" class="chart" style="max-height:760px;overflow:auto;border:1px solid var(--rule);border-radius:4px;background:var(--card)"
+       role="img" aria-label="Tanglegram of the sequence tree against the pocket tree"></div>
+</section>
+
+<div class="grid-2">
+  <section class="plate" aria-labelledby="ot-title">
+    <div class="plate-head"><h2 id="ot-title">Off-target finder</h2><span class="qtag">Q5</span></div>
+    <div class="controls">
+      <div style="flex:1;min-width:200px">
+        <label class="ctl-label" for="ot-kinase">Kinase</label>
+        <input id="ot-kinase" list="ot-list" placeholder="e.g. ABL1" style="width:100%;min-height:44px;border:1px solid var(--rule);border-radius:4px;padding:0 12px;font:inherit">
+        <datalist id="ot-list"></datalist>
+      </div>
+      <div>
+        <label class="ctl-label" for="ot-src">Fingerprint source</label>
+        <select id="ot-src"><option value="pdb">PDB</option><option value="afdb">AlphaFold DB</option><option value="esm2">ESMFold2</option></select>
+      </div>
+    </div>
+    <div class="table-wrap"><table id="ot-table" aria-live="polite">
+      <thead><tr><th scope="col">Rank</th><th scope="col">Kinase</th><th scope="col" class="num">Pocket similarity</th><th scope="col" class="num">Davis co-inhibition</th></tr></thead>
+      <tbody><tr><td colspan="4" class="muted">Choose a kinase.</td></tr></tbody>
+    </table></div>
+  </section>
+  <section class="plate" aria-labelledby="q5-title">
+    <div class="plate-head"><h2 id="q5-title">Do predicted pockets predict selectivity?</h2><span class="qtag">Q5</span></div>
+    <div id="q5-chart" class="chart" role="img" aria-label="Spearman correlation between pocket similarity and Davis co-inhibition, per source, with 95% intervals"></div>
+    <p class="muted" id="q5-note" style="font-size:.88rem"></p>
+  </section>
+</div>
+<script id="q5-data" type="application/json">{{ q5 | tojson }}</script>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/d3/d3.v7.9.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/resemblance.js') }}"></script>
+{% endblock %}

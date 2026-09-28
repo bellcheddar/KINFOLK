@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='vendor/molstar/molstar.5.11.0.css') }}">
+{% endblock %}
+{% block content %}
+<section class="plate" aria-labelledby="ctl-title">
+  <div class="plate-head">
+    <div><div class="eyebrow">Plate IV</div><h1 id="ctl-title">Hidden Rooms</h1></div>
+    <span class="qtag">Q4</span>
+  </div>
+  <p class="lede">Do ESMFold2 ensembles, folded from sequence alone, open the pockets that allosteric drugs found? Each control site is defined by the residues within 4 Å of a bound ligand in the PDB, and counts as recovered when an ESMFold2 site overlaps it with Jaccard ≥ 0.4 in at least one apo sample.</p>
+  <div class="table-wrap">
+    <table>
+      <caption class="sr-only">Positive-control scorecard</caption>
+      <thead><tr><th scope="col">Control</th><th scope="col">Site</th><th scope="col">Defined from</th>
+        <th scope="col">ESMFold2</th><th scope="col" class="num">Recovery</th><th scope="col" class="num">Best Jaccard</th><th scope="col">AlphaFold DB</th></tr></thead>
+      <tbody>
+      {% for c in controls %}{% set e = c.expected_residues_json | fromjson %}
+        <tr>
+          <td><a href="/k/{{ c.domain_id }}">{{ c.control_id }}</a></td>
+          <td>{{ c.site_name }}</td>
+          <td class="mono">{% if e.pdb %}{{ e.pdb }} · {{ e.ligand }} · {{ (e.residues or []) | length }} res{% else %}{{ e.status }}{% endif %}</td>
+          <td>{% if c.recovered is none %}<span class="chip">pending</span>{% elif c.recovered %}<span class="chip agree">● recovered</span>{% else %}<span class="chip disagree">✕ not recovered</span>{% endif %}</td>
+          <td class="num">{{ '%.0f%%' % (c.score * 100) if c.score is not none else 'n/a' }}</td>
+          <td class="num">{{ '%.2f' % e.best_jaccard if e.best_jaccard is not none else 'n/a' }}</td>
+          <td>{% if e.afdb_recovered %}<span class="chip agree">■ recovered</span>{% elif e.afdb_jaccard is not none %}<span class="chip">■ {{ '%.2f' % e.afdb_jaccard }}</span>{% else %}n/a{% endif %}</td>
+        </tr>
+      {% else %}
+        <tr><td colspan="7" class="muted">Controls pending.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="plate" aria-labelledby="atlas-title">
+  <div class="plate-head"><h2 id="atlas-title">Candidate cryptic sites</h2><span class="qtag">Q4</span></div>
+  <p class="lede">Sites seen in at least a quarter of ESMFold2 samples, absent from every apo PDB structure, with P2Rank probability ≥ 0.5 and outside the ATP cleft. Ranked by recovery × probability.</p>
+  <div class="controls">
+    <div><label class="ctl-label" for="f-group">Group</label><select id="f-group"><option value="">All groups</option></select></div>
+    <div><label class="ctl-label" for="f-sub">Subpocket</label><select id="f-sub"><option value="">All</option></select></div>
+    <div><label class="ctl-label" for="f-cand">Show</label>
+      <select id="f-cand"><option value="1">Candidates only</option><option value="0">All novel sites</option></select></div>
+  </div>
+  <div class="table-wrap" style="max-height:460px;overflow:auto">
+    <table id="sites">
+      <caption class="sr-only">Candidate cryptic sites, sortable</caption>
+      <thead><tr>
+        <th scope="col"><button type="button" data-k="gene">Kinase</button></th>
+        <th scope="col"><button type="button" data-k="grp">Group</button></th>
+        <th scope="col"><button type="button" data-k="subpocket">Subpocket</button></th>
+        <th scope="col" class="num"><button type="button" data-k="recovery">Recovery</button></th>
+        <th scope="col" class="num"><button type="button" data-k="p2rank_max">P2Rank</button></th>
+        <th scope="col" class="num"><button type="button" data-k="vol_max">Volume (Å³)</button></th>
+        <th scope="col" class="num"><button type="button" data-k="rank_score" aria-sort="descending">Score</button></th>
+        <th scope="col"><span class="sr-only">View</span></th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<div class="grid-2">
+  <section class="plate" aria-labelledby="viewer-title">
+    <div class="plate-head"><h2 id="viewer-title">Site viewer</h2><span class="mono muted" id="viewer-label">choose a site</span></div>
+    <label class="ctl-label" for="thresh">Recovery threshold: <span id="thresh-val">0.25</span></label>
+    <input type="range" id="thresh" min="0" max="1" step="0.05" value="0.25">
+    <div class="molstar-host" id="site-molstar" aria-label="ESMFold2 model with pocket sites as translucent surfaces"></div>
+    <div class="legend-inline" id="site-legend"></div>
+  </section>
+  <section class="plate" aria-labelledby="sun-title">
+    <div class="plate-head"><h2 id="sun-title">Where the rooms are</h2></div>
+    <div id="sunburst" class="chart" role="img" aria-label="Sunburst of candidate sites by KLIFS subpocket and kinase group"></div>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/d3/d3.v7.9.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/molstar/molstar.5.11.0.js') }}"></script>
+<script src="{{ url_for('static', filename='js/rooms.js') }}"></script>
+{% endblock %}

@@ -86,3 +86,15 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: ABL1 against a crystal pocket: {"3/100": {"s": 16.6, "plddt": 93.1, "pocket85_rmsd_vs_crystal": 2.08}, "10/100": {"s": 35.4, "plddt": 93.6, "pocket85_rmsd_vs_crystal": 2.1}, "20/200": {"s": 67.1, "plddt": 93.5, "pocket85_rmsd_vs_crystal": 2.18}}. Defaults cost 4x with no pocket gain; 50 steps saves only ~10% (trunk dominates) and moves the pocket core 0.24 A
 - How to reverse: Edit num_loops / num_sampling_steps in config/tuning.toml and clear data/manifests/fold.jsonl
 
+## 2026-09-27 20:21  Sequence tree rooting
+- Decision: Root on the edge maximising summed ePK group purity (members / MRCA leaves over AGC, CAMK, CK1, CMGC, STE, TK, TKL); outgroup side is 100% non-ePK
+- Alternatives: Midpoint rooting (splits CMGC; purity 4.46/7); rooting on the atypical MRCA (atypicals are scattered long branches, not a clade)
+- Reason: Spec 6.1 asks for the split that best separates ePK groups from atypicals; purity rose to 5.26/7
+- How to reverse: Replace root_tree with root_at_midpoint in phylo.py
+
+## 2026-09-27 20:24  GOBSMACKED deep link
+- Decision: Render "Send pocket to GOBSMACKED" disabled with a tooltip
+- Alternatives: Link anyway (would open GOBSMACKED without the pocket)
+- Reason: gobsmacked.mdeller.com is live but none of its scripts (stages.js, viewer.js, clip.js, sequence_track.js) read query parameters, so ?uniprot=&pocket= is ignored (checked 2026-09-27)
+- How to reverse: Change needed in GOBSMACKED: on load, read URLSearchParams uniprot (UniProt accession) and pocket (comma-separated UniProt residue numbers), fetch the AFDB model for the accession and pre-select those residues as the pocket. Then set GOBSMACKED_LINK_ENABLED = True in app/static/js/specimen.js
+

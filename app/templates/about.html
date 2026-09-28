@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="plate" aria-labelledby="ab-title">
+  <div class="plate-head"><div><div class="eyebrow">About</div><h1 id="ab-title">How the atlas was made</h1></div></div>
+  <p class="lede">KINFOLK compares three views of every human kinase catalytic domain: experimental structures from the PDB (via KLIFS), the single AlphaFold DB model, and an ensemble of ESMFold2 diffusion samples. Everything on these pages was computed in advance on one Mac Studio; the site only serves the results.</p>
+  <figure style="margin:0">
+    <svg viewBox="0 0 960 250" role="img" aria-labelledby="pipe-title pipe-desc" style="width:100%;height:auto">
+      <title id="pipe-title">Pipeline schematic</title>
+      <desc id="pipe-desc">KLIFS and UniProt feed the catalogue. PDB chains, AlphaFold DB models and ESMFold2 folds are annotated with KLIFS numbering and Kincore states, then feed phylogeny, pocket detection, selectivity and the induced-fit test, and finally the SQLite atlas behind this site.</desc>
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1F3326"/></marker></defs>
+      <g font-family="Public Sans, sans-serif" font-size="13" fill="#1F3326">
+        <g stroke="#1F3326" fill="#F8F7F1" stroke-width="1.2">
+          <rect x="10" y="95" width="130" height="60" rx="4"/>
+          <rect x="190" y="20" width="150" height="50" rx="4"/><rect x="190" y="100" width="150" height="50" rx="4"/><rect x="190" y="180" width="150" height="50" rx="4" fill="#F2E3DA"/>
+          <rect x="390" y="95" width="150" height="60" rx="4"/>
+          <rect x="590" y="10" width="160" height="44" rx="4"/><rect x="590" y="70" width="160" height="44" rx="4"/><rect x="590" y="130" width="160" height="44" rx="4"/><rect x="590" y="190" width="160" height="44" rx="4"/>
+          <rect x="800" y="95" width="150" height="60" rx="4" fill="#1F3326"/>
+        </g>
+        <text x="75" y="120" text-anchor="middle">Catalogue</text><text x="75" y="139" text-anchor="middle" font-size="11">KLIFS + UniProt</text>
+        <text x="265" y="50" text-anchor="middle">PDB via KLIFS</text>
+        <text x="265" y="130" text-anchor="middle">AlphaFold DB</text>
+        <text x="265" y="202" text-anchor="middle">ESMFold2 (MPS)</text><text x="265" y="220" text-anchor="middle" font-size="11">diffusion ensembles</text>
+        <text x="465" y="120" text-anchor="middle">Annotation</text><text x="465" y="139" text-anchor="middle" font-size="11">KLIFS map · Kincore</text>
+        <text x="670" y="37" text-anchor="middle">Phylogeny (IQ-TREE)</text>
+        <text x="670" y="97" text-anchor="middle">Pockets (P2Rank, fpocket)</text>
+        <text x="670" y="157" text-anchor="middle">Selectivity (Davis)</text>
+        <text x="670" y="217" text-anchor="middle">Induced fit (CCD ligands)</text>
+        <text x="875" y="122" text-anchor="middle" fill="#F1EEDF">SQLite atlas</text><text x="875" y="140" text-anchor="middle" fill="#F1EEDF" font-size="11">Flask, read-only</text>
+        <g stroke="#1F3326" stroke-width="1.2" fill="none" marker-end="url(#ar)">
+          <path d="M140,125L188,45"/><path d="M140,125L188,125"/><path d="M140,125L188,205"/>
+          <path d="M340,45L388,120"/><path d="M340,125L388,125"/><path d="M340,205L388,130"/>
+          <path d="M540,125L588,32"/><path d="M540,125L588,92"/><path d="M540,125L588,152"/><path d="M540,125L588,212"/>
+          <path d="M750,32L798,118"/><path d="M750,92L798,122"/><path d="M750,152L798,128"/><path d="M750,212L798,132"/>
+        </g>
+      </g>
+    </svg>
+  </figure>
+</section>
+
+<div class="grid-2">
+  <section class="plate" aria-labelledby="cut-title">
+    <h2 id="cut-title">Training cutoffs and blind sets</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th scope="col">Model</th><th scope="col">PDB training cutoff</th><th scope="col">Blind set: released after</th></tr></thead>
+      <tbody><tr><td>AlphaFold2 (AlphaFold DB)</td><td class="mono">2018-04-30</td><td class="mono">2018-04-30</td></tr>
+        <tr><td>ESMFold2</td><td class="mono">September 2021</td><td class="mono">2021-09-30</td></tr></tbody>
+    </table></div>
+    <p>A blind entry is <b>sequence-novel</b> when its chain shares under 40% identity (MMseqs2, at least half the query covered) with every protein chain released before the relevant cutoff.</p>
+    <h2 style="margin-top:18px">Method notes</h2>
+    <ul>
+      <li>Unit of analysis: the catalytic domain, one row per domain (for example <span class="mono">JAK2_JH1</span> and <span class="mono">JAK2_JH2</span>).</li>
+      <li>Superposition frame: the stable pocket core (KLIFS regions I, II, III, IV, V, gatekeeper, hinge, VI and VII; Cα only).</li>
+      <li>Kincore labels: the published spatial and dihedral rules, ported and checked against the Kincore database (19 of 20 chains agree).</li>
+      <li>Pocket fingerprints: <b>KiSSim-lite</b>, an 85-position physicochemical, exposure and subpocket-distance fingerprint following the KiSSim design (the kissim package itself could not be installed).</li>
+      <li>ESMFold2 settings: 3 recycling loops, 100 sampling steps, float32 on Apple MPS.</li>
+    </ul>
+  </section>
+  <section class="plate" aria-labelledby="ref-title">
+    <h2 id="ref-title">Software and references</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th scope="col">Resource</th><th scope="col">Reference</th><th scope="col">Code</th></tr></thead>
+      <tbody>
+      {% for r in refs %}
+        <tr><td>{{ r.what }}</td>
+          <td>{{ r.first_author }}{% if r.et_al %} et al.{% endif %}, <i>{{ r.journal }}</i> {{ r.year }}.
+            <a href="https://doi.org/{{ r.doi }}" class="mono">doi:{{ r.doi }}</a></td>
+          <td>{% if r.code %}<a href="{{ r.code }}">{{ r.code.split('//')[1].split('/')[0] }}</a>{% endif %}</td></tr>
+      {% else %}<tr><td colspan="3" class="muted">References pending.</td></tr>{% endfor %}
+      </tbody>
+    </table></div>
+    <h2 style="margin-top:18px">Licence and citation</h2>
+    <p>Code: MIT. Derived data inherit the terms of their sources (PDB: CC0; AlphaFold DB: CC BY 4.0; KLIFS and Kincore: as published; ESMFold2 weights: MIT).</p>
+    <p>Cite as: Deller, M. C. <i>KINFOLK: Kinase INventory of Folds, Occluded Ligand sites and Kryptic pockets</i> (2026). kinfolk.mdeller.com; code at github.com/bellcheddar.</p>
+  </section>
+</div>
+{% endblock %}
