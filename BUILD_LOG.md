@@ -146,3 +146,29 @@
 - 2026-09-27 20:51  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
 - 2026-09-27 20:51  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
 - 2026-09-27 20:51  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-27 20:52  finish: orchestrator started
+- 2026-09-27 20:52  annotate: 50/522 domains
+- 2026-09-27 20:52  annotate: 100/522 domains
+- 2026-09-27 20:52  annotate: 150/522 domains
+- 2026-09-27 20:52  annotate: 200/522 domains
+- 2026-09-27 20:52  annotate: 250/522 domains
+- 2026-09-27 20:52  annotate: 300/522 domains
+- 2026-09-27 20:52  annotate: 350/522 domains
+- 2026-09-27 20:52  annotate: 400/522 domains
+- 2026-09-27 20:52  annotate: 450/522 domains
+- 2026-09-27 20:52  annotate: 500/522 domains
+- 2026-09-27 20:52  annotate: 12835 structures ({'pdb': np.int64(12022), 'afdb': np.int64(517), 'esm2': np.int64(296)}), 0 failed
+- 2026-09-27 20:52  finish: annotate (backfill) ok in 0.2 min
+- 2026-09-27 20:52  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'pending': np.int64(510), 'partial': np.int64(8), 'disagree': np.int64(2), 'agree': np.int64(2)}; PCI {'afdb': {'jsd': 0.0984, 'ci95': [0.0609, 0.3248]}, 'esm_single': {'jsd': 0.0685, 'ci95': [0.0274, 0.2609]}, 'esm_ensemble': {'jsd': 0.0662, 'ci95': [0.0315, 0.223]}}; motif repair rows 107
+- 2026-09-27 20:52  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-27 20:52  pockets: 168 new structures to scan over 9 domains
+- 2026-09-27 20:53  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-27 20:53  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-27 20:53  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-27 20:53  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-27 20:53  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-27 20:53  pockets: 20811 pockets, 130 ESMFold2 sites, 0 candidate cryptic sites; controls recovered 3/5
+- 2026-09-27 20:53  finish: pockets (backfill) ok in 0.7 min
+- 2026-09-27 20:53  bundle: SQLite 7.3 MB, structures 0.05 GB, total 0.07 GB; 0 specimen JSON files over 150 KB
+- 2026-09-27 20:53  finish: bundle (backfill) ok in 0.2 min
+- 2026-09-27 20:53  icon: kinfolk_icon.svg / _300.png (marcs-vibe-icon house style; QC PASS)

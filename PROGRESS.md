@@ -1,19 +1,15 @@
 # KINFOLK progress
 
-Updated: 2026-09-27 20:18
+Updated: 2026-09-27 21:33
 
 | Phase | Name | Status | % |
 |------|------|--------|---|
-| 0 | Bootstrap and probe | Done: MPS float32 (bf16 aborts on MPS, fp16 unsupported by ESMC); ABL1 16.4 s; projection 13.8 h (MVS 3.2 h); G1 closed | 100 |
-| 1 | Catalogue | Done: 522 domains, 57 pseudokinases, 190 dark | 100 |
-| 2 | Acquisition | AFDB done (517 + 5 absent); PDB metadata, blind and novel flags done; KLIFS files downloading (about 55%); **fold queue running** | 70 |
-| 3 | Annotation | Code written; Kincore port passes 19/20 against the Kincore database | 20 |
-| 4 | Phylogeny | IQ-TREE LG+G4 -B 1000 running (522 domains) | 40 |
-| 5 | Pockets | Code written; fpocket 4.2.3 and P2Rank 2.5.1 installed | 15 |
-| 6 | Selectivity | Code written (KiSSim-lite; kissim not installable); Davis via PyTDC loaded | 15 |
-| 7 | Induced fit | Code written; selection waits on Phase 2 | 10 |
-| 8 | Data bundle | | 0 |
-| 9 | Web app | Shell, tokens, Plate I code written; vendored D3 7.9.0 and Mol* 5.11.0 | 15 |
-| 10 | Polish and handover | | 0 |
+| 0-2 | Bootstrap, catalogue, acquisition | Done | 100 |
+| 2c | Fold queue | Running | 50 |
+| 3-8 | Analysis | Backfilling every 2 h | 60 |
+| 9 | Web app | Built; QC passing on interim bundle | 90 |
+| 10 | Handover | Pending folds | 20 |
 
-Open gates: none.
+Fold queue: pass A 24/24, pass B 20/20, pass C 110/507, pass D 0/438, pass Q6 0/50, pass E 0/288; remaining projection 13.4 h; failed batches 0.
+
+Open gates: none

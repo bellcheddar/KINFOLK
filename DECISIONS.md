@@ -122,3 +122,15 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: KLIFS allosteric annotations include additives; the class rules keep each site where its ligand class binds
 - How to reverse: Edit ADDITIVES / SITE_RULE in pockets.py
 
+## 2026-09-27 20:53  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-27 21:39  README polish
+- Decision: README.md written to references/readme_template.md (header, badges, contact table, Why it matters intro, tables, author footer) and linted for its hard rules (no em dashes, rel=noopener on every target=_blank, no hype words)
+- Alternatives: readme_forge.py
+- Reason: readme_forge.py is referenced by the marcs-vibe-coding skill but is not present anywhere on this machine
+- How to reverse: Run readme_forge.py over README.md when it is available
+
