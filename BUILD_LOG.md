@@ -176,3 +176,248 @@
 - 2026-09-27 22:01  bundle: SQLite 7.3 MB, structures 0.05 GB, total 0.07 GB; 0 specimen JSON files over 150 KB
 - 2026-09-27 22:03  finish: orchestrator started
 - 2026-09-27 22:03  annotate: 50/522 domains
+- 2026-09-27 22:03  annotate: 100/522 domains
+- 2026-09-27 22:03  annotate: 150/522 domains
+- 2026-09-27 22:03  annotate: 200/522 domains
+- 2026-09-27 22:03  annotate: 250/522 domains
+- 2026-09-27 22:03  annotate: 300/522 domains
+- 2026-09-27 22:03  annotate: 350/522 domains
+- 2026-09-27 22:03  annotate: 400/522 domains
+- 2026-09-27 22:03  annotate: 450/522 domains
+- 2026-09-27 22:03  annotate: 500/522 domains
+- 2026-09-27 22:03  annotate: 13093 structures ({'pdb': np.int64(12022), 'esm2': np.int64(554), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-27 22:03  finish: annotate (backfill) ok in 0.1 min
+- 2026-09-27 22:04  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'pending': np.int64(305), 'none': np.int64(91), 'partial': np.int64(52), 'disagree': np.int64(38), 'agree': np.int64(36)}; PCI {'afdb': {'jsd': 0.1079, 'ci95': [0.0791, 0.1702]}, 'esm_single': {'jsd': 0.1009, 'ci95': [0.0727, 0.1645]}, 'esm_ensemble': {'jsd': 0.1048, 'ci95': [0.0762, 0.1689]}}; motif repair rows 136
+- 2026-09-27 22:04  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-27 22:04  pockets: 258 new structures to scan over 206 domains
+- 2026-09-27 22:04  pockets: scanned 25/206 domains
+- 2026-09-27 22:04  pockets: scanned 50/206 domains
+- 2026-09-27 22:05  pockets: scanned 75/206 domains
+- 2026-09-27 22:05  pockets: scanned 100/206 domains
+- 2026-09-27 22:06  pockets: scanned 125/206 domains
+- 2026-09-27 22:06  pockets: scanned 150/206 domains
+- 2026-09-27 22:07  pockets: scanned 175/206 domains
+- 2026-09-27 22:07  pockets: scanned 200/206 domains
+- 2026-09-27 22:07  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-27 22:07  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-27 22:07  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-27 22:07  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-27 22:07  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-27 22:07  pockets: 21781 pockets, 903 ESMFold2 sites, 1 candidate cryptic sites; controls recovered 3/5
+- 2026-09-27 22:07  finish: pockets (backfill) ok in 3.5 min
+- 2026-09-27 22:07  bundle: SQLite 9.1 MB, structures 0.06 GB, total 0.08 GB; 0 specimen JSON files over 150 KB
+- 2026-09-27 22:07  finish: bundle (backfill) ok in 0.3 min
+- 2026-09-28 00:07  annotate: 50/522 domains
+- 2026-09-28 00:07  annotate: 100/522 domains
+- 2026-09-28 00:07  annotate: 150/522 domains
+- 2026-09-28 00:07  annotate: 200/522 domains
+- 2026-09-28 00:08  annotate: 250/522 domains
+- 2026-09-28 00:08  annotate: 300/522 domains
+- 2026-09-28 00:08  annotate: 350/522 domains
+- 2026-09-28 00:08  annotate: 400/522 domains
+- 2026-09-28 00:08  annotate: 450/522 domains
+- 2026-09-28 00:08  annotate: 500/522 domains
+- 2026-09-28 00:08  annotate: 13378 structures ({'pdb': np.int64(12022), 'esm2': np.int64(839), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 00:08  finish: annotate (backfill) ok in 0.2 min
+- 2026-09-28 00:08  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(217), 'partial': np.int64(114), 'agree': np.int64(92), 'disagree': np.int64(79), 'pending': np.int64(20)}; PCI {'afdb': {'jsd': 0.0754, 'ci95': [0.0571, 0.1104]}, 'esm_single': {'jsd': 0.0892, 'ci95': [0.0671, 0.1279]}, 'esm_ensemble': {'jsd': 0.0911, 'ci95': [0.0692, 0.1289]}}; motif repair rows 187
+- 2026-09-28 00:08  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-28 00:08  pockets: 285 new structures to scan over 285 domains
+- 2026-09-28 00:08  pockets: scanned 25/285 domains
+- 2026-09-28 00:09  pockets: scanned 50/285 domains
+- 2026-09-28 00:09  pockets: scanned 75/285 domains
+- 2026-09-28 00:09  pockets: scanned 100/285 domains
+- 2026-09-28 00:10  pockets: scanned 125/285 domains
+- 2026-09-28 00:10  pockets: scanned 150/285 domains
+- 2026-09-28 00:11  pockets: scanned 175/285 domains
+- 2026-09-28 00:11  pockets: scanned 200/285 domains
+- 2026-09-28 00:11  pockets: scanned 225/285 domains
+- 2026-09-28 00:12  pockets: scanned 250/285 domains
+- 2026-09-28 00:12  pockets: scanned 275/285 domains
+- 2026-09-28 00:12  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 00:12  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 00:12  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 00:12  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 00:12  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 00:12  pockets: 22883 pockets, 2001 ESMFold2 sites, 3 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 00:12  finish: pockets (backfill) ok in 4.7 min
+- 2026-09-28 00:13  bundle: SQLite 11.3 MB, structures 0.07 GB, total 0.09 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 00:13  finish: bundle (backfill) ok in 0.3 min
+- 2026-09-28 01:32  fold queue: started on mps float32, loops 3, steps 100
+- 2026-09-28 01:32  finish: orchestrator started
+- 2026-09-28 01:32  annotate: 50/522 domains
+- 2026-09-28 01:32  annotate: 100/522 domains
+- 2026-09-28 01:32  annotate: 150/522 domains
+- 2026-09-28 01:32  annotate: 200/522 domains
+- 2026-09-28 01:32  annotate: 250/522 domains
+- 2026-09-28 01:32  annotate: 300/522 domains
+- 2026-09-28 01:32  annotate: 350/522 domains
+- 2026-09-28 01:32  annotate: 400/522 domains
+- 2026-09-28 01:32  annotate: 450/522 domains
+- 2026-09-28 01:32  annotate: 500/522 domains
+- 2026-09-28 01:32  annotate: 13901 structures ({'pdb': np.int64(12022), 'esm2': np.int64(1362), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 01:32  finish: annotate (backfill) ok in 0.1 min
+- 2026-09-28 01:33  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(93), 'disagree': np.int64(83)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0512, 0.1019]}, 'esm_single': {'jsd': 0.0814, 'ci95': [0.0623, 0.1152]}, 'esm_ensemble': {'jsd': 0.0833, 'ci95': [0.0645, 0.1173]}}; motif repair rows 192
+- 2026-09-28 01:33  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-28 01:33  pockets: 523 new structures to scan over 54 domains
+- 2026-09-28 01:33  pockets: scanned 25/54 domains
+- 2026-09-28 01:34  pockets: scanned 50/54 domains
+- 2026-09-28 01:34  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 01:34  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 01:34  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 01:34  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 01:34  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 01:34  pockets: 24512 pockets, 2268 ESMFold2 sites, 10 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 01:34  finish: pockets (backfill) ok in 1.3 min
+- 2026-09-28 01:34  bundle: SQLite 14.5 MB, structures 0.08 GB, total 0.10 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 01:34  finish: bundle (backfill) ok in 0.3 min
+- 2026-09-28 03:34  annotate: 50/522 domains
+- 2026-09-28 03:34  annotate: 100/522 domains
+- 2026-09-28 03:34  annotate: 150/522 domains
+- 2026-09-28 03:34  annotate: 200/522 domains
+- 2026-09-28 03:34  annotate: 250/522 domains
+- 2026-09-28 03:34  annotate: 300/522 domains
+- 2026-09-28 03:34  annotate: 350/522 domains
+- 2026-09-28 03:34  annotate: 400/522 domains
+- 2026-09-28 03:34  annotate: 450/522 domains
+- 2026-09-28 03:34  annotate: 500/522 domains
+- 2026-09-28 03:34  annotate: 14718 structures ({'pdb': np.int64(12022), 'esm2': np.int64(2179), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 03:34  finish: annotate (backfill) ok in 0.2 min
+- 2026-09-28 03:35  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(93), 'disagree': np.int64(83)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0506, 0.1015]}, 'esm_single': {'jsd': 0.0814, 'ci95': [0.0623, 0.1144]}, 'esm_ensemble': {'jsd': 0.0832, 'ci95': [0.0628, 0.1157]}}; motif repair rows 192
+- 2026-09-28 03:35  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-28 03:35  pockets: 817 new structures to scan over 55 domains
+- 2026-09-28 03:35  pockets: scanned 25/55 domains
+- 2026-09-28 03:36  pockets: scanned 50/55 domains
+- 2026-09-28 03:36  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 03:36  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 03:36  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 03:36  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 03:36  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 03:36  pockets: 27586 pockets, 2681 ESMFold2 sites, 11 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 03:36  finish: pockets (backfill) ok in 1.8 min
+- 2026-09-28 03:37  bundle: SQLite 19.5 MB, structures 0.08 GB, total 0.11 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 03:37  finish: bundle (backfill) ok in 0.3 min
+- 2026-09-28 05:37  annotate: 50/522 domains
+- 2026-09-28 05:37  annotate: 100/522 domains
+- 2026-09-28 05:37  annotate: 150/522 domains
+- 2026-09-28 05:37  annotate: 200/522 domains
+- 2026-09-28 05:37  annotate: 250/522 domains
+- 2026-09-28 05:37  annotate: 300/522 domains
+- 2026-09-28 05:37  annotate: 350/522 domains
+- 2026-09-28 05:37  annotate: 400/522 domains
+- 2026-09-28 05:37  annotate: 450/522 domains
+- 2026-09-28 05:37  annotate: 500/522 domains
+- 2026-09-28 05:37  annotate: 15468 structures ({'pdb': np.int64(12022), 'esm2': np.int64(2929), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 05:37  finish: annotate (backfill) ok in 0.2 min
+- 2026-09-28 05:37  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(93), 'disagree': np.int64(83)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0518, 0.1017]}, 'esm_single': {'jsd': 0.0814, 'ci95': [0.063, 0.1187]}, 'esm_ensemble': {'jsd': 0.0832, 'ci95': [0.0645, 0.1208]}}; motif repair rows 192
+- 2026-09-28 05:37  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-28 05:37  pockets: 750 new structures to scan over 50 domains
+- 2026-09-28 05:38  pockets: scanned 25/50 domains
+- 2026-09-28 05:38  pockets: scanned 50/50 domains
+- 2026-09-28 05:38  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 05:38  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 05:38  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 05:38  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 05:38  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 05:38  pockets: 30387 pockets, 2910 ESMFold2 sites, 12 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 05:38  finish: pockets (backfill) ok in 1.3 min
+- 2026-09-28 05:39  bundle: SQLite 24.1 MB, structures 0.08 GB, total 0.11 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 05:39  finish: bundle (backfill) ok in 0.3 min
+- 2026-09-28 07:39  annotate: 50/522 domains
+- 2026-09-28 07:39  annotate: 100/522 domains
+- 2026-09-28 07:39  annotate: 150/522 domains
+- 2026-09-28 07:39  annotate: 200/522 domains
+- 2026-09-28 07:39  annotate: 250/522 domains
+- 2026-09-28 07:39  annotate: 300/522 domains
+- 2026-09-28 07:39  annotate: 350/522 domains
+- 2026-09-28 07:39  annotate: 400/522 domains
+- 2026-09-28 07:39  annotate: 450/522 domains
+- 2026-09-28 07:39  annotate: 500/522 domains
+- 2026-09-28 07:39  annotate: 15468 structures ({'pdb': np.int64(12022), 'esm2': np.int64(2929), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 07:39  finish: annotate (backfill) ok in 0.2 min
+- 2026-09-28 07:39  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(93), 'disagree': np.int64(83)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0512, 0.1008]}, 'esm_single': {'jsd': 0.0814, 'ci95': [0.0619, 0.117]}, 'esm_ensemble': {'jsd': 0.0832, 'ci95': [0.0622, 0.1197]}}; motif repair rows 192
+- 2026-09-28 07:39  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-28 07:39  pockets: 0 new structures to scan over 0 domains
+- 2026-09-28 07:39  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 07:39  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 07:39  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 07:39  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 07:39  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 07:39  pockets: 30387 pockets, 2910 ESMFold2 sites, 12 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 07:39  finish: pockets (backfill) ok in 0.1 min
+- 2026-09-28 07:39  bundle: SQLite 24.1 MB, structures 0.08 GB, total 0.11 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 07:39  finish: bundle (backfill) ok in 0.3 min
+- 2026-09-28 09:39  annotate: 50/522 domains
+- 2026-09-28 09:39  annotate: 100/522 domains
+- 2026-09-28 09:39  annotate: 150/522 domains
+- 2026-09-28 09:39  annotate: 200/522 domains
+- 2026-09-28 09:39  annotate: 250/522 domains
+- 2026-09-28 09:39  annotate: 300/522 domains
+- 2026-09-28 09:39  annotate: 350/522 domains
+- 2026-09-28 09:39  annotate: 400/522 domains
+- 2026-09-28 09:39  annotate: 450/522 domains
+- 2026-09-28 09:39  annotate: 500/522 domains
+- 2026-09-28 09:39  annotate: 15468 structures ({'pdb': np.int64(12022), 'esm2': np.int64(2929), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 09:39  finish: annotate (backfill) ok in 0.2 min
+- 2026-09-28 09:40  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(93), 'disagree': np.int64(83)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0494, 0.1004]}, 'esm_single': {'jsd': 0.0814, 'ci95': [0.0622, 0.1196]}, 'esm_ensemble': {'jsd': 0.0832, 'ci95': [0.0634, 0.1214]}}; motif repair rows 192
+- 2026-09-28 09:40  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-28 09:40  pockets: 0 new structures to scan over 0 domains
+- 2026-09-28 09:40  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 09:40  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 09:40  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 09:40  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 09:40  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 09:40  pockets: 30387 pockets, 2910 ESMFold2 sites, 12 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 09:40  finish: pockets (backfill) ok in 0.1 min
+- 2026-09-28 09:40  bundle: SQLite 24.1 MB, structures 0.08 GB, total 0.11 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 09:40  finish: bundle (backfill) ok in 0.3 min
+- 2026-09-28 11:40  annotate: 50/522 domains
+- 2026-09-28 11:40  annotate: 100/522 domains
+- 2026-09-28 11:40  annotate: 150/522 domains
+- 2026-09-28 11:40  annotate: 200/522 domains
+- 2026-09-28 11:40  annotate: 250/522 domains
+- 2026-09-28 11:40  annotate: 300/522 domains
+- 2026-09-28 11:40  annotate: 350/522 domains
+- 2026-09-28 11:40  annotate: 400/522 domains
+- 2026-09-28 11:40  annotate: 450/522 domains
+- 2026-09-28 11:40  annotate: 500/522 domains
+- 2026-09-28 11:40  annotate: 15468 structures ({'pdb': np.int64(12022), 'esm2': np.int64(2929), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 11:40  finish: annotate (backfill) ok in 0.2 min
+- 2026-09-28 11:40  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(93), 'disagree': np.int64(83)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0514, 0.0998]}, 'esm_single': {'jsd': 0.0814, 'ci95': [0.0619, 0.119]}, 'esm_ensemble': {'jsd': 0.0832, 'ci95': [0.0639, 0.1216]}}; motif repair rows 192
+- 2026-09-28 11:40  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-28 11:40  pockets: 0 new structures to scan over 0 domains
+- 2026-09-28 11:40  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 11:40  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 11:40  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 11:40  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 11:40  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 11:40  pockets: 30387 pockets, 2910 ESMFold2 sites, 12 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 11:40  finish: pockets (backfill) ok in 0.1 min
+- 2026-09-28 11:41  bundle: SQLite 24.1 MB, structures 0.08 GB, total 0.11 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 11:41  finish: bundle (backfill) ok in 0.3 min
+- 2026-09-28 12:02  finish: orchestrator started
+- 2026-09-28 12:02  annotate: 50/522 domains
+- 2026-09-28 12:02  annotate: 100/522 domains
+- 2026-09-28 12:02  annotate: 150/522 domains
+- 2026-09-28 12:02  annotate: 200/522 domains
+- 2026-09-28 12:02  annotate: 250/522 domains
+- 2026-09-28 12:02  annotate: 300/522 domains
+- 2026-09-28 12:02  annotate: 350/522 domains
+- 2026-09-28 12:02  annotate: 400/522 domains
+- 2026-09-28 12:02  annotate: 450/522 domains
+- 2026-09-28 12:02  annotate: 500/522 domains
+- 2026-09-28 12:02  annotate: 15483 structures ({'pdb': np.int64(12022), 'esm2': np.int64(2944), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 12:02  finish: annotate (backfill) ok in 0.2 min
+- 2026-09-28 12:02  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(93), 'disagree': np.int64(83)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0512, 0.1019]}, 'esm_single': {'jsd': 0.0814, 'ci95': [0.0623, 0.1152]}, 'esm_ensemble': {'jsd': 0.0832, 'ci95': [0.0642, 0.1172]}}; motif repair rows 192
+- 2026-09-28 12:02  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-28 12:02  pockets: 15 new structures to scan over 1 domains
+- 2026-09-28 12:03  fold queue: started on mps float32, loops 3, steps 100
+- 2026-09-28 12:03  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 12:03  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 12:03  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 12:03  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 12:03  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 12:03  pockets: 30420 pockets, 2917 ESMFold2 sites, 12 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 12:03  finish: pockets (backfill) ok in 0.2 min
+- 2026-09-28 12:03  bundle: SQLite 24.2 MB, structures 0.08 GB, total 0.11 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 12:03  finish: bundle (backfill) ok in 0.3 min
+- 2026-09-28 12:05  fold queue: stalled 05:20-12:01 (one batch took 6.7 h instead of ~45 s) while running at nice +5; relaunched both processes at nice 0; throughput back to normal

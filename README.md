@@ -68,7 +68,8 @@ pixi run smoke                      # ESMFold2 smoke test on ABL1, fold-time pro
 # pipeline (every stage is resumable; manifests in data/manifests/)
 pixi run kinfolk run --phase 1      # catalogue
 pixi run kinfolk run --phase 2      # PDB via KLIFS, AlphaFold DB, blind and novel flags
-pixi run kinfolk fold               # ESMFold2 fold queue (long-running)
+pixi run kinfolk fold               # ESMFold2 fold queue (long-running; run in tmux or with
+                                    # zsh 'setopt NO_BG_NICE' so it is not niced to +5)
 pixi run kinfolk finish             # backfill while folding, then phases 3 to 10
 pixi run kinfolk status
 

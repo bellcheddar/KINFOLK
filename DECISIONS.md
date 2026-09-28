@@ -152,3 +152,63 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: Requested by Marc; lets a tmux-launched session run unattended within scoped limits
 - How to reverse: Delete .claude/settings.json
 
+## 2026-09-27 22:07  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-28 00:12  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-28 01:34  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-28 03:36  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-28 05:38  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-28 07:39  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-28 09:40  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-28 11:40  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-28 12:03  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-28 12:05  Launching long jobs from zsh
+- Decision: Start the fold queue and orchestrator with setopt NO_BG_NICE (or from tmux) so they run at nice 0
+- Alternatives: Default zsh background launch (BG_NICE: nice +5)
+- Reason: At nice +5 the fold queue crawled overnight while the Mac was idle (one batch 6.7 h instead of ~45 s), consistent with macOS deprioritising low-priority background work; at nice 0 it runs at full speed
+- How to reverse: None needed; relaunch as documented in README Usage
+
