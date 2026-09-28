@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}KINFOLK</title>
+  <meta name="description" content="KINFOLK: a kinome-wide field guide comparing ESMFold2, AlphaFold DB and the PDB across KLIFS pocket motifs, novel structures and cryptic pockets.">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Public+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/tokens.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav class="sidebar" id="sidebar" aria-label="KINFOLK" data-open="false">
+    <div class="sidebar-top">
+      <div>
+        <p class="wordmark"><a href="/">KINFOLK</a></p>
+        <p class="backronym collapsible"><b>K</b>inase <b>IN</b>ventory of <b>F</b>olds, <b>O</b>ccluded <b>L</b>igand sites and <b>K</b>ryptic pockets</p>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false" id="menu-toggle">Menu</button>
+    </div>
+    <div class="search collapsible" role="search">
+      <label for="kinase-search">Find a kinase</label>
+      <input id="kinase-search" type="search" placeholder="Gene, UniProt or family" autocomplete="off"
+             role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+      <ul class="search-results" id="search-results" role="listbox" aria-label="Matching kinases"></ul>
+    </div>
+    <div class="plates-nav collapsible">
+      <h2>Plates</h2>
+      <ol>
+        {% for num, name, href, key in plates %}
+        <li><a href="{{ href }}" {% if plate == num %}aria-current="page"{% endif %}><span class="num">{{ num }}.</span><span>{{ name }}</span></a></li>
+        {% endfor %}
+        <li><a href="/about" {% if request.path == '/about' %}aria-current="page"{% endif %}><span class="num">§</span><span>About</span></a></li>
+      </ol>
+    </div>
+    <div class="key collapsible">
+      <h2>Key to markers</h2>
+      <ul>
+        <li><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="#F1EEDF" stroke-width="2"/></svg> PDB (ring)</li>
+        <li><svg width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="11" height="11" fill="#C98F2B"/></svg> AlphaFold DB (square)</li>
+        <li><svg width="18" height="18" aria-hidden="true"><path d="M9 2.5 16 15.5H2Z" fill="#E07A55"/></svg> ESMFold2 (triangle)</li>
+        <li><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="#3F6B52" stroke="#F1EEDF"/></svg> Agrees with the PDB</li>
+        <li><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="#C98F2B" stroke="#F1EEDF"/><path d="M9 3v12" stroke="#1F3326" stroke-width="2"/></svg> Partial</li>
+        <li><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="#A9482A" stroke="#F1EEDF"/><path d="M5 9h8" stroke="#F1EEDF" stroke-width="2"/></svg> Disagrees</li>
+        <li><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="5.5" fill="none" stroke="#F1EEDF" stroke-dasharray="2 2"/></svg> No PDB structure</li>
+      </ul>
+    </div>
+    <footer class="collapsible">Precomputed atlas · {{ build.get('date', '') }}</footer>
+  </nav>
+  <main class="main" id="main" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
+  <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

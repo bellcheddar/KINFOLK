@@ -34,3 +34,35 @@
 - 2026-09-27 19:41  catalogue: pseudokinase flag disagreements with UniProt text: 33
 - 2026-09-27 19:41  catalogue: wrote 522 domains; pseudokinases 57, dark 190; groups {'Other': 85, 'TK': 94, 'TKL': 43, 'Atypical': 26, 'AGC': 63, 'CAMK': 82, 'CMGC': 64, 'CK1': 12, 'STE': 48, 'RGC': 5}
 - 2026-09-27 19:41  Phase 1 complete: acceptance passed (522 domains; TRIB1 DFG→SLE, ERBB3 HRD→HRN, KSR2 K→R)
+- 2026-09-27 19:45  pdb: 13278 human KLIFS chains, 12032 pass the quality filter; blind AF2 4817, blind ESM 1387
+- 2026-09-27 19:46  afdb: 517 domains with model, 5 absent; covered 100.0%
+- 2026-09-27 19:48  pdb: novel AF2 116, novel ESM 51 (MMseqs2, < 40% identity at >= 50% query coverage)
+- 2026-09-27 19:50  phylo: MSA 522 x 262 match columns; trimmed 9 columns with > 50% gaps
+- 2026-09-27 19:50  pdb: downloaded 500/12032 KLIFS complexes
+- 2026-09-27 19:52  kincore: unit test 19/20 match the Kincore database (acceptance >= 18/20)
+- 2026-09-27 19:53  pdb: downloaded 1000/12032 KLIFS complexes
+- 2026-09-27 19:55  pdb: downloaded 1500/12032 KLIFS complexes
+- 2026-09-27 19:58  pdb: downloaded 2000/12032 KLIFS complexes
+- 2026-09-27 20:00  pdb: downloaded 2500/12032 KLIFS complexes
+- 2026-09-27 20:02  pdb: downloaded 3000/12032 KLIFS complexes
+- 2026-09-27 20:05  pdb: downloaded 3500/12032 KLIFS complexes
+- 2026-09-27 20:07  pdb: downloaded 4000/12032 KLIFS complexes
+- 2026-09-27 20:07  smoke: ESMFold2 loaded on mps float32 in 22.8 s
+- 2026-09-27 20:08  smoke: device mps failed: RuntimeError: not supported for torch.int64
+- 2026-09-27 20:08  smoke: ESMFold2 loaded on cpu float32 in 4.8 s
+- 2026-09-27 20:08  smoke: device cpu failed: RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::BFloat16 != float
+- 2026-09-27 20:09  pdb: downloaded 4500/12032 KLIFS complexes
+- 2026-09-27 20:09  smoke: ESMFold2 loaded on mps float32 in 13.7 s
+- 2026-09-27 20:10  smoke: float32 ABL1 fold 18.6 s, pLDDT 93.1
+- 2026-09-27 20:11  smoke: ESMFold2 loaded on mps float32 in 12.4 s
+- 2026-09-27 20:11  pdb: downloaded 5000/12032 KLIFS complexes
+- 2026-09-27 20:11  smoke: float32 ABL1 fold 16.4 s, pLDDT 93.1
+- 2026-09-27 20:13  pdb: downloaded 5500/12032 KLIFS complexes
+- 2026-09-27 20:13  phylo: sequence tree by iqtree LG+G4 -B 1000 in 23.5 min
+- 2026-09-27 20:13  phylo: rooted midpoint; non-monophyletic groups: Atypical (496 intruders), CAMK (7 intruders), CK1 (1 intruders), CMGC (457 intruders), Other (433 intruders), STE (192 intruders), TKL (104 intruders)
+- 2026-09-27 20:14  pdb: downloaded 6000/12032 KLIFS complexes
+- 2026-09-27 20:15  pdb: downloaded 6500/12032 KLIFS complexes
+- 2026-09-27 20:16  Phase 0 complete: smoke test passed (MPS float32, ABL1 16.4 s); projection 13.8 h total, minimum viable set 3.2 h (< 96 h budget; gate G1 closed)
+- 2026-09-27 20:16  fold queue: started on mps float32, loops 3, steps 100
+- 2026-09-27 20:17  pdb: downloaded 7000/12032 KLIFS complexes
+- 2026-09-27 20:18  pdb: downloaded 7500/12032 KLIFS complexes

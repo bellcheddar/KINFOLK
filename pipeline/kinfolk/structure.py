@@ -1,24 +1,17 @@
 """Structure I/O and geometry helpers (gemmi based)."""
 from __future__ import annotations
 
-import gzip
-from pathlib import Path
 
 import gemmi
 import numpy as np
 
 
-def read_structure(path_or_text: str | Path) -> gemmi.Structure:
-    p = Path(path_or_text) if not str(path_or_text).lstrip().startswith("data_") else None
-    if p is None:
+def read_structure(path_or_text: str) -> gemmi.Structure:
+    if str(path_or_text).lstrip().startswith("data_"):
         doc = gemmi.cif.read_string(str(path_or_text))
         st = gemmi.make_structure_from_block(doc.sole_block())
-    elif p.suffix == ".gz":
-        with gzip.open(p, "rt") as fh:
-            doc = gemmi.cif.read_string(fh.read())
-        st = gemmi.make_structure_from_block(doc.sole_block())
     else:
-        st = gemmi.read_structure(str(p))
+        st = gemmi.read_structure(str(path_or_text))  # handles .gz for PDB and mmCIF
     st.setup_entities()
     st.remove_hydrogens()
     return st

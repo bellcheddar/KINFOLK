@@ -9,7 +9,31 @@ import numpy as np
 
 from .config import tuning
 
-DTYPES = {"float32": "float32", "bfloat16": "bfloat16", "float16": "float16"}
+# ESMC (the bundled language model) supports only bf16 and fp32, and its hidden
+# states feed trunk linears directly, so trunk and ESMC precision must match.
+ESMC_PRECISION = {"float32": "fp32", "bfloat16": "bf16"}
+_PATCHED = False
+
+
+def patch_mps() -> None:
+    """MPS lacks scatter_reduce_ for int64 (used once per fold on token indices).
+
+    Run just that call on CPU and copy back; everything else stays on MPS."""
+    global _PATCHED
+    if _PATCHED:
+        return
+    import torch
+
+    orig = torch.Tensor.scatter_reduce_
+
+    def scatter_reduce_(self, dim, index, src, reduce, *, include_self=True):
+        if self.device.type == "mps" and self.dtype == torch.int64:
+            out = orig(self.cpu(), dim, index.cpu(), src.cpu(), reduce, include_self=include_self)
+            return self.copy_(out.to(self.device))
+        return orig(self, dim, index, src, reduce, include_self=include_self)
+
+    torch.Tensor.scatter_reduce_ = scatter_reduce_
+    _PATCHED = True
 
 
 def apply_env() -> None:
@@ -39,13 +63,22 @@ class Folder:
         self.torch = torch
         self.device = device or t.get("fold_device", "cpu")
         self.dtype_name = dtype or t.get("fold_dtype", "float32")
+        if self.dtype_name not in ESMC_PRECISION:
+            raise ValueError(f"{self.dtype_name}: ESMC supports only {sorted(ESMC_PRECISION)}")
+        if self.device == "mps":
+            patch_mps()
         self.model = EsmFold2Model.from_pretrained(
-            "biohub/ESMFold2", device=self.device, dtype=getattr(torch, self.dtype_name)
+            "biohub/ESMFold2", device=self.device, dtype=getattr(torch, self.dtype_name),
+            esmc_precision=ESMC_PRECISION[self.dtype_name],
         ).eval()
         self.builder = ESMFold2InputBuilder()
 
     def set_dtype(self, dtype: str) -> None:
+        if dtype not in ESMC_PRECISION:
+            raise ValueError(f"{dtype}: ESMC supports only {sorted(ESMC_PRECISION)} "
+                             "(trunk and ESMC precision must match)")
         self.model = self.model.to(getattr(self.torch, dtype))
+        self.model.set_esmc_precision(ESMC_PRECISION[dtype])
         self.dtype_name = dtype
 
     def fold(self, sequence: str, *, samples: int = 1, seed: int = 0, num_loops: int = 3,

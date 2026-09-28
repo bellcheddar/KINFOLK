@@ -1,0 +1,21 @@
+19/20 match
+4WOTA: ref DFGin/ABAminus ours DFGin/ABAminus
+6P5MC: ref DFGin/ABAminus ours DFGin/ABAminus
+4OTDA: ref DFGin/ABAminus ours DFGin/ABAminus
+3O96A: ref DFGout/BBAminus ours DFGout/BBAminus
+8UVYA: ref DFGout/BBAminus ours DFGout/BBAminus
+8Q61A: ref DFGout/BBAminus ours DFGout/BBAminus
+3ZH8C: ref DFGin/BLAminus ours DFGin/BLAminus
+3TV7A: ref DFGin/BLAminus ours DFGin/BLAminus
+1Z5MA: ref DFGin/BLAminus ours DFGin/BLAminus
+8XOVA: ref DFGin/BLAplus ours DFGin/BLAplus
+4OTIA: ref DFGin/BLAplus ours DFGin/BLAplus
+4OTHA: ref DFGin/BLAplus ours DFGin/BLAplus
+7MYJA: ref DFGin/BLBminus ours Unassigned/Unassigned
+4UJ9A: ref DFGin/BLAminus ours DFGin/BLAminus
+4FTIA: ref DFGin/BLAminus ours DFGin/BLAminus
+7UP4A: ref DFGin/BLAminus ours DFGin/BLAminus
+7K7LA: ref DFGin/BLAminus ours DFGin/BLAminus
+2ACXA: ref DFGin/BLAminus ours DFGin/BLAminus
+6VZKA: ref DFGin/BLAminus ours DFGin/BLAminus
+3QC4A: ref DFGout/BBAminus ours DFGout/BBAminus

@@ -1,0 +1,29 @@
+/* KINFOLK Field Guide design tokens (spec 9.2). */
+:root {
+  --ground: #E6EADF;
+  --card: #F8F7F1;
+  --ink: #1F3326;
+  --ink-muted: #52625A;
+  --rule: #C9D0C1;
+  --sidebar-text: #F1EEDF;
+  --agree: #3F6B52;
+  --partial: #C98F2B;
+  --disagree: #A9482A;
+  --esm: #E07A55;
+  --band: #E9EDE2;
+  --band-selected: #F2E3DA;
+  --ribbon-ok: #D9DFD0;
+
+  /* Derived, text-safe variants (>= 4.5:1 on --card) for labels that name a marker colour. */
+  --partial-text: #8A5E12;
+  --esm-text: #A34A28;
+
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius: 4px;
+  --sidebar-w: 288px;
+  --gap: 20px;
+  --touch: 44px;
+}

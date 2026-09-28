@@ -1,0 +1,17 @@
+{
+ "3/100": {
+  "s": 16.6,
+  "plddt": 93.1,
+  "pocket85_rmsd_vs_crystal": 2.08
+ },
+ "10/100": {
+  "s": 35.4,
+  "plddt": 93.6,
+  "pocket85_rmsd_vs_crystal": 2.1
+ },
+ "20/200": {
+  "s": 67.1,
+  "plddt": 93.5,
+  "pocket85_rmsd_vs_crystal": 2.18
+ }
+}

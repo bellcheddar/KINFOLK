@@ -1,0 +1,29 @@
+{
+  "device": "mps",
+  "length": 272,
+  "construct_start": 232,
+  "num_loops": 3,
+  "num_sampling_steps": 100,
+  "dtypes": {
+    "float32": {
+      "seconds": 16.4,
+      "core_rmsd": 0.0,
+      "mean_plddt": 93.1,
+      "ptm": 0.965
+    },
+    "bfloat16": {
+      "error": "process abort in MPSNDArrayMatrixMultiplication (destination and accumulator dtypes differ); observed 2026-09-27 20:10, esm 3.4.1.post1, torch 2.11.0"
+    },
+    "float16": {
+      "error": "not supported: ESMC precision options are bf16 and fp32 only, and trunk and ESMC must match"
+    }
+  },
+  "load_seconds": 12.4,
+  "chosen_dtype": "float32",
+  "steps50": {
+    "seconds": 14.5,
+    "core_rmsd_vs_100": 0.242
+  },
+  "ensemble8_seconds_total": 45.9,
+  "single_seconds": 16.2
+}

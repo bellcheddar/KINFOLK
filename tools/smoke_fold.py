@@ -24,6 +24,13 @@ from kinfolk.structure import atom_table, read_structure, superposed_rmsd
 OUT = DATA / "esm2" / "smoke"
 LOOPS, STEPS = 3, 100
 RMSD_TOL = 0.5
+KNOWN_BAD = {
+    "mps": {
+        "bfloat16": "process abort in MPSNDArrayMatrixMultiplication (destination and accumulator dtypes differ); "
+                    "observed 2026-09-27 20:10, esm 3.4.1.post1, torch 2.11.0",
+        "float16": "not supported: ESMC precision options are bf16 and fp32 only, and trunk and ESMC must match",
+    },
+}
 
 
 def abl1_construct() -> tuple[str, str, int]:
@@ -62,8 +69,12 @@ def run(device: str) -> dict:
                                    "mean_plddt": round(float(ref.plddt.mean()), 1), "ptm": round(ref.ptm, 3)}
     log(f"smoke: float32 ABL1 fold {ref.seconds:.1f} s, pLDDT {ref.plddt.mean():.1f}")
 
+    # Reduced-precision trials that cannot run in-process are recorded, not retried:
+    # an MPS assertion aborts the interpreter, so it cannot be caught.
+    for dt, why in KNOWN_BAD.get(device, {}).items():
+        report["dtypes"][dt] = {"error": why}
     if device == "mps":
-        for dt in ("bfloat16", "float16"):
+        for dt in [d for d in ("bfloat16", "float16") if d not in KNOWN_BAD.get(device, {})]:
             try:
                 f.set_dtype(dt)
                 f.fold(seq[:60], num_sampling_steps=10)
@@ -109,8 +120,12 @@ def main() -> int:
         print("SMOKE FAILED ON MPS AND CPU")
         return 2
     (OUT / "smoke.json").write_text(json.dumps(report, indent=2))
+    per_sample = max(0.0, (report["ensemble8_seconds_total"] - report["single_seconds"]) / 7)
+    fixed = max(0.0, report["single_seconds"] - per_sample)
     update_tuning(fold_device=report["device"], fold_dtype=report["chosen_dtype"],
-                  fold_dtype_status="set by smoke test", num_loops=LOOPS, num_sampling_steps=STEPS)
+                  fold_dtype_status="set by smoke test", num_loops=LOOPS, num_sampling_steps=STEPS,
+                  fold_fixed_s=round(fixed, 2), fold_per_sample_s=round(per_sample, 2),
+                  fold_ref_length=report["length"])
     decision("Fold precision", f"{report['chosen_dtype']} on {report['device']}",
              "float32, bfloat16, float16",
              f"Fastest dtype reproducing the float32 ABL1 pocket core to < {RMSD_TOL} A: "

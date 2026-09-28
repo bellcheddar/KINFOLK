@@ -1,12 +1,29 @@
+# environments
 .pixi/
 .venv/
+app/.venv/
 __pycache__/
 *.pyc
-data/pdb/raw/
-data/afdb/raw/
-data/esm2/models/
-data/**/*.cif
-data/**/*.cif.gz
-app/data/structures/
-qc/screens/*.png
+.pytest_cache/
 .DS_Store
+
+# third-party tools fetched at build time (see tools/fetch_vendor.sh)
+tools/vendor/
+
+# data: regenerable; keep only small curated outputs
+data/**
+!data/
+!data/catalogue/
+!data/catalogue/kinases.parquet
+!data/catalogue/pseudo_disagreements.txt
+!data/kincore/
+!data/kincore/unit_test_report.txt
+!data/esm2/
+!data/esm2/smoke/
+!data/esm2/smoke/smoke.json
+!data/esm2/smoke/loops_test.json
+!data/esm2/extra_jobs.jsonl
+
+# app bundle (built by kinfolk run --phase 8)
+app/data/
+qc/screens/*.png
