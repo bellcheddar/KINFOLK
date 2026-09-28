@@ -1,0 +1,49 @@
+
+==================================== ERRORS ====================================
+_____________________ ERROR collecting tests/test_core.py ______________________
+ImportError while importing test module '/Users/dellboy/Documents/Vibe_Coding/KINFOLK/pipeline/tests/test_core.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.pixi/envs/default/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pipeline/tests/test_core.py:9: in <module>
+    from kinfolk import DATA, ROOT, klifs
+E   ModuleNotFoundError: No module named 'kinfolk'
+____________________ ERROR collecting tests/test_kincore.py ____________________
+ImportError while importing test module '/Users/dellboy/Documents/Vibe_Coding/KINFOLK/pipeline/tests/test_kincore.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.pixi/envs/default/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pipeline/tests/test_kincore.py:7: in <module>
+    from kinfolk import DATA
+E   ModuleNotFoundError: No module named 'kinfolk'
+=========================== short test summary info ============================
+ERROR pipeline/tests/test_core.py
+ERROR pipeline/tests/test_kincore.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
+2 errors in 1.85s
+
+--- app ---
+...............F                                                         [100%]
+=================================== FAILURES ===================================
+_______________________ test_structures_are_gzip_encoded _______________________
+
+client = <FlaskClient <Flask 'kinfolk_app'>>
+
+    def test_structures_are_gzip_encoded(client):
+        con = sqlite3.connect(DB)
+        row = con.execute("SELECT file_path FROM structure WHERE file_path IS NOT NULL LIMIT 1").fetchone()
+        if not row:
+            pytest.skip("no bundled structures")
+        r = client.get(f"/structures/{row[0]}")
+>       assert r.status_code == 200 and r.headers.get("Content-Encoding") == "gzip"
+E       assert (404 == 200)
+E        +  where 404 = <WrapperTestResponse streamed [404 NOT FOUND]>.status_code
+
+tests/test_routes.py:65: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_routes.py::test_structures_are_gzip_encoded - assert (404 =...
+1 failed, 15 passed in 0.30s
