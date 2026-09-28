@@ -1193,3 +1193,4 @@
 - 2026-09-28 17:46  finish: findings failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
 - 2026-09-28 17:46  finish: bundle failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
 - 2026-09-28 17:47  finish: pytest pipeline rc 2, app rc 1; visual QC rc 1; science headline failures ['Q5 method sanity check failed (PDB rho not positive with CI excluding 0)']
+- 2026-09-28 17:47  gate G6 opened
