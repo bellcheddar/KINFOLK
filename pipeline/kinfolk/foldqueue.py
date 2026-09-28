@@ -151,23 +151,44 @@ def _write_sample(job: Job, idx: int, s) -> dict:
             "ptm": round(s.ptm, 4)}
 
 
-def run(max_hours: float | None = None) -> None:
+RECYCLE_JOBS = 40      # restart the worker process this often: MPS caches compiled graphs per input
+                       # shape, and over ~12 h of varied lengths "other allocations" reached 156 GB
+MAX_OOM_RETRIES = 2    # fresh-process OOMs before a batch is recorded as failed
+EXIT_COMPLETE, EXIT_RECYCLE = 0, 3
+
+
+def _is_oom(msg: str) -> bool:
+    m = msg.lower()
+    return "out of memory" in m or "alloc" in m or "mps backend" in m
+
+
+def _release(folder) -> None:
+    import gc
+    gc.collect()
+    if folder.device == "mps":
+        folder.torch.mps.empty_cache()
+
+
+def run(max_hours: float | None = None, max_jobs: int | None = None) -> int:
+    """Fold until done (returns EXIT_COMPLETE) or until this worker should be recycled
+    (returns EXIT_RECYCLE: after max_jobs batches, or after an out-of-memory error)."""
     from .fold import Folder
 
     man = Manifest("fold")
     folder = Folder()
     t = tuning()
     loops, steps = int(t.get("num_loops", 3)), int(t.get("num_sampling_steps", 100))
-    log(f"fold queue: started on {folder.device} {folder.dtype_name}, loops {loops}, steps {steps}")
-    t_start = time.time()
+    log(f"fold queue: worker started on {folder.device} {folder.dtype_name}, loops {loops}, steps {steps}")
+    t_start, n_jobs = time.time(), 0
     while True:
         jobs = build_jobs()
-        done = man.done()
-        failed = {r["id"] for r in man.records() if str(r.get("status", "")).startswith("failed")}
+        recs = man.records()
+        done = {r["id"] for r in recs if r.get("status") in ("done", "absent")}
+        failed = {r["id"] for r in recs if str(r.get("status", "")).startswith("failed")}
         todo = [j for j in jobs if j.job_id not in done and j.job_id not in failed]
         if not todo:
             log("fold queue: all jobs complete")
-            break
+            return EXIT_COMPLETE
         job = todo[0]
         batch = job.n_samples
         while True:
@@ -178,26 +199,55 @@ def run(max_hours: float | None = None) -> None:
                     n = min(batch, job.n_samples - a)
                     samples += folder.fold(job.sequence, samples=n, seed=seed_for(job) + a, num_loops=loops,
                                            num_sampling_steps=steps, ligands=job.ligands)
-                recs = [_write_sample(job, job.first_sample + i, s) for i, s in enumerate(samples)]
+                out = [_write_sample(job, job.first_sample + i, s) for i, s in enumerate(samples)]
                 man.add(job.job_id, status="done", domain_id=job.domain_id, tag=job.tag, pass_name=job.pass_name,
                         length=len(job.sequence), construct_start=job.construct_start, ligands=job.ligands,
-                        seconds=round(time.time() - t0, 1), samples=recs)
+                        seconds=round(time.time() - t0, 1), samples=out)
                 break
             except Exception as e:  # noqa: BLE001
                 msg = f"{type(e).__name__}: {str(e)[:160]}"
-                if batch > 1 and ("memory" in msg.lower() or "MPS" in msg or "alloc" in msg.lower()):
+                _release(folder)
+                if _is_oom(msg) and batch > 1:
                     batch = max(1, batch // 2)
                     log(f"fold queue: {job.job_id} memory error, retrying with batch {batch}")
-                    folder.torch.mps.empty_cache() if folder.device == "mps" else None
                     continue
+                if _is_oom(msg):
+                    tries = sum(1 for r in recs if r["id"] == job.job_id and r.get("status") == "oom_retry") + 1
+                    if tries < MAX_OOM_RETRIES:
+                        man.add(job.job_id, status="oom_retry", domain_id=job.domain_id, pass_name=job.pass_name)
+                        log(f"fold queue: {job.job_id} out of memory at batch 1; recycling the worker to retry")
+                        _status(jobs, man)
+                        return EXIT_RECYCLE
                 traceback.print_exc()
                 man.add(job.job_id, status=f"failed:{msg}", domain_id=job.domain_id, pass_name=job.pass_name)
                 log(f"fold queue: {job.job_id} failed ({msg})")
                 break
+        _release(folder)
         _status(jobs, man)
+        n_jobs += 1
         if max_hours and (time.time() - t_start) / 3600 > max_hours:
             log("fold queue: max_hours reached, stopping cleanly")
-            break
+            return EXIT_RECYCLE
+        if max_jobs and n_jobs >= max_jobs:
+            log(f"fold queue: recycling worker after {n_jobs} batches")
+            return EXIT_RECYCLE
+
+
+def supervise() -> None:
+    """Run fold workers in fresh processes until the queue is complete."""
+    import subprocess
+    import sys
+    log(f"fold queue: supervisor started (recycle every {RECYCLE_JOBS} batches)")
+    while True:
+        rc = subprocess.run([sys.executable, "-c",
+                             f"import sys; from kinfolk import foldqueue as q; sys.exit(q.run(max_jobs={RECYCLE_JOBS}))"]
+                            ).returncode
+        if rc == EXIT_COMPLETE:
+            log("fold queue: supervisor finished")
+            return
+        if rc != EXIT_RECYCLE:
+            log(f"fold queue: worker exited with code {rc}; restarting in 30 s")
+            time.sleep(30)
 
 
 def _status(jobs: list[Job], man: Manifest) -> None:
@@ -215,4 +265,4 @@ def _status(jobs: list[Job], man: Manifest) -> None:
 
 
 if __name__ == "__main__":
-    run()
+    supervise()

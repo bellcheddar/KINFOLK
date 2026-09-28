@@ -1194,3 +1194,23 @@
 - 2026-09-28 17:46  finish: bundle failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
 - 2026-09-28 17:47  finish: pytest pipeline rc 2, app rc 1; visual QC rc 1; science headline failures ['Q5 method sanity check failed (PDB rho not positive with CI excluding 0)']
 - 2026-09-28 17:47  gate G6 opened
+- 2026-09-28 18:09  fold queue: supervisor started (recycle every 40 batches)
+- 2026-09-28 18:09  finish: orchestrator started
+- 2026-09-28 18:09  annotate: 50/522 domains
+- 2026-09-28 18:09  annotate: 100/522 domains
+- 2026-09-28 18:09  annotate: 150/522 domains
+- 2026-09-28 18:09  annotate: 200/522 domains
+- 2026-09-28 18:09  annotate: 250/522 domains
+- 2026-09-28 18:09  annotate: 300/522 domains
+- 2026-09-28 18:09  annotate: 350/522 domains
+- 2026-09-28 18:09  annotate: 400/522 domains
+- 2026-09-28 18:09  annotate: 450/522 domains
+- 2026-09-28 18:09  annotate: 500/522 domains
+- 2026-09-28 18:09  annotate: 17440 structures ({'pdb': np.int64(12022), 'esm2': np.int64(4901), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 18:09  finish: annotate (backfill) ok in 0.2 min
+- 2026-09-28 18:10  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(93), 'disagree': np.int64(83)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0512, 0.1019]}, 'esm_single': {'jsd': 0.0789, 'ci95': [0.0601, 0.1131]}, 'esm_ensemble': {'jsd': 0.0849, 'ci95': [0.0659, 0.1192]}}; motif repair rows 192
+- 2026-09-28 18:10  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-28 18:10  pockets: 1557 new structures to scan over 131 domains
+- 2026-09-28 18:10  fold queue: worker started on mps float32, loops 3, steps 100
+- 2026-09-28 18:11  pockets: scanned 25/131 domains
+- 2026-09-28 18:11  incident 17:35-17:44: 237 pass-E batches failed with MPS out of memory (other allocations 156 GB, limit 183 GB) after ~12 h in one process; the orchestrator treated them as ended and ran final phases, which also failed (spawned workers could not import kinfolk: hidden .pth flag back since 14:05). Fixed: PYTHONPATH via pixi activation, worker recycling every 40 batches with cache release, OOM retry in a fresh process, stall watchdog, failure-fraction guard; OOM records cleared; relaunched in tmux; false G6 (missing q5.json) withdrawn

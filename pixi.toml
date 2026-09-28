@@ -43,3 +43,8 @@ probe = "python tools/hwprobe.py"
 smoke = "python tools/smoke_fold.py"
 test = "pytest pipeline/tests -q"
 post-install = "bash tools/post_install.sh"
+
+[activation.env]
+# Import kinfolk from source even if macOS hides the editable .pth file
+# (Python >= 3.12.14 skips hidden .pth files; see DECISIONS.md).
+PYTHONPATH = "$PIXI_PROJECT_ROOT/pipeline"

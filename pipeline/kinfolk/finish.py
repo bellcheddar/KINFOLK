@@ -171,22 +171,52 @@ def final() -> None:
     commit("phase 10: findings, handover, gate opened")
 
 
+STALL_MIN = 30          # no finished batch for this long -> restart the worker
+MAX_FAILED_FRAC = 0.02  # above this, stop and ask rather than finish on degraded data
+
+
+def manifest_age_min() -> float:
+    p = DATA / "manifests" / "fold.jsonl"
+    return (time.time() - p.stat().st_mtime) / 60 if p.exists() else 0.0
+
+
+def failed_fraction() -> float:
+    from .config import Manifest
+    from .foldqueue import build_jobs
+    ids = {j.job_id for j in build_jobs()}
+    failed = {r["id"] for r in Manifest("fold").records() if str(r.get("status", "")).startswith("failed")}
+    return len(failed & ids) / max(1, len(ids))
+
+
 def run() -> None:
     log("finish: orchestrator started")
     last = 0.0
     while not queue_complete():
         if not fold_queue_alive():
             log("finish: fold queue not running but incomplete; restarting it")
-            subprocess.Popen("caffeinate -dimsu .pixi/envs/default/bin/kinfolk fold >> data/esm2/foldqueue.log 2>&1",
+            subprocess.Popen("caffeinate -dimsu pixi run kinfolk fold >> data/esm2/foldqueue.log 2>&1",
                              shell=True, cwd=ROOT)
+            time.sleep(120)
+        elif manifest_age_min() > STALL_MIN:
+            log(f"finish: no fold progress for {manifest_age_min():.0f} min; restarting the fold worker")
+            sh("pkill -f 'q.run(max_jobs'")
+            sh(f"osascript -e 'display notification \"Fold queue stalled; worker restarted\" with title \"KINFOLK\"'")
             time.sleep(120)
         if time.time() - last > BACKFILL_H * 3600:
             backfill()
             last = time.time()
         progress([("0-2", "Bootstrap, catalogue, acquisition", "Done", 100),
-                  ("2c", "Fold queue", "Running", 50), ("3-8", "Analysis", "Backfilling every 2 h", 60),
-                  ("9", "Web app", "Built; QC passing on interim bundle", 90), ("10", "Handover", "Pending folds", 20)],
+                  ("2c", "Fold queue", "Running", 80), ("3-8", "Analysis", "Backfilling every 2 h", 70),
+                  ("9", "Web app", "Built; QC passing on interim bundle", 90), ("10", "Handover", "Pending folds", 30)],
                  "none")
         time.sleep(600)
-    log("finish: fold queue complete; running final phases")
+    frac = failed_fraction()
+    if frac > MAX_FAILED_FRAC:
+        open_gate("G1", f"{frac:.1%} of fold batches failed, above the {MAX_FAILED_FRAC:.0%} limit; the final phases "
+                  "were not run on degraded data.",
+                  "Check data/manifests/fold.jsonl failures and BUILD_LOG.md; clear them to retry, or reply 'accept' "
+                  "to finish with them flagged.",
+                  "Folding finished with failures.", "Re-run the failed batches or finish with a caveat.")
+        return
+    log(f"finish: fold queue complete ({frac:.1%} failed); running final phases")
     final()

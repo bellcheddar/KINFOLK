@@ -230,3 +230,21 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: Region-based and reproducible from the KLIFS numbering already computed
 - How to reverse: Edit SUBPOCKET in pockets.py
 
+## 2026-09-28 18:11  Fold worker recycling
+- Decision: Supervisor runs fold workers in fresh processes, recycled every 40 batches; gc + torch.mps.empty_cache after each batch; an OOM at batch size 1 recycles the worker and retries once before failing
+- Alternatives: One long-lived process (spec 2.2 fold_instances = 1)
+- Reason: MPS kept per-shape graph allocations: other allocations grew to 156 GB over ~12 h and every batch then failed; a fresh process starts clean and costs ~15 s of model load per 40 batches
+- How to reverse: Set RECYCLE_JOBS = 0 behaviour by running foldqueue.run() directly
+
+## 2026-09-28 18:11  Import path
+- Decision: PYTHONPATH=$PIXI_PROJECT_ROOT/pipeline set in pixi [activation.env]
+- Alternatives: Rely on the editable .pth file
+- Reason: macOS re-applied the hidden flag to the .pth (Python 3.12.14 skips hidden .pth files), silently breaking every spawned worker from 14:05; the environment lives in iCloud-synced Documents, which may be touching file flags
+- How to reverse: Remove [activation.env] from pixi.toml
+
+## 2026-09-28 18:11  Orchestrator guards
+- Decision: Watchdog restarts the fold worker if no batch finishes for 30 min; the final phases run only if at most 2% of batches failed, otherwise a gate opens
+- Alternatives: Liveness check only
+- Reason: The overnight nice +5 crawl and the OOM cascade both went unnoticed by a liveness-only check
+- How to reverse: Edit STALL_MIN / MAX_FAILED_FRAC in finish.py
+

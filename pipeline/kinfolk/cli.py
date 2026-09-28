@@ -71,7 +71,10 @@ def main() -> None:
         finish.run()
     elif a.cmd == "fold":
         from . import foldqueue
-        foldqueue.run(a.max_hours)
+        if a.max_hours:
+            foldqueue.run(a.max_hours)
+        else:
+            foldqueue.supervise()
 
 
 if __name__ == "__main__":
