@@ -107,8 +107,18 @@
     });
   }
 
+  // Mol* inserts an empty logo link; give it an accessible name wherever a viewer appears.
+  function labelMolstar(root) {
+    root.querySelectorAll("a.msp-logo:not([aria-label])").forEach((a) => {
+      a.setAttribute("aria-label", "Mol* viewer website (opens in a new tab)");
+      a.setAttribute("rel", "noopener noreferrer");
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     initSearch();
     initMenu();
+    labelMolstar(document);
+    new MutationObserver(() => labelMolstar(document)).observe(document.body, { childList: true, subtree: true });
   });
 })();

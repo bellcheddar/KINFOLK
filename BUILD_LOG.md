@@ -1214,3 +1214,4 @@
 - 2026-09-28 18:10  fold queue: worker started on mps float32, loops 3, steps 100
 - 2026-09-28 18:11  pockets: scanned 25/131 domains
 - 2026-09-28 18:11  incident 17:35-17:44: 237 pass-E batches failed with MPS out of memory (other allocations 156 GB, limit 183 GB) after ~12 h in one process; the orchestrator treated them as ended and ran final phases, which also failed (spawned workers could not import kinfolk: hidden .pth flag back since 14:05). Fixed: PYTHONPATH via pixi activation, worker recycling every 40 batches with cache release, OOM retry in a fresh process, stall watchdog, failure-fraction guard; OOM records cleared; relaunched in tmux; false G6 (missing q5.json) withdrawn
+- 2026-09-28 18:12  pockets: scanned 50/131 domains
