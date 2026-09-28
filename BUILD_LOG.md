@@ -1187,3 +1187,4 @@
 - 2026-09-28 17:46  pockets: 30420 pockets, 2917 ESMFold2 sites, 12 candidate cryptic sites; controls recovered 3/5
 - 2026-09-28 17:46  finish: pockets ok in 0.1 min
 - 2026-09-28 17:46  finish: selectivity + pocket trees failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
+- 2026-09-28 17:46  finish: induced fit ok in 0.0 min
