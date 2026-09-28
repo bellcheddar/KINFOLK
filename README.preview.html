@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.emd { color:#111111; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  font-size:clamp(16px,1rem + 0.2vw,18px); line-height:1.7; overflow-wrap:anywhere; width:100%; max-width:none; }
+.emd *,.emd *::before,.emd *::after { box-sizing:border-box; }
+.emd h1,.emd h2,.emd h3,.emd h4,.emd h5,.emd h6 { line-height:1.2; margin:1.4em 0 0.6em; overflow-wrap:anywhere; }
+.emd h1 { font-size:clamp(2rem,1.5rem + 2.4vw,2.75rem); margin-top:0.2em; }
+.emd h1 img { vertical-align:middle; margin-right:0.4rem; }
+.emd h2 { font-size:clamp(1.5rem,1.25rem + 1.4vw,2rem); border-bottom:1px solid #e5e7eb; padding-bottom:0.3em; }
+.emd h3 { font-size:clamp(1.2rem,1.05rem + 0.9vw,1.5rem); }
+.emd p,.emd li,.emd blockquote,.emd pre { max-width:none; }
+.emd p,.emd ul,.emd ol,.emd blockquote,.emd pre,.emd table,.emd .emd-table-wrap,.emd hr { margin:0 0 1rem; }
+.emd ul,.emd ol { padding-left:1.4rem; }
+.emd ul.emd-tasklist { list-style:none; padding-left:0.2rem; }
+.emd ul.emd-tasklist li { margin:0.15rem 0; }
+.emd a { color:#467FF7; text-decoration:none; overflow-wrap:anywhere; }
+.emd a:hover { text-decoration:underline; }
+.emd img { max-width:100%; height:auto; }
+.emd p img { vertical-align:middle; }
+.emd pre,.emd code { font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace; }
+.emd code { background:#f6f8fa; padding:0.15em 0.35em; border-radius:6px; overflow-wrap:anywhere; }
+.emd pre { background:#f6f8fa; padding:1rem; overflow-x:auto; border-radius:10px; border:1px solid #e5e7eb; }
+.emd pre code { background:transparent; padding:0; overflow-wrap:normal; }
+.emd blockquote { padding:0.2rem 1rem; border-left:4px solid #467FF7; color:#555555; }
+.emd hr { border:0; border-top:1px solid #e5e7eb; }
+.emd .emd-table-wrap { width:100%; overflow-x:auto; }
+.emd table { width:100%; border-collapse:collapse; border-spacing:0; font-size:0.95rem; }
+.emd th,.emd td { border:1px solid #e5e7eb; padding:0.7rem 0.8rem; text-align:left; vertical-align:top; white-space:normal; word-break:break-word; overflow-wrap:anywhere; }
+.emd th { font-weight:700; }
+.emd .emd-data-table { table-layout:fixed; }
+.emd .emd-info-table { width:auto; max-width:100%; }
+.emd .emd-info-table th,.emd .emd-info-table td { border:0; padding:0.25rem 0.5rem; }
+@media (max-width:767px){
+  .emd { font-size:16px; line-height:1.65; }
+  .emd .emd-table-wrap { overflow-x:visible; }
+  .emd .emd-data-table,.emd .emd-data-table tbody,.emd .emd-data-table tr,.emd .emd-data-table td { display:block !important; width:100% !important; }
+  .emd .emd-data-table thead,.emd .emd-data-table th { display:none !important; }
+  .emd .emd-data-table { font-size:0.84rem; border:0; }
+  .emd .emd-data-table tr { margin:0 0 0.8rem; border:1px solid #e5e7eb; border-radius:10px; overflow:hidden; background:#ffffff; }
+  .emd .emd-data-table td { border:0; border-top:1px solid #e5e7eb; padding:0.45rem 0.7rem; line-height:1.35; }
+  .emd .emd-data-table tr td:first-child { border-top:0; }
+  .emd .emd-data-table td::before { content:attr(data-label); display:block; font-size:0.7rem; line-height:1.2; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:#555555; margin-bottom:0.2rem; }
+  .emd .emd-data-table td[data-label=""]::before { content:none; }
+  .emd .emd-info-table,.emd .emd-info-table tbody,.emd .emd-info-table tr { display:block; }
+  .emd .emd-info-table td { display:inline-block; width:auto; padding:0.15rem 0.4rem 0.15rem 0; }
+}
+
+</style>
+</head>
+<body>
+<div class="emd">
+<p align="center"><img src="kinfolk_icon_300.png" width="160" alt="KINFOLK icon: an open field guide with a kinase family tree"></p>
+
+<h1>🧬 KINFOLK</h1>
+<blockquote>
+<p><strong>A kinome-wide field guide to how ESMFold2, AlphaFold DB and the PDB see every human kinase pocket.</strong></p>
+</blockquote>
+<p><img alt="python" src="https://img.shields.io/badge/python-3.12-3776AB?logo=python&amp;logoColor=white"> <img alt="flask" src="https://img.shields.io/badge/flask-3.1-467FF7?logo=flask&amp;logoColor=white"> <img alt="ESMFold2" src="https://img.shields.io/badge/ESMFold2-7B%20on%20Apple%20MPS-467FF7"> <img alt="domains" src="https://img.shields.io/badge/kinase%20domains-522-00897B"> <img alt="status" src="https://img.shields.io/badge/status-pre--deployment-fcb900"> <img alt="author" src="https://img.shields.io/badge/author-Marc%20C.%20Deller%2C%20D.Phil.-1C244B"></p>
+<table class="emd-info-table">
+<tr>
+<td>🌐 <b>Website</b></td><td><a href="https://marcdeller.com" target="_blank" rel="noopener noreferrer">marcdeller.com</a></td>
+<td>✉️ <b>Contact</b></td><td><a href="mailto:marc@marcdeller.com">marc@marcdeller.com</a></td>
+<td>🐙 <b>GitHub</b></td><td><a href="https://github.com/bellcheddar/KINFOLK" target="_blank" rel="noopener noreferrer">bellcheddar/KINFOLK</a></td>
+</tr>
+</table>
+
+<hr>
+<p><strong>K</strong>inase <strong>IN</strong>ventory of <strong>F</strong>olds, <strong>O</strong>ccluded <strong>L</strong>igand sites and <strong>K</strong>ryptic pockets. KINFOLK compares three views of every human kinase catalytic domain: experimental structures from the PDB (via KLIFS), the single AlphaFold DB model, and an ensemble of ESMFold2 diffusion samples. It measures KLIFS pocket motifs, conformational states, novel and dark kinases, cryptic pockets, selectivity and induced fit, and serves the results as a precomputed, interactive field guide at <code>kinfolk.mdeller.com</code>.</p>
+<p>Why it matters: structure predictors are now the default starting point for kinase drug design, yet a single predicted model tends to show one conformation, and it is rarely clear how far to trust a predicted pocket for a kinase with no crystal structure. KINFOLK quantifies where predicted pockets agree with experiment, where they collapse the kinome onto one active-like state, and where a diffusion ensemble recovers the missing states or opens hidden allosteric rooms. It is useful for: choosing which predicted model to dock into, triaging dark and pseudokinases, finding candidate allosteric sites, and anticipating off-target kinases from pocket similarity.</p>
+<h2>✨ Features</h2>
+<div class="emd-table-wrap"><table class="emd-data-table">
+<thead>
+<tr>
+<th>Plate</th>
+<th>Route</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Plate">I. Family Tree</td>
+<td data-label="Route"><code>/</code></td>
+<td data-label="What it shows">Phylogram, cladogram or radial tree of 522 catalytic domains; three agreement marks per tip (PDB ring, AlphaFold DB square, ESMFold2 triangle)</td>
+</tr>
+<tr>
+<td data-label="Plate">II. Specimen Card</td>
+<td data-label="Route"><code>/k/&lt;domain_id&gt;</code></td>
+<td data-label="What it shows">Observer's note, field marks, conformational compass (Kincore D1/D2), 85-position KLIFS ribbon, three-way Mol* overlay with two-way linking</td>
+</tr>
+<tr>
+<td data-label="Plate">III. Family Resemblance</td>
+<td data-label="Route"><code>/resemblance</code></td>
+<td data-label="What it shows">Sequence tree against pocket tree (tanglegram), off-target finder, selectivity correlations</td>
+</tr>
+<tr>
+<td data-label="Plate">IV. Hidden Rooms</td>
+<td data-label="Route"><code>/rooms</code></td>
+<td data-label="What it shows">Positive-control scorecard, candidate cryptic sites, site viewer, subpocket sunburst</td>
+</tr>
+<tr>
+<td data-label="Plate">V. Black Sheep</td>
+<td data-label="Route"><code>/black-sheep</code></td>
+<td data-label="What it shows">Pseudokinases: does a predictor "repair" the degraded catalytic motif?</td>
+</tr>
+<tr>
+<td data-label="Plate">VI. Distant Relatives</td>
+<td data-label="Route"><code>/dark</code></td>
+<td data-label="What it shows">The dark kinome, with predictor agreement as a confidence signal</td>
+</tr>
+<tr>
+<td data-label="Plate">VII. The Almanac</td>
+<td data-label="Route"><code>/almanac</code></td>
+<td data-label="What it shows">One section per question (Q1 to Q6), including the Prior Collapse Index slider</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every view keeps its state in the URL (for example <code>/?k=ABL1&amp;tree=phylo&amp;tips=agree</code>), so any view can be shared.</p>
+<h2>🎯 Questions</h2>
+<div class="emd-table-wrap"><table class="emd-data-table">
+<thead>
+<tr>
+<th></th>
+<th>Question</th>
+<th>Headline metric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="">Q1</td>
+<td data-label="Question">How faithful is each KLIFS motif?</td>
+<td data-label="Headline metric">Cα RMSD per motif to the nearest PDB state, pocket-core frame</td>
+</tr>
+<tr>
+<td data-label="">Q2</td>
+<td data-label="Question">Do predictors collapse the kinome onto BLAminus?</td>
+<td data-label="Headline metric">Prior Collapse Index: Jensen–Shannon divergence from the PDB state distribution, bootstrap CI</td>
+</tr>
+<tr>
+<td data-label="">Q3</td>
+<td data-label="Question">How do models behave on dark, pseudo and post-cutoff kinases?</td>
+<td data-label="Headline metric">Blind and blind + novel pocket RMSD; motif-repair calls</td>
+</tr>
+<tr>
+<td data-label="">Q4</td>
+<td data-label="Question">Do apo ESMFold2 ensembles find known allosteric sites?</td>
+<td data-label="Headline metric">Positive-control recovery (Jaccard ≥ 0.4); candidate cryptic sites</td>
+</tr>
+<tr>
+<td data-label="">Q5</td>
+<td data-label="Question">Do predicted pockets predict selectivity?</td>
+<td data-label="Headline metric">Spearman ρ against Davis 2011 co-inhibition, as a fraction of the PDB value</td>
+</tr>
+<tr>
+<td data-label="">Q6</td>
+<td data-label="Question">Does a type II ligand pull DFG out?</td>
+<td data-label="Headline metric">DFG-out fraction, apo against holo ESMFold2 folds</td>
+</tr>
+</tbody>
+</table></div>
+<p>Results, with numbers and confidence intervals, are in <a href="FINDINGS.md"><code>FINDINGS.md</code></a>.</p>
+<h2>📋 Requirements</h2>
+<div class="emd-table-wrap"><table class="emd-data-table">
+<thead>
+<tr>
+<th>Component</th>
+<th>Version</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Component">macOS on Apple Silicon</td>
+<td data-label="Version">15 or later</td>
+<td data-label="Notes">Built on a Mac Studio (M2 Ultra, 128 GB)</td>
+</tr>
+<tr>
+<td data-label="Component">pixi</td>
+<td data-label="Version">0.6x</td>
+<td data-label="Notes">Compute environment (<code>pixi.toml</code>, conda-forge and bioconda)</td>
+</tr>
+<tr>
+<td data-label="Component">uv</td>
+<td data-label="Version">0.9x</td>
+<td data-label="Notes">App environment (<code>app/pyproject.toml</code>)</td>
+</tr>
+<tr>
+<td data-label="Component">ESMFold2 weights</td>
+<td data-label="Version"><code>biohub/ESMFold2</code></td>
+<td data-label="Notes">26.7 GB, fetched from Hugging Face on first run</td>
+</tr>
+<tr>
+<td data-label="Component">Google Chrome</td>
+<td data-label="Version">any recent</td>
+<td data-label="Notes">Used by the Playwright QC (never <code>playwright install</code>)</td>
+</tr>
+</tbody>
+</table></div>
+<h2>🚀 Usage</h2>
+<pre><code class="language-bash"># compute environment
+pixi install &amp;&amp; bash tools/post_install.sh &amp;&amp; bash tools/fetch_vendor.sh
+pixi run probe                      # hardware probe -&gt; config/hardware.toml, tuning.toml
+pixi run smoke                      # ESMFold2 smoke test on ABL1, fold-time projection
+
+# pipeline (every stage is resumable; manifests in data/manifests/)
+pixi run kinfolk run --phase 1      # catalogue
+pixi run kinfolk run --phase 2      # PDB via KLIFS, AlphaFold DB, blind and novel flags
+pixi run kinfolk fold               # ESMFold2 fold queue (long-running)
+pixi run kinfolk finish             # backfill while folding, then phases 3 to 10
+pixi run kinfolk status
+
+# app
+cd app &amp;&amp; uv sync &amp;&amp; uv run gunicorn -w 2 -b 127.0.0.1:8010 kinfolk_app:app
+</code></pre>
+<div class="emd-table-wrap"><table class="emd-data-table">
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Command"><code>kinfolk run --phase N</code></td>
+<td data-label="Purpose">Run one pipeline phase (1 to 8)</td>
+</tr>
+<tr>
+<td data-label="Command"><code>kinfolk fold [--max-hours H]</code></td>
+<td data-label="Purpose">Start or resume the fold queue</td>
+</tr>
+<tr>
+<td data-label="Command"><code>kinfolk finish</code></td>
+<td data-label="Purpose">Unattended backfill and completion, ending at deployment gate G3</td>
+</tr>
+<tr>
+<td data-label="Command"><code>kinfolk status</code></td>
+<td data-label="Purpose">Progress, fold-queue projection and manifest counts</td>
+</tr>
+</tbody>
+</table></div>
+<h2>📊 Output</h2>
+<div class="emd-table-wrap"><table class="emd-data-table">
+<thead>
+<tr>
+<th>Path</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Path"><code>app/data/kinfolk.sqlite</code></td>
+<td data-label="Contents">Read-only atlas (kinase, structure, motif_dev, ribbon, ligand, site, similarity, tree, control, induced_fit, summary)</td>
+</tr>
+<tr>
+<td data-label="Path"><code>app/static/data/kinase/*.json</code></td>
+<td data-label="Contents">One specimen file per domain (each under 150 KB)</td>
+</tr>
+<tr>
+<td data-label="Path"><code>app/data/structures/</code></td>
+<td data-label="Contents">Domain-cropped mmCIF (gzip) in each domain's pocket-core frame</td>
+</tr>
+<tr>
+<td data-label="Path"><code>FINDINGS.md</code></td>
+<td data-label="Contents">Headline results for Q1 to Q6</td>
+</tr>
+<tr>
+<td data-label="Path"><code>DECISIONS.md</code>, <code>BUILD_LOG.md</code>, <code>PROGRESS.md</code></td>
+<td data-label="Contents">Every judgement call, event and phase status</td>
+</tr>
+<tr>
+<td data-label="Path"><code>qc/</code></td>
+<td data-label="Contents">Tests, screenshots, accessibility and science checks</td>
+</tr>
+<tr>
+<td data-label="Path"><code>deploy/</code></td>
+<td data-label="Contents"><code>deploy.sh</code>, systemd unit, nginx server block (not run by the build)</td>
+</tr>
+</tbody>
+</table></div>
+<h2>🔧 Tech stack</h2>
+<div class="emd-table-wrap"><table class="emd-data-table">
+<thead>
+<tr>
+<th>Layer</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Layer">Structure prediction</td>
+<td data-label="Tools">ESMFold2 (Biohub <code>esm</code> 3.4.1), float32 on Apple MPS</td>
+</tr>
+<tr>
+<td data-label="Layer">Structures and annotation</td>
+<td data-label="Tools">KLIFS, RCSB, AlphaFold DB, gemmi, biotite, Kincore rules (ported)</td>
+</tr>
+<tr>
+<td data-label="Layer">Sequence and phylogeny</td>
+<td data-label="Tools">HMMER (Pfam PF00069), MMseqs2, IQ-TREE 3, scikit-bio</td>
+</tr>
+<tr>
+<td data-label="Layer">Pockets</td>
+<td data-label="Tools">P2Rank 2.5.1, fpocket 4.2</td>
+</tr>
+<tr>
+<td data-label="Layer">Selectivity</td>
+<td data-label="Tools">KiSSim-lite fingerprints, Davis 2011 (via PyTDC)</td>
+</tr>
+<tr>
+<td data-label="Layer">App</td>
+<td data-label="Tools">Flask, gunicorn, SQLite, D3 7.9, Mol* 5.11 (vendored, checksummed)</td>
+</tr>
+</tbody>
+</table></div>
+<h2>📄 Licence</h2>
+<p>Code: MIT. Derived data follow the terms of their sources (PDB: CC0; AlphaFold DB: CC BY 4.0; KLIFS and Kincore: as published; ESMFold2 weights: MIT). Software and reference DOIs are listed on the app's About page.</p>
+<hr>
+<h2>👤 Author</h2>
+<p><strong>Marc C. Deller, D.Phil.</strong><br>
+Structural biologist &amp; drug discovery scientist  </p>
+<table class="emd-info-table">
+<tr>
+<td>🌐</td><td><a href="https://marcdeller.com" target="_blank" rel="noopener noreferrer">marcdeller.com</a></td>
+<td>✉️</td><td><a href="mailto:marc@marcdeller.com">marc@marcdeller.com</a></td>
+<td>🐙</td><td><a href="https://github.com/bellcheddar/KINFOLK" target="_blank" rel="noopener noreferrer">github.com/bellcheddar/KINFOLK</a></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

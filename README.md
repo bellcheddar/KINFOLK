@@ -10,7 +10,7 @@
 <tr>
 <td>🌐 <b>Website</b></td><td><a href="https://marcdeller.com" target="_blank" rel="noopener noreferrer">marcdeller.com</a></td>
 <td>✉️ <b>Contact</b></td><td><a href="mailto:marc@marcdeller.com">marc@marcdeller.com</a></td>
-<td>🐙 <b>GitHub</b></td><td><a href="https://github.com/bellcheddar" target="_blank" rel="noopener noreferrer">@bellcheddar</a></td>
+<td>🐙 <b>GitHub</b></td><td><a href="https://github.com/bellcheddar/KINFOLK" target="_blank" rel="noopener noreferrer">bellcheddar/KINFOLK</a></td>
 </tr>
 </table>
 
@@ -121,6 +121,6 @@ Structural biologist & drug discovery scientist
 <tr>
 <td>🌐</td><td><a href="https://marcdeller.com" target="_blank" rel="noopener noreferrer">marcdeller.com</a></td>
 <td>✉️</td><td><a href="mailto:marc@marcdeller.com">marc@marcdeller.com</a></td>
-<td>🐙</td><td><a href="https://github.com/bellcheddar" target="_blank" rel="noopener noreferrer">github.com/bellcheddar</a></td>
+<td>🐙</td><td><a href="https://github.com/bellcheddar/KINFOLK" target="_blank" rel="noopener noreferrer">github.com/bellcheddar/KINFOLK</a></td>
 </tr>
 </table>

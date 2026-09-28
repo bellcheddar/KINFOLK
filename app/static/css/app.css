@@ -134,7 +134,7 @@ td.num, th.num { text-align: right; font-family: var(--font-mono); }
 .chart svg { display: block; max-width: 100%; height: auto; }
 
 /* scrollytelling */
-.story section { min-height: 60vh; display: grid; align-content: center; }
+.story section { min-height: 60vh; display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; }
 .story .figure { position: sticky; top: 20px; }
 
 /* flip cards */

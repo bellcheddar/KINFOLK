@@ -3,7 +3,8 @@
   "use strict";
   const K = window.KINFOLK;
   const C = K.colours;
-  const GOBSMACKED_LINK_ENABLED = false; // see DECISIONS.md: GOBSMACKED does not yet read ?uniprot=&pocket=
+  // GOBSMACKED /prepare reads ?uniprot=&pocket= (UniProt numbering; starts from the AlphaFold DB model).
+  const GOBSMACKED_PREPARE = "https://gobsmacked.mdeller.com/prepare";
   const domainId = document.getElementById("specimen").dataset.domain;
   const SRC_COLOUR = { pdb: 0x52625a, afdb: 0xc98f2b, esm2: 0xe07a55 };
   let data = null, viewer = null, ribbonCells = null, residueToPos = {};
@@ -28,12 +29,14 @@
       chip("AlphaFold DB", a.afdb, "■") + chip("ESMFold2", a.esm2, "▲");
 
     const gob = document.getElementById("gob-link");
-    const residues = [fm.b3_lys, fm.ac_glu, fm.gatekeeper, fm.dfg_asp].filter((f) => f && f.resnum).map((f) => f.resnum);
-    if (GOBSMACKED_LINK_ENABLED) {
-      gob.href = `https://gobsmacked.mdeller.com/?uniprot=${encodeURIComponent(data.uniprot)}&pocket=${residues.join(",")}`;
-      gob.removeAttribute("aria-disabled");
-      document.getElementById("gob-wrap").removeAttribute("title");
+    const residues = (data.pocket_uniprot && data.pocket_uniprot.length ? data.pocket_uniprot
+      : [fm.b3_lys, fm.ac_glu, fm.gatekeeper, fm.dfg_asp].filter((f) => f && f.resnum).map((f) => f.resnum));
+    if (residues.length) {
+      gob.href = `${GOBSMACKED_PREPARE}?uniprot=${encodeURIComponent(data.uniprot)}&pocket=${residues.join(",")}`;
+      gob.title = `Open ${data.gene} in GOBSMACKED with its ${residues.length}-residue KLIFS pocket preselected`;
     } else {
+      gob.setAttribute("aria-disabled", "true");
+      gob.title = "No KLIFS pocket could be mapped for this domain";
       gob.addEventListener("click", (e) => e.preventDefault());
     }
 

@@ -271,6 +271,7 @@ def specimen_json(k: dict, d: dict, s_dom: pd.DataFrame, fam_pts: list, ribbon: 
         "is_dark": bool(k["is_dark"]), "is_pseudo": bool(k["is_pseudokinase"]), "pseudo_evidence": k["pseudo_evidence"],
         "tier": k["priority_tier"], "field_marks": field_marks(k), "observer_note": observer_note(k, d, pdb),
         "klifs_pocket": k["klifs_pocket_seq"],
+        "pocket_uniprot": sorted(klifs.map_pocket_to_sequence(k["klifs_pocket_seq"], k["full_sequence"]).values()),
         "agreement": {"pdb_pip": d.get("pdb_pip"), "afdb": d.get("afdb_agreement"), "esm2": d.get("esm_agreement"),
                       "pdb_states": d.get("pdb_states") or [], "afdb_state": d.get("afdb_state"),
                       "esm_best_state": d.get("esm_best_state"), "afdb_rmsd": _f(d.get("afdb_rmsd"), 2),

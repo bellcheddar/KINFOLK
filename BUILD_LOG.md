@@ -172,3 +172,7 @@
 - 2026-09-27 20:53  bundle: SQLite 7.3 MB, structures 0.05 GB, total 0.07 GB; 0 specimen JSON files over 150 KB
 - 2026-09-27 20:53  finish: bundle (backfill) ok in 0.2 min
 - 2026-09-27 20:53  icon: kinfolk_icon.svg / _300.png (marcs-vibe-icon house style; QC PASS)
+- 2026-09-27 22:00  fixes: GOBSMACKED deep link enabled, README forged, .claude/settings.json written
+- 2026-09-27 22:01  bundle: SQLite 7.3 MB, structures 0.05 GB, total 0.07 GB; 0 specimen JSON files over 150 KB
+- 2026-09-27 22:03  finish: orchestrator started
+- 2026-09-27 22:03  annotate: 50/522 domains

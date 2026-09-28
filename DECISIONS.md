@@ -134,3 +134,21 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: readme_forge.py is referenced by the marcs-vibe-coding skill but is not present anywhere on this machine
 - How to reverse: Run readme_forge.py over README.md when it is available
 
+## 2026-09-27 22:00  GOBSMACKED deep link (supersedes the disabled button)
+- Decision: GOBSMACKED /prepare now reads ?uniprot=&pocket= (change in GOBSMACKED app/static/js/prepare.js: validates the accession and up to 200 residue numbers, clears the EGFR example and its forced 1M17 hint, fetches the AlphaFold DB model, prefills the pocket and computes the box). KINFOLK links to https://gobsmacked.mdeller.com/prepare with the full KLIFS pocket in UniProt numbering (pocket_uniprot in each specimen JSON), opening in a new tab
+- Alternatives: Keep the button disabled; send only the four field-mark residues
+- Reason: Requested by Marc; AFDB models use UniProt numbering, so KINFOLK residue numbers carry over unchanged. Tested in headless Chrome against the real prepare.html and prepare.js with stubbed APIs
+- How to reverse: Revert the prepare.js change in GOBSMACKED and restore the disabled button in specimen.html/specimen.js. The live link needs GOBSMACKED redeployed
+
+## 2026-09-27 22:00  README polish (supersedes the manual-only entry)
+- Decision: Ran readme_forge.py (found at Vibe_Coding/marcs-vibe-coding/scripts/) with readme_meta.json; adopted README.polished.md as README.md; README.html, README.preview.html and elementor-widget-markdown.css generated for the site
+- Alternatives: Template-only README
+- Reason: The script exists locally, just not inside the installed skill folder
+- How to reverse: Re-run readme_forge.py after FINDINGS.md is final if the README should quote headline numbers
+
+## 2026-09-27 22:00  Claude Code permissions
+- Decision: Wrote .claude/settings.json verbatim from spec Appendix A (scoped allow list; denies push, SSH, rsync, sudo, root/home rm -rf, playwright install)
+- Alternatives: Leave permissions to the session defaults
+- Reason: Requested by Marc; lets a tmux-launched session run unattended within scoped limits
+- How to reverse: Delete .claude/settings.json
+
