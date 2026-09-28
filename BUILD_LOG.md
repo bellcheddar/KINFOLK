@@ -1186,3 +1186,4 @@
 - 2026-09-28 17:46  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
 - 2026-09-28 17:46  pockets: 30420 pockets, 2917 ESMFold2 sites, 12 candidate cryptic sites; controls recovered 3/5
 - 2026-09-28 17:46  finish: pockets ok in 0.1 min
+- 2026-09-28 17:46  finish: selectivity + pocket trees failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
