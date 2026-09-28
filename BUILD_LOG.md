@@ -1188,3 +1188,7 @@
 - 2026-09-28 17:46  finish: pockets ok in 0.1 min
 - 2026-09-28 17:46  finish: selectivity + pocket trees failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
 - 2026-09-28 17:46  finish: induced fit ok in 0.0 min
+- 2026-09-28 17:46  references: 13 DOIs resolved via Crossref; dropped 1: tdc (10.48550/arXiv.2102.09548: HTTP 404)
+- 2026-09-28 17:46  finish: references ok in 0.0 min
+- 2026-09-28 17:46  finish: findings failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
+- 2026-09-28 17:46  finish: bundle failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
