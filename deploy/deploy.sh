@@ -7,8 +7,8 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 REMOTE=/srv/kinfolk
 
 echo "1. Sync app code and data bundle"
-rsync -az --delete --exclude '.venv' --exclude '__pycache__' --exclude 'tests' "$ROOT/app/" "$DROPLET:$REMOTE/app/"
-rsync -az "$ROOT/deploy/kinfolk.service" "$ROOT/deploy/nginx-kinfolk.conf" "$DROPLET:/tmp/"
+rsync -az --delete --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r --exclude '.venv' --exclude '__pycache__' --exclude 'tests' "$ROOT/app/" "$DROPLET:$REMOTE/app/"
+rsync -az --chmod=Fu=rw,Fgo=r "$ROOT/deploy/kinfolk.service" "$ROOT/deploy/nginx-kinfolk.conf" "$DROPLET:/tmp/"
 
 echo "2. Remote setup (user, venv, systemd, nginx)"
 ssh "$DROPLET" bash -s <<'REMOTE_EOF'
