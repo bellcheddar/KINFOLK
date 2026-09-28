@@ -1178,3 +1178,11 @@
 - 2026-09-28 17:45  finish: fold queue complete; running final phases
 - 2026-09-28 17:45  finish: annotate failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
 - 2026-09-28 17:45  finish: summarise failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
+- 2026-09-28 17:45  pockets: 0 new structures to scan over 0 domains
+- 2026-09-28 17:46  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 17:46  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 17:46  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 17:46  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 17:46  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 17:46  pockets: 30420 pockets, 2917 ESMFold2 sites, 12 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 17:46  finish: pockets ok in 0.1 min

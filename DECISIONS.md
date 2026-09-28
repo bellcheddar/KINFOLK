@@ -224,3 +224,9 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: Region-based and reproducible from the KLIFS numbering already computed
 - How to reverse: Edit SUBPOCKET in pockets.py
 
+## 2026-09-28 17:46  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
