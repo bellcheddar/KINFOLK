@@ -212,3 +212,15 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: At nice +5 the fold queue crawled overnight while the Mac was idle (one batch 6.7 h instead of ~45 s), consistent with macOS deprioritising low-priority background work; at nice 0 it runs at full speed
 - How to reverse: None needed; relaunch as documented in README Usage
 
+## 2026-09-28 14:05  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-28 16:05  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+

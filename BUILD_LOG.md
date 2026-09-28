@@ -421,3 +421,760 @@
 - 2026-09-28 12:03  bundle: SQLite 24.2 MB, structures 0.08 GB, total 0.11 GB; 0 specimen JSON files over 150 KB
 - 2026-09-28 12:03  finish: bundle (backfill) ok in 0.3 min
 - 2026-09-28 12:05  fold queue: stalled 05:20-12:01 (one batch took 6.7 h instead of ~45 s) while running at nice +5; relaunched both processes at nice 0; throughput back to normal
+- 2026-09-28 13:43  finish: fold queue not running but incomplete; restarting it
+- 2026-09-28 13:43  fold queue: started on mps float32, loops 3, steps 100
+- 2026-09-28 14:05  finish: annotate (backfill) failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
+- 2026-09-28 14:05  finish: summarise (backfill) failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
+- 2026-09-28 14:05  pockets: 0 new structures to scan over 0 domains
+- 2026-09-28 14:05  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 14:05  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 14:05  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 14:05  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 14:05  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 14:05  pockets: 30420 pockets, 2917 ESMFold2 sites, 12 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 14:05  finish: pockets (backfill) ok in 0.1 min
+- 2026-09-28 14:05  finish: bundle (backfill) failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
+- 2026-09-28 16:05  finish: annotate (backfill) failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
+- 2026-09-28 16:05  finish: summarise (backfill) failed: concurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.
+- 2026-09-28 16:05  pockets: 0 new structures to scan over 0 domains
+- 2026-09-28 16:05  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 16:05  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 16:05  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 16:05  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 16:05  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 16:05  pockets: 30420 pockets, 2917 ESMFold2 sites, 12 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 16:05  finish: pockets (backfill) ok in 0.1 min
+- 2026-09-28 16:05  finish: bundle (backfill) failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
+- 2026-09-28 17:02  fold queue: CSNK1A1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:04  fold queue: CSNK1D:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:06  fold queue: CSNK1E:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:07  fold queue: CSNK1G1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:09  fold queue: CSNK1G2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:11  fold queue: CSNK1G3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:13  fold queue: DAPK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:15  fold queue: DAPK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:17  fold queue: DAPK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:19  fold queue: DCLK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:20  fold queue: DMPK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:21  fold queue: DMPK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:24  fold queue: EIF2AK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:24  fold queue: EIF2AK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:27  fold queue: EPHA2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:28  fold queue: EPHA2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:31  fold queue: EPHA3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:31  fold queue: EPHA3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:35  fold queue: EPHA5:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:35  fold queue: EPHA5:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:35  fold queue: EPHA5:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 26.42 GiB, other allocations: 156.33 GiB, max allowed: 182.78 GiB). Tried to allocate 77.66 MiB on private pool. Use P)
+- 2026-09-28 17:37  fold queue: EPHA7:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:37  fold queue: EPHA7:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:37  fold queue: EPHA7:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 26.42 GiB, other allocations: 156.34 GiB, max allowed: 182.78 GiB). Tried to allocate 77.66 MiB on private pool. Use P)
+- 2026-09-28 17:38  fold queue: EPHA8:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:38  fold queue: EPHA8:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:39  fold queue: EPHA8:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 26.29 GiB, other allocations: 156.43 GiB, max allowed: 182.78 GiB). Tried to allocate 77.66 MiB on private pool. Use P)
+- 2026-09-28 17:39  fold queue: EPHB1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:39  fold queue: EPHB1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:39  fold queue: EPHB1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 26.19 GiB, other allocations: 156.53 GiB, max allowed: 182.78 GiB). Tried to allocate 78.77 MiB on private pool. Use P)
+- 2026-09-28 17:40  fold queue: EPHB2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:40  fold queue: EPHB2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:40  fold queue: EPHB2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 26.09 GiB, other allocations: 156.57 GiB, max allowed: 182.78 GiB). Tried to allocate 78.77 MiB on private pool. Use P)
+- 2026-09-28 17:40  fold queue: EPHB3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:40  fold queue: EPHB3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:40  fold queue: EPHB3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 26.09 GiB, other allocations: 156.69 GiB, max allowed: 182.78 GiB). Tried to allocate 157.53 MiB on private pool. Use )
+- 2026-09-28 17:41  fold queue: ERBB2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:41  fold queue: ERBB2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:41  fold queue: ERBB2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.97 GiB, other allocations: 156.69 GiB, max allowed: 182.78 GiB). Tried to allocate 162.00 MiB on private pool. Use )
+- 2026-09-28 17:41  fold queue: ERBB4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:41  fold queue: ERBB4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:41  fold queue: ERBB4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.91 GiB, other allocations: 156.79 GiB, max allowed: 182.78 GiB). Tried to allocate 162.00 MiB on private pool. Use )
+- 2026-09-28 17:41  fold queue: ERN1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:41  fold queue: ERN1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:41  fold queue: ERN1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.89 GiB, other allocations: 156.79 GiB, max allowed: 182.78 GiB). Tried to allocate 155.32 MiB on private pool. Use )
+- 2026-09-28 17:41  fold queue: FES:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: FES:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: FES:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.77 GiB, other allocations: 156.92 GiB, max allowed: 182.78 GiB). Tried to allocate 144.50 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: FGR:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: FGR:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: FGR:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.81 GiB, other allocations: 156.92 GiB, max allowed: 182.78 GiB). Tried to allocate 146.63 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: FYN:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: FYN:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: FYN:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.81 GiB, other allocations: 156.92 GiB, max allowed: 182.78 GiB). Tried to allocate 146.63 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: GAK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: GAK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: GAK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.65 GiB, other allocations: 156.93 GiB, max allowed: 182.78 GiB). Tried to allocate 233.35 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: GRK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: GRK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: GRK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.74 GiB, other allocations: 156.93 GiB, max allowed: 182.78 GiB). Tried to allocate 156.42 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: GRK4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: GRK4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: GRK4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.74 GiB, other allocations: 156.93 GiB, max allowed: 182.78 GiB). Tried to allocate 156.42 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: GRK5:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: GRK5:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: GRK5:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.74 GiB, other allocations: 156.93 GiB, max allowed: 182.78 GiB). Tried to allocate 156.42 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: GRK6:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: GRK6:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: GRK6:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.71 GiB, other allocations: 156.93 GiB, max allowed: 182.78 GiB). Tried to allocate 156.42 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: HCK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: HCK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: HCK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.77 GiB, other allocations: 156.93 GiB, max allowed: 182.78 GiB). Tried to allocate 146.63 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: INSR:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: INSR:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: INSR:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.64 GiB, other allocations: 156.93 GiB, max allowed: 182.78 GiB). Tried to allocate 234.14 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: INSRR:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: INSRR:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: INSRR:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.64 GiB, other allocations: 156.93 GiB, max allowed: 182.78 GiB). Tried to allocate 234.14 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: ITK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: ITK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: ITK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.80 GiB, other allocations: 156.94 GiB, max allowed: 182.78 GiB). Tried to allocate 140.28 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: JAK1_JH1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: JAK1_JH1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: JAK1_JH1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.63 GiB, other allocations: 156.95 GiB, max allowed: 182.78 GiB). Tried to allocate 229.39 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: JAK2_JH1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: JAK2_JH1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: JAK2_JH1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.64 GiB, other allocations: 156.95 GiB, max allowed: 182.78 GiB). Tried to allocate 232.56 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: LCK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: LCK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: LCK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.83 GiB, other allocations: 156.96 GiB, max allowed: 182.78 GiB). Tried to allocate 146.63 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: LIMK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: LIMK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: LIMK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.61 GiB, other allocations: 156.96 GiB, max allowed: 182.78 GiB). Tried to allocate 226.23 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: LIMK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: LIMK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: LIMK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.65 GiB, other allocations: 156.96 GiB, max allowed: 182.78 GiB). Tried to allocate 235.72 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: LMTK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: LMTK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: LMTK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.69 GiB, other allocations: 157.00 GiB, max allowed: 182.78 GiB). Tried to allocate 236.51 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: LRRK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: LRRK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: LRRK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.62 GiB, other allocations: 156.99 GiB, max allowed: 182.78 GiB). Tried to allocate 221.48 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: LYN:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: LYN:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: LYN:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.61 GiB, other allocations: 156.99 GiB, max allowed: 182.78 GiB). Tried to allocate 217.53 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: MAP2K4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: MAP2K4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: MAP2K4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.64 GiB, other allocations: 156.99 GiB, max allowed: 182.78 GiB). Tried to allocate 226.23 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: MAP2K6:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: MAP2K6:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: MAP2K6:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.63 GiB, other allocations: 156.99 GiB, max allowed: 182.78 GiB). Tried to allocate 223.07 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: MAP2K7:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: MAP2K7:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: MAP2K7:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.63 GiB, other allocations: 156.99 GiB, max allowed: 182.78 GiB). Tried to allocate 222.28 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: MAP3K12:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: MAP3K12:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:42  fold queue: MAP3K12:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.44 GiB, other allocations: 157.15 GiB, max allowed: 182.78 GiB). Tried to allocate 207.25 MiB on private pool. Use )
+- 2026-09-28 17:42  fold queue: MAP3K14:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:42  fold queue: MAP3K14:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP3K14:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.36 GiB, other allocations: 157.32 GiB, max allowed: 182.78 GiB). Tried to allocate 218.32 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAP3K2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAP3K2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP3K2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.35 GiB, other allocations: 157.35 GiB, max allowed: 182.78 GiB). Tried to allocate 215.95 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAP3K20:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAP3K20:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP3K20:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.38 GiB, other allocations: 157.35 GiB, max allowed: 182.78 GiB). Tried to allocate 223.07 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAP3K21:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAP3K21:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP3K21:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.17 GiB, other allocations: 157.58 GiB, max allowed: 182.78 GiB). Tried to allocate 235.72 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAP3K5:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAP3K5:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP3K5:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.38 GiB, other allocations: 157.36 GiB, max allowed: 182.78 GiB). Tried to allocate 220.69 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAP3K7:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAP3K7:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP3K7:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.36 GiB, other allocations: 157.37 GiB, max allowed: 182.78 GiB). Tried to allocate 218.32 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAP3K8:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAP3K8:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP3K8:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.34 GiB, other allocations: 157.38 GiB, max allowed: 182.78 GiB). Tried to allocate 214.37 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAP3K9:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAP3K9:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP3K9:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.20 GiB, other allocations: 157.39 GiB, max allowed: 182.78 GiB). Tried to allocate 230.19 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAP4K1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAP4K1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP4K1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.37 GiB, other allocations: 157.39 GiB, max allowed: 182.78 GiB). Tried to allocate 219.90 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAP4K3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAP4K3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP4K3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.18 GiB, other allocations: 157.40 GiB, max allowed: 182.78 GiB). Tried to allocate 221.48 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAP4K4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAP4K4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAP4K4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.44 GiB, max allowed: 182.78 GiB). Tried to allocate 227.02 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAPKAPK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAPKAPK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAPKAPK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.45 GiB, max allowed: 182.78 GiB). Tried to allocate 224.65 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MAPKAPK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MAPKAPK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MAPKAPK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.45 GiB, max allowed: 182.78 GiB). Tried to allocate 223.86 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MARK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MARK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MARK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.18 GiB, other allocations: 157.45 GiB, max allowed: 182.78 GiB). Tried to allocate 216.74 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MARK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MARK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MARK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.15 GiB, other allocations: 157.45 GiB, max allowed: 182.78 GiB). Tried to allocate 216.74 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MARK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MARK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MARK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.14 GiB, other allocations: 157.60 GiB, max allowed: 182.78 GiB). Tried to allocate 215.16 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MARK4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MARK4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MARK4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.14 GiB, other allocations: 157.64 GiB, max allowed: 182.78 GiB). Tried to allocate 215.16 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MELK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MELK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MELK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.15 GiB, other allocations: 157.46 GiB, max allowed: 182.78 GiB). Tried to allocate 217.53 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MERTK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MERTK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MERTK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.18 GiB, other allocations: 157.46 GiB, max allowed: 182.78 GiB). Tried to allocate 232.56 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MET:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MET:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MET:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.14 GiB, other allocations: 157.46 GiB, max allowed: 182.78 GiB). Tried to allocate 229.39 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MINK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MINK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MINK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.16 GiB, other allocations: 157.46 GiB, max allowed: 182.78 GiB). Tried to allocate 227.02 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MST1R:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MST1R:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MST1R:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.47 GiB, max allowed: 182.78 GiB). Tried to allocate 226.23 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: MYLK4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: MYLK4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: MYLK4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.48 GiB, max allowed: 182.78 GiB). Tried to allocate 219.90 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: NEK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: NEK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: NEK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.11 GiB, other allocations: 157.48 GiB, max allowed: 182.78 GiB). Tried to allocate 213.57 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: NEK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: NEK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: NEK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.49 GiB, max allowed: 182.78 GiB). Tried to allocate 223.86 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: NEK7:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: NEK7:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: NEK7:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.50 GiB, max allowed: 182.78 GiB). Tried to allocate 222.28 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: NTRK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: NTRK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: NTRK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.18 GiB, other allocations: 157.50 GiB, max allowed: 182.78 GiB). Tried to allocate 232.56 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: NTRK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: NTRK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: NTRK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.14 GiB, other allocations: 157.50 GiB, max allowed: 182.78 GiB). Tried to allocate 230.98 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: OXSR1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: OXSR1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: OXSR1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.26 GiB, other allocations: 157.51 GiB, max allowed: 182.78 GiB). Tried to allocate 84.99 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PAK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PAK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PAK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.21 GiB, other allocations: 157.52 GiB, max allowed: 182.78 GiB). Tried to allocate 72.25 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PAK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PAK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PAK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.11 GiB, other allocations: 157.52 GiB, max allowed: 182.78 GiB). Tried to allocate 215.95 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PAK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PAK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PAK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.52 GiB, max allowed: 182.78 GiB). Tried to allocate 216.74 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PAK4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PAK4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PAK4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.52 GiB, max allowed: 182.78 GiB). Tried to allocate 216.74 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PAK6:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PAK6:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PAK6:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.52 GiB, max allowed: 182.78 GiB). Tried to allocate 216.74 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PASK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PASK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PASK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.21 GiB, other allocations: 157.53 GiB, max allowed: 182.78 GiB). Tried to allocate 72.78 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PHKG2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PHKG2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PHKG2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.21 GiB, other allocations: 157.53 GiB, max allowed: 182.78 GiB). Tried to allocate 81.00 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PI4KA:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PI4KA:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PI4KA:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.23 GiB, other allocations: 157.53 GiB, max allowed: 182.78 GiB). Tried to allocate 77.66 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PI4KB:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PI4KB:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PI4KB:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.18 GiB, other allocations: 157.53 GiB, max allowed: 182.78 GiB). Tried to allocate 80.44 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PIK3C3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PIK3C3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PIK3C3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.21 GiB, other allocations: 157.53 GiB, max allowed: 182.78 GiB). Tried to allocate 80.44 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PIM1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PIM1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PIM1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.53 GiB, max allowed: 182.78 GiB). Tried to allocate 217.53 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PIM2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PIM2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PIM2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.15 GiB, other allocations: 157.54 GiB, max allowed: 182.78 GiB). Tried to allocate 219.11 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PKMYT1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PKMYT1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PKMYT1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.20 GiB, other allocations: 157.55 GiB, max allowed: 182.78 GiB). Tried to allocate 71.19 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PKN1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PKN1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PKN1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.20 GiB, other allocations: 157.55 GiB, max allowed: 182.78 GiB). Tried to allocate 76.56 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PKN2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PKN2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PKN2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.20 GiB, other allocations: 157.56 GiB, max allowed: 182.78 GiB). Tried to allocate 76.56 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PLK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PLK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PLK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.56 GiB, max allowed: 182.78 GiB). Tried to allocate 217.53 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PLK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PLK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PLK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.56 GiB, max allowed: 182.78 GiB). Tried to allocate 217.53 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PLK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PLK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PLK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.56 GiB, max allowed: 182.78 GiB). Tried to allocate 217.53 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PLK4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PLK4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PLK4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.56 GiB, max allowed: 182.78 GiB). Tried to allocate 218.32 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PRKAA1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PRKAA1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PRKAA1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.18 GiB, other allocations: 157.56 GiB, max allowed: 182.78 GiB). Tried to allocate 72.78 MiB on private pool. Use P)
+- 2026-09-28 17:43  fold queue: PRKAA2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PRKAA2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PRKAA2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.56 GiB, max allowed: 182.78 GiB). Tried to allocate 217.53 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PRKACA:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PRKACA:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PRKACA:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.57 GiB, max allowed: 182.78 GiB). Tried to allocate 219.11 MiB on private pool. Use )
+- 2026-09-28 17:43  fold queue: PRKCA:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:43  fold queue: PRKCA:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:43  fold queue: PRKCA:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.57 GiB, max allowed: 182.78 GiB). Tried to allocate 222.28 MiB on private pool. Use )
+- 2026-09-28 17:44  fold queue: PRKCB:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PRKCB:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PRKCB:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.57 GiB, max allowed: 182.78 GiB). Tried to allocate 222.28 MiB on private pool. Use )
+- 2026-09-28 17:44  fold queue: PRKCH:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PRKCH:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PRKCH:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.15 GiB, other allocations: 157.57 GiB, max allowed: 182.78 GiB). Tried to allocate 76.56 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: PRKCI:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PRKCI:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PRKCI:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.17 GiB, other allocations: 157.58 GiB, max allowed: 182.78 GiB). Tried to allocate 230.19 MiB on private pool. Use )
+- 2026-09-28 17:44  fold queue: PRKCQ:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PRKCQ:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PRKCQ:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.59 GiB, max allowed: 182.78 GiB). Tried to allocate 219.11 MiB on private pool. Use )
+- 2026-09-28 17:44  fold queue: PRKG1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PRKG1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PRKG1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.16 GiB, other allocations: 157.60 GiB, max allowed: 182.78 GiB). Tried to allocate 76.56 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: PTK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PTK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PTK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.60 GiB, max allowed: 182.78 GiB). Tried to allocate 222.28 MiB on private pool. Use )
+- 2026-09-28 17:44  fold queue: PTK2B:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PTK2B:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PTK2B:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.60 GiB, max allowed: 182.78 GiB). Tried to allocate 76.02 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: PTK6:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PTK6:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PTK6:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.11 GiB, other allocations: 157.61 GiB, max allowed: 182.78 GiB). Tried to allocate 71.72 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RAF1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RAF1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RAF1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.61 GiB, max allowed: 182.78 GiB). Tried to allocate 77.11 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RIOK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RIOK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RIOK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.61 GiB, max allowed: 182.78 GiB). Tried to allocate 222.28 MiB on private pool. Use )
+- 2026-09-28 17:44  fold queue: RIPK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RIPK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RIPK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.18 GiB, other allocations: 157.61 GiB, max allowed: 182.78 GiB). Tried to allocate 2.88 MiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: RIPK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RIPK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RIPK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.16 GiB, other allocations: 157.61 GiB, max allowed: 182.78 GiB). Tried to allocate 15.77 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RIPK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RIPK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RIPK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.10 GiB, other allocations: 157.62 GiB, max allowed: 182.78 GiB). Tried to allocate 80.44 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: ROCK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ROCK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ROCK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.14 GiB, other allocations: 157.62 GiB, max allowed: 182.78 GiB). Tried to allocate 78.21 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: ROCK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ROCK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ROCK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.62 GiB, max allowed: 182.78 GiB). Tried to allocate 225.44 MiB on private pool. Use )
+- 2026-09-28 17:44  fold queue: ROR1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ROR1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ROR1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.15 GiB, other allocations: 157.63 GiB, max allowed: 182.78 GiB). Tried to allocate 2.89 MiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: ROR2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ROR2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ROR2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.07 GiB, other allocations: 157.64 GiB, max allowed: 182.78 GiB). Tried to allocate 84.41 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: ROS1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ROS1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ROS1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.65 GiB, max allowed: 182.78 GiB). Tried to allocate 13.73 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RPS6KA1_C:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RPS6KA1_C:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RPS6KA1_C:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.65 GiB, max allowed: 182.78 GiB). Tried to allocate 75.47 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RPS6KA1_N:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RPS6KA1_N:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RPS6KA1_N:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.65 GiB, max allowed: 182.78 GiB). Tried to allocate 12.13 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RPS6KA3_C:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RPS6KA3_C:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RPS6KA3_C:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.65 GiB, max allowed: 182.78 GiB). Tried to allocate 75.47 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RPS6KA3_N:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RPS6KA3_N:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RPS6KA3_N:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.65 GiB, max allowed: 182.78 GiB). Tried to allocate 12.13 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RPS6KA5_C:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RPS6KA5_C:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RPS6KA5_C:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.65 GiB, max allowed: 182.78 GiB). Tried to allocate 12.31 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RPS6KA5_N:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RPS6KA5_N:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RPS6KA5_N:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.13 GiB, other allocations: 157.65 GiB, max allowed: 182.78 GiB). Tried to allocate 7.70 MiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: RPS6KA6_N:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RPS6KA6_N:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RPS6KA6_N:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.65 GiB, max allowed: 182.78 GiB). Tried to allocate 11.96 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RPS6KB1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RPS6KB1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RPS6KB1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.10 GiB, other allocations: 157.65 GiB, max allowed: 182.78 GiB). Tried to allocate 77.66 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: RYK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RYK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RYK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.09 GiB, other allocations: 157.65 GiB, max allowed: 182.78 GiB). Tried to allocate 81.00 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: SGK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: SGK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: SGK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 2.73 MiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: SIK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: SIK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: SIK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 11.46 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: SLK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: SLK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: SLK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.07 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 76.02 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: SNRK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: SNRK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: SNRK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 11.62 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: SRC:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: SRC:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: SRC:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 11.62 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK10:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK10:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK10:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.07 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 76.02 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK11:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK11:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK11:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.07 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 77.11 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK16:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK16:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK16:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.04 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 84.41 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK17A:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK17A:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK17A:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.10 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 77.11 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK17B:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK17B:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK17B:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.10 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 77.11 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK24:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK24:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK24:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.08 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 71.72 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK25:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK25:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK25:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.11 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 14.40 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK26:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK26:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK26:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.11 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 14.40 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.08 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 72.25 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK32A:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK32A:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK32A:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.10 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 76.02 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK33:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK33:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK33:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.08 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 79.88 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: STK4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 11.46 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: SYK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: SYK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: SYK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 11.71 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: TAOK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TAOK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TAOK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 11.62 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: TEK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TEK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TEK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.11 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 13.28 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: TNIK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TNIK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TNIK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.12 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 7.57 MiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: TNK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TNK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TNK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.07 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 76.56 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: TNNI3K:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TNNI3K:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TNNI3K:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.10 GiB, other allocations: 157.66 GiB, max allowed: 182.78 GiB). Tried to allocate 77.11 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: TTBK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TTBK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TTBK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.05 GiB, other allocations: 157.67 GiB, max allowed: 182.78 GiB). Tried to allocate 78.77 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: TTK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TTK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TTK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.11 GiB, other allocations: 157.67 GiB, max allowed: 182.78 GiB). Tried to allocate 12.74 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: ULK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ULK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ULK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.05 GiB, other allocations: 157.67 GiB, max allowed: 182.78 GiB). Tried to allocate 78.21 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: ULK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ULK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ULK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.06 GiB, other allocations: 157.67 GiB, max allowed: 182.78 GiB). Tried to allocate 77.11 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: ULK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ULK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ULK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.09 GiB, other allocations: 157.68 GiB, max allowed: 182.78 GiB). Tried to allocate 11.88 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: WEE1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: WEE1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: WEE1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.03 GiB, other allocations: 157.69 GiB, max allowed: 182.78 GiB). Tried to allocate 82.70 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: WEE2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: WEE2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: WEE2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.10 GiB, other allocations: 157.69 GiB, max allowed: 182.78 GiB). Tried to allocate 2.90 MiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: ZAP70:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ZAP70:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ZAP70:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.10 GiB, other allocations: 157.69 GiB, max allowed: 182.78 GiB). Tried to allocate 2.78 MiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: ACVR1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ACVR1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ACVR1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.05 GiB, other allocations: 157.69 GiB, max allowed: 182.78 GiB). Tried to allocate 95.06 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: ACVR2A:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ACVR2A:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ACVR2A:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.02 GiB, other allocations: 157.70 GiB, max allowed: 182.78 GiB). Tried to allocate 96.29 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: ACVR2B:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ACVR2B:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ACVR2B:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.02 GiB, other allocations: 157.72 GiB, max allowed: 182.78 GiB). Tried to allocate 94.45 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: ACVRL1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ACVRL1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ACVRL1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.02 GiB, other allocations: 157.73 GiB, max allowed: 182.78 GiB). Tried to allocate 94.45 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: ATM:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ATM:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ATM:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.95 GiB, other allocations: 157.74 GiB, max allowed: 182.78 GiB). Tried to allocate 108.29 MiB on private pool. Use )
+- 2026-09-28 17:44  fold queue: ATR:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: ATR:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: ATR:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.94 GiB, other allocations: 157.75 GiB, max allowed: 182.78 GiB). Tried to allocate 105.70 MiB on private pool. Use )
+- 2026-09-28 17:44  fold queue: BMPR1B:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: BMPR1B:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: BMPR1B:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.01 GiB, other allocations: 157.75 GiB, max allowed: 182.78 GiB). Tried to allocate 93.24 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: BMPR2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: BMPR2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: BMPR2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.94 GiB, other allocations: 157.76 GiB, max allowed: 182.78 GiB). Tried to allocate 101.25 MiB on private pool. Use )
+- 2026-09-28 17:44  fold queue: BUB1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: BUB1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: BUB1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.01 GiB, other allocations: 157.77 GiB, max allowed: 182.78 GiB). Tried to allocate 93.24 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CAMKK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CAMKK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CAMKK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.99 GiB, other allocations: 157.77 GiB, max allowed: 182.78 GiB). Tried to allocate 89.07 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CAMKK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CAMKK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CAMKK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.99 GiB, other allocations: 157.77 GiB, max allowed: 182.78 GiB). Tried to allocate 89.07 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CDK11B:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDK11B:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDK11B:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 25.00 GiB, other allocations: 157.78 GiB, max allowed: 182.78 GiB). Tried to allocate 91.44 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CDK12:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDK12:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDK12:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.93 GiB, other allocations: 157.79 GiB, max allowed: 182.78 GiB). Tried to allocate 96.29 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CDK13:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDK13:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDK13:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.93 GiB, other allocations: 157.79 GiB, max allowed: 182.78 GiB). Tried to allocate 96.29 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CDK16:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDK16:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDK16:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.90 GiB, other allocations: 157.80 GiB, max allowed: 182.78 GiB). Tried to allocate 89.07 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CDK4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDK4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDK4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.90 GiB, other allocations: 157.81 GiB, max allowed: 182.78 GiB). Tried to allocate 89.66 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CDK6:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDK6:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDK6:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.88 GiB, other allocations: 157.83 GiB, max allowed: 182.78 GiB). Tried to allocate 92.64 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CDK7:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDK7:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDK7:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.87 GiB, other allocations: 157.84 GiB, max allowed: 182.78 GiB). Tried to allocate 90.25 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CDK8:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDK8:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDK8:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.92 GiB, other allocations: 157.85 GiB, max allowed: 182.78 GiB). Tried to allocate 59.51 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CDK9:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDK9:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDK9:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.89 GiB, other allocations: 157.86 GiB, max allowed: 182.78 GiB). Tried to allocate 53.28 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CDKL5:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDKL5:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDKL5:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.87 GiB, other allocations: 157.87 GiB, max allowed: 182.78 GiB). Tried to allocate 49.33 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CHUK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CHUK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CHUK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.87 GiB, other allocations: 157.87 GiB, max allowed: 182.78 GiB). Tried to allocate 50.30 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CLK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CLK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CLK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 60.50 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CLK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CLK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CLK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 60.50 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CLK4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CLK4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CLK4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 59.13 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CSF1R:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CSF1R:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CSF1R:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 57.78 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CSNK2A1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CSNK2A1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CSNK2A1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 51.26 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: CSNK2A2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CSNK2A2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CSNK2A2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 51.26 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: DDR1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: DDR1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: DDR1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 48.76 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: DDR2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: DDR2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: DDR2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 46.32 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: DYRK1A:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: DYRK1A:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: DYRK1A:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 59.13 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: DYRK1B:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: DYRK1B:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: DYRK1B:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 57.78 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: DYRK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: DYRK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: DYRK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 56.45 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: DYRK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: DYRK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: DYRK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 56.45 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: EPHB4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: EPHB4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: EPHB4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 45.12 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: FGFR3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: FGFR3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: FGFR3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 46.32 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: FGFR4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: FGFR4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: FGFR4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 46.32 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: GSK3A:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: GSK3A:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: GSK3A:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 46.32 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: GSK3B:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: GSK3B:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: GSK3B:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 47.53 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: HASPIN:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: HASPIN:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: HASPIN:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.65 GiB, other allocations: 158.11 GiB, max allowed: 182.78 GiB). Tried to allocate 52.53 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: HIPK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: HIPK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: HIPK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 61.88 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: HIPK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: HIPK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: HIPK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 61.88 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: IKBKB:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: IKBKB:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: IKBKB:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 47.53 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: IRAK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: IRAK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: IRAK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 51.26 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: KDR:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: KDR:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: KDR:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 59.13 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: LRRK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: LRRK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: LRRK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 45.12 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAP2K2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAP2K2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAP2K2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 47.53 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAPK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAPK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAPK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 48.76 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAPK10:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAPK10:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAPK10:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 50.00 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAPK11:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAPK11:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAPK11:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 45.12 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAPK12:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAPK12:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAPK12:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 46.32 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAPK13:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAPK13:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAPK13:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 46.32 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAPK14:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAPK14:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAPK14:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 46.32 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAPK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAPK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAPK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 48.76 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAPK6:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAPK6:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAPK6:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 48.76 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAPK8:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAPK8:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAPK8:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 50.00 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MAPK9:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MAPK9:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MAPK9:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.68 GiB, other allocations: 158.09 GiB, max allowed: 182.78 GiB). Tried to allocate 50.00 MiB on private pool. Use P)
+- 2026-09-28 17:44  fold queue: MKNK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MKNK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MKNK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.75 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: MKNK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MKNK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MKNK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.75 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: MTOR:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MTOR:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MTOR:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.75 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: MUSK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MUSK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MUSK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: NTRK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: NTRK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: NTRK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PBK:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PBK:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PBK:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PIK3CA:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PIK3CA:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PIK3CA:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PIK3CD:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PIK3CD:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PIK3CD:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PIK3CG:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PIK3CG:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PIK3CG:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PIK3R4:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PIK3R4:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PIK3R4:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PRP4K:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PRP4K:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PRP4K:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.75 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: RET:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RET:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RET:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: RIOK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: RIOK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: RIOK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: STK38:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: STK38:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: STK38:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: TBK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TBK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TBK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: TGFBR1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TGFBR1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TGFBR1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: TGFBR2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TGFBR2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TGFBR2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.75 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: TLK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TLK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TLK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: TYK2_JH1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: TYK2_JH1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: TYK2_JH1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: VRK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: VRK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: VRK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: VRK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: VRK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: VRK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: FLT1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: FLT1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: FLT1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.75 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: FLT3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: FLT3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: FLT3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 3.00 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: KIT:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: KIT:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: KIT:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 3.00 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PDGFRA:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PDGFRA:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PDGFRA:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 3.00 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PDGFRB:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PDGFRB:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PDGFRB:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 3.00 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PI4K2A:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PI4K2A:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PI4K2A:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.75 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PI4K2B:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PI4K2B:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PI4K2B:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 2.75 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: PINK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: PINK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: PINK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 3.00 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: SMG1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: SMG1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: SMG1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 3.00 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: EIF2AK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: EIF2AK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: EIF2AK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 3.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: EIF2AK4_C:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: EIF2AK4_C:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: EIF2AK4_C:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 3.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: CDC7:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: CDC7:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: CDC7:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 4.25 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: EIF2AK3:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: EIF2AK3:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: EIF2AK3:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 4.00 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: SRPK1:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: SRPK1:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: SRPK1:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 4.75 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: SRPK2:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: SRPK2:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: SRPK2:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 5.00 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: MASTL:apo:1-7 memory error, retrying with batch 3
+- 2026-09-28 17:44  fold queue: MASTL:apo:1-7 memory error, retrying with batch 1
+- 2026-09-28 17:44  fold queue: MASTL:apo:1-7 failed (RuntimeError: MPS backend out of memory (MPS allocated: 24.61 GiB, other allocations: 158.21 GiB, max allowed: 182.78 GiB). Tried to allocate 6.50 KiB on private pool. Use PY)
+- 2026-09-28 17:44  fold queue: all jobs complete
+- 2026-09-28 17:45  finish: fold queue complete; running final phases
+- 2026-09-28 17:45  finish: annotate failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
+- 2026-09-28 17:45  finish: summarise failed: concurrent.futures.process.BrokenProcessPool: A child process terminated abruptly, the process pool is not usable anymore
