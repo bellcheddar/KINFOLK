@@ -58,6 +58,7 @@ def main() -> None:
     r = sub.add_parser("run")
     r.add_argument("--phase", type=int, required=True)
     sub.add_parser("status")
+    sub.add_parser("finish")
     f = sub.add_parser("fold")
     f.add_argument("--max-hours", type=float, default=None)
     a = ap.parse_args()
@@ -65,6 +66,9 @@ def main() -> None:
         phase(a.phase)
     elif a.cmd == "status":
         status()
+    elif a.cmd == "finish":
+        from . import finish
+        finish.run()
     elif a.cmd == "fold":
         from . import foldqueue
         foldqueue.run(a.max_hours)

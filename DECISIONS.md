@@ -110,3 +110,15 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: Q6 is a headline question; extra T3 samples only refine ensembles
 - How to reverse: Move pass Q6 in foldqueue.build_jobs
 
+## 2026-09-27 20:49  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-09-27 20:52  Positive-control site resolution
+- Decision: Resolve each control from KLIFS allosteric-ligand chains at run time: try ligands by frequency; reject crystallisation additives (PEG, glycols, buffers, ions) and ligands under 15 heavy atoms; use the ligand copy that contacts the kinase chain; apply a class rule (ABL1 and PDPK1 < 50% of site residues inside the 85 KLIFS positions, EGFR < 70%, AKT1 must touch the PH domain, MAP2K1 any). Chosen: ABL1 6NPE KWD, MAP2K1 4MNE 573, PDPK1 3ORZ 2A2, EGFR 4G5J 0WM, AKT1 4EJN 0R4
+- Alternatives: Hand-typed residue lists (forbidden by spec 12); most frequent allosteric ligand without filters (picked PE5 and DTD additives)
+- Reason: KLIFS allosteric annotations include additives; the class rules keep each site where its ligand class binds
+- How to reverse: Edit ADDITIVES / SITE_RULE in pockets.py
+

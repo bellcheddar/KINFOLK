@@ -114,3 +114,35 @@
 - 2026-09-27 20:40  pockets: scanned 175/519 domains
 - 2026-09-27 20:41  pockets: scanned 200/519 domains
 - 2026-09-27 20:41  pockets: scanned 225/519 domains
+- 2026-09-27 20:42  pockets: scanned 250/519 domains
+- 2026-09-27 20:43  pockets: scanned 275/519 domains
+- 2026-09-27 20:44  pockets: scanned 300/519 domains
+- 2026-09-27 20:44  pockets: scanned 325/519 domains
+- 2026-09-27 20:45  pockets: scanned 350/519 domains
+- 2026-09-27 20:46  pockets: scanned 375/519 domains
+- 2026-09-27 20:46  pockets: scanned 400/519 domains
+- 2026-09-27 20:47  pockets: scanned 425/519 domains
+- 2026-09-27 20:48  pockets: scanned 450/519 domains
+- 2026-09-27 20:48  pockets: scanned 475/519 domains
+- 2026-09-27 20:49  pockets: scanned 500/519 domains
+- 2026-09-27 20:49  controls: ABL1 site from 6NPE B ligand KWD: 13 residues
+- 2026-09-27 20:49  controls: MAP2K1 site from 4MNE H ligand 573: 24 residues
+- 2026-09-27 20:49  controls: PDPK1 site from 4CT2 A ligand DTD: 10 residues
+- 2026-09-27 20:49  controls: EGFR site from 8HV6 A ligand PE5: 8 residues
+- 2026-09-27 20:49  controls: AKT1 site from 4EJN A ligand 0R4: 19 residues
+- 2026-09-27 20:49  pockets: 20146 pockets, 49 ESMFold2 sites, 0 candidate cryptic sites; controls recovered 1/5
+- 2026-09-27 20:50  controls: ABL1: 3PYY A ligand 3YY (25 heavy atoms, 12 residues, 0% in KLIFS); rejected ['KWD (19 heavy atoms)', 'KWP (25 heavy atoms)']
+- 2026-09-27 20:50  controls: MAP2K1: failed:no qualifying allosteric ligand; rejected ['573 (27 heavy atoms)']
+- 2026-09-27 20:50  controls: PDPK1: 4RQK A ligand R1S (23 heavy atoms, 13 residues, 46% in KLIFS); rejected ['DTD (additive)', '2A2 (19 heavy atoms)', '1F8 (16 heavy atoms)']
+- 2026-09-27 20:50  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-27 20:50  controls: AKT1: failed:no qualifying allosteric ligand; rejected ['0R4 (site 58% inside KLIFS pocket)', 'IQO (site 72% inside KLIFS pocket)']
+- 2026-09-27 20:51  controls: ABL1: 3PYY A ligand 3YY (25 heavy atoms, 12 residues, 0% in KLIFS); rejected ['KWD (no protein contacts in 6NPE B)', 'KWP (no protein contacts in 6NPV B)']
+- 2026-09-27 20:51  controls: MAP2K1: failed:no qualifying allosteric ligand; rejected ['573 (no protein contacts in 4MNE H)']
+- 2026-09-27 20:51  controls: PDPK1: 4RQK A ligand R1S (23 heavy atoms, 13 residues, 46% in KLIFS); rejected ['DTD (additive)', '2A2 (no protein contacts in 3ORZ C)', '1F8 (no protein contacts in 3ORX B)']
+- 2026-09-27 20:51  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-27 20:51  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-27 20:51  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-27 20:51  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-27 20:51  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-27 20:51  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-27 20:51  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)

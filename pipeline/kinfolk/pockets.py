@@ -273,40 +273,92 @@ def _rcsb_cif(pdb_id: str) -> Path:
     return p
 
 
+ADDITIVES = set("""HOH SO4 PO4 GOL EDO PEG PGE PG4 PE4 PE5 PE8 1PE 2PE 7PE P6G P33 12P 15P PGO PGR MPD DMS DTD DTT
+BME ACT ACY FMT CIT TLA MLI MES EPE TRS IMD NO3 SCN IPA NH4 CL NA MG ZN CA K MN NI CO CD IOD BR BU3 HEZ UNX UNL
+MYR PLM OLA LDA BOG""".split())
+# Where each control site must lie (spec 12): fraction of site residues inside the 85 KLIFS positions,
+# or (AKT1) contact with the PH domain, which the interdomain MK-2206-class site requires.
+SITE_RULE = {
+    "ABL1": lambda uni, frac, d: frac < 0.5,          # myristoyl pocket, C-lobe
+    "PDPK1": lambda uni, frac, d: frac < 0.5,         # PIF pocket, N-lobe
+    "EGFR": lambda uni, frac, d: frac < 0.7,          # EAI045 pocket beside alphaC (partly back pocket)
+    "MAP2K1": lambda uni, frac, d: True,              # type III pocket adjacent to ATP
+    "AKT1": lambda uni, frac, d: any(u < d["domain_start"] - 20 for u in uni),   # must touch the PH domain
+}
+
+
+def _contacts(pdb_id: str, chain: str, lig: str, full_seq: str):
+    st = gemmi.read_structure(str(_rcsb_cif(pdb_id)))
+    st.setup_entities()
+    model = st[0]
+    prot = model[chain] if chain in [x.name for x in model] else max(model, key=len)
+    lig_res = [res for ch in model for res in ch if res.name == lig]
+    if not lig_res:
+        return None, 0
+    ns = gemmi.NeighborSearch(model, st.cell, 5).populate()
+    contacts, heavy = set(), 0
+    for copy_ in lig_res:  # the ligand copy that contacts this protein chain most
+        found = set()
+        for a in copy_:
+            for mk in ns.find_atoms(a.pos, "\0", radius=4.0):
+                cra = mk.to_cra(model)
+                if cra.chain.name == prot.name and cra.residue.name != lig and cra.residue.het_flag != "H":
+                    found.add(cra.residue.seqid.num)
+        if len(found) > len(contacts):
+            contacts, heavy = found, sum(1 for a in copy_ if a.element.name != "H")
+    if not contacts:
+        heavy = sum(1 for a in lig_res[0] if a.element.name != "H")
+    to_uni = uniprot_numbering(prot, full_seq)
+    return sorted({to_uni[n] for n in contacts if n in to_uni}), heavy
+
+
 def control_sites(cat: pd.DataFrame) -> list[dict]:
-    """Resolve each control site from ligand-bound PDB entries (residues within 4 A of the ligand)."""
+    """Resolve each control site from ligand-bound PDB entries (residues within 4 A of the ligand).
+
+    Candidate ligands are KLIFS 'allosteric' ligands of the kinase, tried by frequency; a ligand is
+    accepted when it is not a crystallisation additive, has >= 15 heavy atoms, and its site lies where
+    the control class says (outside the ATP cleft for ABL1, PDPK1, EGFR, AKT1)."""
     chains = pd.read_parquet(DATA / "pdb" / "chains.parquet")
     out = []
     for gene, site in CONTROLS.items():
         d = cat[cat.gene == gene].iloc[0].to_dict()
+        kpos = klifs_positions(d)
         c = chains[(chains.domain_id == d["domain_id"]) & chains.passes_quality &
                    ~chains.allosteric_ligand.astype(str).isin(["0", "", "None"])].copy()
-        if c.empty:
-            out.append({"gene": gene, "domain_id": d["domain_id"], "site_name": site, "status": "failed:no allosteric chain"})
-            continue
-        lig = c.allosteric_ligand.astype(str).value_counts().index[0]
         c["res_num"] = pd.to_numeric(c.resolution_rcsb.fillna(c.resolution), errors="coerce")
-        best = c[c.allosteric_ligand.astype(str) == lig].sort_values("res_num").iloc[0]
-        try:
-            st = gemmi.read_structure(str(_rcsb_cif(best.pdb)))
-            st.setup_entities()
-            model = st[0]
-            prot = model[best.chain] if best.chain in [x.name for x in model] else max(model, key=len)
-            ns = gemmi.NeighborSearch(model, st.cell, 5).populate()
-            lig_atoms = [(res, a) for ch in model for res in ch if res.name == lig for a in res]
-            contacts = set()
-            for _, a in lig_atoms:
-                for mk in ns.find_atoms(a.pos, "\0", radius=4.0):
-                    cra = mk.to_cra(model)
-                    if cra.chain.name == prot.name and cra.residue.name != lig and cra.residue.het_flag != "H":
-                        contacts.add(cra.residue.seqid.num)
-            to_uni = uniprot_numbering(prot, d["full_sequence"])
-            uni = sorted({to_uni[n] for n in contacts if n in to_uni})
-            out.append({"gene": gene, "domain_id": d["domain_id"], "site_name": site, "pdb_id": best.pdb.upper(),
-                        "chain": prot.name, "ligand": lig, "residues": uni, "status": "done"})
-            log(f"controls: {gene} site from {best.pdb.upper()} {prot.name} ligand {lig}: {len(uni)} residues")
-        except Exception as e:  # noqa: BLE001
-            out.append({"gene": gene, "domain_id": d["domain_id"], "site_name": site, "status": f"failed:{e}"})
+        tried, chosen = [], None
+        for lig in c.allosteric_ligand.astype(str).value_counts().index:
+            if lig in ADDITIVES:
+                tried.append(f"{lig} (additive)")
+                continue
+            best = c[c.allosteric_ligand.astype(str) == lig].sort_values("res_num").iloc[0]
+            try:
+                uni, heavy = _contacts(best.pdb, best.chain, lig, d["full_sequence"])
+            except Exception as e:  # noqa: BLE001
+                tried.append(f"{lig} ({type(e).__name__})")
+                continue
+            if not uni:
+                tried.append(f"{lig} (no protein contacts in {best.pdb.upper()} {best.chain})")
+                continue
+            if heavy < 15:
+                tried.append(f"{lig} ({heavy} heavy atoms)")
+                continue
+            _, frac = subpocket(uni, kpos)
+            if not SITE_RULE[gene](uni, frac, d):
+                tried.append(f"{lig} (site location fails the {gene} rule; {frac:.0%} in KLIFS)")
+                continue
+            chosen = {"gene": gene, "domain_id": d["domain_id"], "site_name": site, "pdb_id": best.pdb.upper(),
+                      "chain": best.chain, "ligand": lig, "heavy_atoms": heavy, "frac_in_klifs": round(frac, 2),
+                      "residues": uni, "rejected": tried, "status": "done"}
+            break
+        if chosen is None:
+            chosen = {"gene": gene, "domain_id": d["domain_id"], "site_name": site, "rejected": tried,
+                      "status": "failed:no qualifying allosteric ligand"}
+        out.append(chosen)
+        log(f"controls: {gene}: " + (f"{chosen['pdb_id']} {chosen['chain']} ligand {chosen['ligand']} "
+                                     f"({chosen['heavy_atoms']} heavy atoms, {len(chosen['residues'])} residues, "
+                                     f"{chosen['frac_in_klifs']:.0%} in KLIFS)" if chosen["status"] == "done"
+                                     else chosen["status"]) + (f"; rejected {tried[:6]}" if tried else ""))
     return out
 
 
