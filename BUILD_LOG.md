@@ -1308,3 +1308,4 @@
 - 2026-09-28 21:46  bundle: SQLite 54.3 MB, structures 0.10 GB, total 0.16 GB; 0 specimen JSON files over 150 KB
 - 2026-09-28 21:46  finish: bundle ok in 0.4 min
 - 2026-09-28 21:47  finish: pytest pipeline rc 0, app rc 0; visual QC rc 1; science headline failures []
+- 2026-09-28 21:47  gate G3 opened
