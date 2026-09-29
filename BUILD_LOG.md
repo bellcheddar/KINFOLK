@@ -1295,3 +1295,7 @@
 - 2026-09-28 21:45  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
 - 2026-09-28 21:45  pockets: 42455 pockets, 4689 ESMFold2 sites, 24 candidate cryptic sites; controls recovered 3/5
 - 2026-09-28 21:45  finish: pockets ok in 2.3 min
+- 2026-09-28 21:46  selectivity: KiSSim-lite fingerprints PDB 304, AFDB 517, ESMFold2 522
+- 2026-09-28 21:46  selectivity: Davis mapped 257 wild-type domains x 68 inhibitors (122 targets unmapped or variant)
+- 2026-09-28 21:46  selectivity: Q5 Spearman {'pdb': 0.298, 'afdb': 0.311, 'esm2': 0.312} (CI {'pdb': [0.217, 0.376], 'afdb': [0.229, 0.385], 'esm2': [0.228, 0.388]}); fraction of PDB {'afdb': 1.043, 'esm2': 1.045}
+- 2026-09-28 21:46  finish: selectivity + pocket trees failed: skbio.stats.distance._base.DistanceMatrixError: Data must be symmetric and cannot contain NaNs.
