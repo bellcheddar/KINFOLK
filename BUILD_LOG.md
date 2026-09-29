@@ -1301,3 +1301,9 @@
 - 2026-09-28 21:46  finish: selectivity + pocket trees failed: skbio.stats.distance._base.DistanceMatrixError: Data must be symmetric and cannot contain NaNs.
 - 2026-09-28 21:46  induced fit: 31 complexes; mean DFG-out fraction apo 0.00 vs holo 1.00; median ligand RMSD 0.94
 - 2026-09-28 21:46  finish: induced fit ok in 0.0 min
+- 2026-09-28 21:46  references: 13 DOIs resolved via Crossref; dropped 1: tdc (10.48550/arXiv.2102.09548: HTTP 404)
+- 2026-09-28 21:46  finish: references ok in 0.0 min
+- 2026-09-28 21:46  findings: written data/findings.json and FINDINGS.md
+- 2026-09-28 21:46  finish: findings ok in 0.1 min
+- 2026-09-28 21:46  bundle: SQLite 54.3 MB, structures 0.10 GB, total 0.16 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 21:46  finish: bundle ok in 0.4 min
