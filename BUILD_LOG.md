@@ -1299,3 +1299,5 @@
 - 2026-09-28 21:46  selectivity: Davis mapped 257 wild-type domains x 68 inhibitors (122 targets unmapped or variant)
 - 2026-09-28 21:46  selectivity: Q5 Spearman {'pdb': 0.298, 'afdb': 0.311, 'esm2': 0.312} (CI {'pdb': [0.217, 0.376], 'afdb': [0.229, 0.385], 'esm2': [0.228, 0.388]}); fraction of PDB {'afdb': 1.043, 'esm2': 1.045}
 - 2026-09-28 21:46  finish: selectivity + pocket trees failed: skbio.stats.distance._base.DistanceMatrixError: Data must be symmetric and cannot contain NaNs.
+- 2026-09-28 21:46  induced fit: 31 complexes; mean DFG-out fraction apo 0.00 vs holo 1.00; median ligand RMSD 0.94
+- 2026-09-28 21:46  finish: induced fit ok in 0.0 min
