@@ -1285,3 +1285,13 @@
 - 2026-09-28 21:43  finish: annotate ok in 0.2 min
 - 2026-09-28 21:43  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(96), 'disagree': np.int64(80)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0518, 0.1017]}, 'esm_single': {'jsd': 0.0785, 'ci95': [0.0612, 0.1157]}, 'esm_ensemble': {'jsd': 0.0803, 'ci95': [0.0625, 0.1148]}}; motif repair rows 192
 - 2026-09-28 21:43  finish: summarise ok in 0.1 min
+- 2026-09-28 21:43  pockets: 441 new structures to scan over 63 domains
+- 2026-09-28 21:44  pockets: scanned 25/63 domains
+- 2026-09-28 21:45  pockets: scanned 50/63 domains
+- 2026-09-28 21:45  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 21:45  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 21:45  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 21:45  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 21:45  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 21:45  pockets: 42455 pockets, 4689 ESMFold2 sites, 24 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 21:45  finish: pockets ok in 2.3 min
