@@ -5,7 +5,10 @@ set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 if [[ -f .env ]]; then set -a; source .env; set +a; fi
 DROPLET_SSH="${DROPLET_SSH:-root@mdeller.com}"
-SSH=(ssh -o BatchMode=yes -o ConnectTimeout=15)
+# One multiplexed connection for every step: the droplet rate-limits and bans IPs that open
+# several SSH connections in quick succession (a 5-connection deploy got banned, 2026-09-28).
+CTL="$HOME/.ssh/cm-kinfolk-%C"
+SSH=(ssh -o BatchMode=yes -o ConnectTimeout=15 -o ControlMaster=auto -o ControlPath="$CTL" -o ControlPersist=120)
 [[ -n "${SSH_KEY:-}" ]] && SSH+=(-i "${SSH_KEY/#\~/$HOME}")
 "${SSH[@]}" "$DROPLET_SSH" bash -s <<'REMOTE_EOF'
 set -euo pipefail

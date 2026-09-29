@@ -14,14 +14,17 @@ if [[ -f .env ]]; then set -a; source .env; set +a; fi
 DROPLET_SSH="${DROPLET_SSH:-root@mdeller.com}"
 HOST="${DROPLET_SSH#*@}"
 REMOTE=/srv/kinfolk
-SSH=(ssh -o BatchMode=yes -o ConnectTimeout=15)
+# One multiplexed connection for every step: the droplet rate-limits and bans IPs that open
+# several SSH connections in quick succession (a 5-connection deploy got banned, 2026-09-28).
+CTL="$HOME/.ssh/cm-kinfolk-%C"
+SSH=(ssh -o BatchMode=yes -o ConnectTimeout=15 -o ControlMaster=auto -o ControlPath="$CTL" -o ControlPersist=120)
 [[ -n "${SSH_KEY:-}" ]] && SSH+=(-i "${SSH_KEY/#\~/$HOME}")
 RSYNC_SSH="${SSH[*]}"
 
 echo "==> Pre-flight"
-nc -z -G 8 "$HOST" 22 >/dev/null 2>&1 || { echo "Port 22 on $HOST is unreachable (firewall or ban?). Stopping."; exit 1; }
 ssh-keygen -F "$HOST" >/dev/null || { echo "No known_hosts entry for $HOST. Connect once interactively to verify the key. Stopping."; exit 1; }
-"${SSH[@]}" "$DROPLET_SSH" true || { echo "SSH login to $DROPLET_SSH failed. Not retrying (ban risk). Stopping."; exit 1; }
+"${SSH[@]}" "$DROPLET_SSH" true || { echo "SSH login to $DROPLET_SSH failed (unreachable, banned or refused). Not retrying (ban risk). Stopping."; exit 1; }
+trap '"${SSH[@]}" -O exit "$DROPLET_SSH" >/dev/null 2>&1 || true' EXIT
 
 echo "==> Syncing app code and data bundle to $DROPLET_SSH:$REMOTE/app"
 "${SSH[@]}" "$DROPLET_SSH" "mkdir -p $REMOTE/app"
