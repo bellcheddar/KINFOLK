@@ -1,0 +1,10 @@
+[Unit]
+Description=KINFOLK: check GitHub for a new live commit every minute
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1min
+AccuracySec=5s
+
+[Install]
+WantedBy=timers.target

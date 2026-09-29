@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import gzip
 import json
-import shutil
 import sqlite3
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor
@@ -344,8 +343,9 @@ def run() -> dict:
     nseq = nearest_by_sequence()
 
     # ---------------- structures: choose + write superposed crops
-    if SDIR.exists():
-        shutil.rmtree(SDIR)
+    # Overwrite in place and prune stale files afterwards: deleting and recreating the whole
+    # folder made iCloud (the project lives in ~/Documents) create "name 2.cif.gz" conflict copies.
+    SDIR.mkdir(parents=True, exist_ok=True)
     tasks = []
     keep_ids = {}
     for _, k in cat.iterrows():
@@ -364,6 +364,13 @@ def run() -> dict:
     with ProcessPoolExecutor(int(tuning().get("cpu_workers", 4))) as ex:
         for (kd, _, _), w in zip(tasks, ex.map(write_domain_structures, tasks, chunksize=4)):
             files[kd["domain_id"]] = w
+    keep = {SDIR / rel for w in files.values() for rel in w.values()}
+    for p in SDIR.rglob("*"):
+        if p.is_file() and p not in keep:
+            p.unlink()
+    for d in sorted((d for d in SDIR.rglob("*") if d.is_dir()), reverse=True):
+        if not any(d.iterdir()):
+            d.rmdir()
     size_gb = sum(p.stat().st_size for p in SDIR.rglob("*.cif.gz")) / 1e9
 
     # ---------------- SQLite
