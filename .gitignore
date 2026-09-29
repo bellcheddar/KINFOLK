@@ -27,3 +27,4 @@ data/**
 # app bundle (built by kinfolk run --phase 8)
 app/data/
 qc/screens/*.png
+.env

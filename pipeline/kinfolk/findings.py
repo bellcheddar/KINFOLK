@@ -130,10 +130,10 @@ def run() -> dict:
     tr = blind.get("Training era (before 2018-04-30)", {})
     parts = []
     if bn.get("esm2") and tr.get("esm2"):
-        parts.append(f"ESMFold2's pocket RMSD rises from a median {tr['esm2']['median']:.2f} Å on training-era structures to "
+        parts.append(f"ESMFold2's median pocket RMSD is {tr['esm2']['median']:.2f} Å on training-era structures and "
                      f"{bn['esm2']['median']:.2f} Å on blind, sequence-novel ones (n {bn['esm2']['n']})")
     if bn.get("afdb") and tr.get("afdb"):
-        parts.append(f"AlphaFold DB goes from {tr['afdb']['median']:.2f} to {bn['afdb']['median']:.2f} Å")
+        parts.append(f"AlphaFold DB's is {tr['afdb']['median']:.2f} and {bn['afdb']['median']:.2f} Å respectively")
     if F["q3"]["dark_esm_afdb_rmsd"]:
         parts.append(f"on the dark kinome the two predictors' pockets differ by a median {F['q3']['dark_esm_afdb_rmsd']['median']:.2f} Å")
     for src, name in (("afdb", "AlphaFold DB"), ("esm2", "ESMFold2")):
@@ -180,8 +180,9 @@ def run() -> dict:
                    "summary": (f"On {len(blind)} post-cutoff type II complexes, folding with the ligand raises the share of "
                                f"DFG-out samples from {blind.apo_frac_dfgout.mean():.0%} (apo) to {blind.holo_frac_dfgout.mean():.0%} (holo)"
                                + (f" (paired Wilcoxon p = {p:.2g})" if p is not None else "")
-                               + (f"; the median ligand heavy-atom RMSD to the crystal is {blind.lig_rmsd.median():.1f} Å"
-                                  if blind.lig_rmsd.notna().any() else "") + ".")}
+                               + (f"; the median ligand heavy-atom RMSD to the crystal is {blind.lig_rmsd.median():.1f} Å "
+                                  f"over the {int(blind.lig_rmsd.notna().sum())} complexes where ligand atoms could be "
+                                  f"matched by name" if blind.lig_rmsd.notna().any() else "") + ".")}
     else:
         F["q6"] = {"summary": "Pending."}
     (DATA / "findings.json").write_text(json.dumps(F, indent=1, default=str))

@@ -16,7 +16,7 @@ Figure: `/almanac#q2 (PCI slider)`
 
 ## Q3: Novel sequences and structures
 
-ESMFold2's pocket RMSD rises from a median 1.21 Å on training-era structures to 0.95 Å on blind, sequence-novel ones (n 10); AlphaFold DB goes from 0.96 to 0.96 Å; on the dark kinome the two predictors' pockets differ by a median 0.53 Å; AlphaFold DB restores the degraded catalytic residue to canonical geometry in 30 of 81 pseudokinase motifs; ESMFold2 restores the degraded catalytic residue to canonical geometry in 36 of 85 pseudokinase motifs.
+ESMFold2's median pocket RMSD is 1.21 Å on training-era structures and 0.95 Å on blind, sequence-novel ones (n 10); AlphaFold DB's is 0.96 and 0.96 Å respectively; on the dark kinome the two predictors' pockets differ by a median 0.53 Å; AlphaFold DB restores the degraded catalytic residue to canonical geometry in 30 of 81 pseudokinase motifs; ESMFold2 restores the degraded catalytic residue to canonical geometry in 36 of 85 pseudokinase motifs.
 
 Figure: `/almanac#q3, /dark, /black-sheep`
 
@@ -34,7 +34,7 @@ Figure: `/resemblance, /almanac#q5`
 
 ## Q6: Induced fit
 
-On 30 post-cutoff type II complexes, folding with the ligand raises the share of DFG-out samples from 0% (apo) to 100% (holo) (paired Wilcoxon p = 4.3e-08); the median ligand heavy-atom RMSD to the crystal is 1.0 Å.
+On 30 post-cutoff type II complexes, folding with the ligand raises the share of DFG-out samples from 0% (apo) to 100% (holo) (paired Wilcoxon p = 4.3e-08); the median ligand heavy-atom RMSD to the crystal is 1.0 Å over the 15 complexes where ligand atoms could be matched by name.
 
 Figure: `/almanac#q6`
 

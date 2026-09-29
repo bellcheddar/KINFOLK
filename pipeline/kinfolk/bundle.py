@@ -484,7 +484,8 @@ def run() -> dict:
                "induced_fit": ifit.to_dict("records") if len(ifit) else [],
                "motif_fidelity": _json(DATA / "annotation" / "motif_summary.json", {}),
                "construct_starts": {k.domain_id: int(max(1, k.domain_start - PAD)) for _, k in cat.iterrows()}}
-    con.executemany("INSERT INTO summary VALUES (?,?)", [(k, json.dumps(v, default=str)) for k, v in summary.items()])
+    con.executemany("INSERT INTO summary VALUES (?,?)",
+                    [(k, json.dumps(_clean(v), default=str, allow_nan=False)) for k, v in summary.items()])
     con.commit()
     con.execute("VACUUM")
     con.close()
