@@ -6,7 +6,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 392,
+   "fcp_ms": 736,
    "label_overlaps": 0,
    "screenshot": "qc/screens/plate_I_desktop.png",
    "axe_serious_critical": [],
@@ -21,25 +21,8 @@
    "fcp_ms": 140,
    "molstar_initialised": true,
    "screenshot": "qc/screens/plate_II_desktop.png",
-   "axe_serious_critical": [
-    {
-     "id": "link-name",
-     "impact": "serious",
-     "n": 1,
-     "help": "Links must have discernible text"
-    }
-   ],
-   "console_errors": [
-    "Failed to load resource: the server responded with a status of 404 (NOT FOUND)",
-    "Error: Download failed with status code 404\n    at IWe (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112110)\n    at e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112782)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:116505)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4155:34028)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async Tot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:249937)\n    at async D6 (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:248064)\n    at async pot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:242110)",
-    "Error: Invalid data cell.\n    at i3.parseTrajectory (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7115:275846)\n    at http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:151523\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:238370)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:150863)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async n1.run (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:114067)\n    at async loadSet (http://127.0.0.1:8010/static/js/specimen.js:200:5)\n    at async initMolstar (http://127.0.0.1:8010/static/js/specimen.js:187:5)",
-    "Failed to load resource: the server responded with a status of 404 (NOT FOUND)",
-    "Error: Download failed with status code 404\n    at IWe (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112110)\n    at e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112782)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:116505)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4155:34028)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async Tot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:249937)\n    at async D6 (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:248064)\n    at async pot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:242110)",
-    "Error: Invalid data cell.\n    at i3.parseTrajectory (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7115:275846)\n    at http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:151523\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:238370)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:150863)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async n1.run (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:114067)\n    at async loadSet (http://127.0.0.1:8010/static/js/specimen.js:201:5)\n    at async initMolstar (http://127.0.0.1:8010/static/js/specimen.js:187:5)",
-    "Failed to load resource: the server responded with a status of 404 (NOT FOUND)",
-    "Error: Download failed with status code 404\n    at IWe (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112110)\n    at e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112782)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:116505)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4155:34028)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async Tot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:249937)\n    at async D6 (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:248064)\n    at async pot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:242110)",
-    "Error: Invalid data cell.\n    at i3.parseTrajectory (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7115:275846)\n    at http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:151523\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:238370)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:150863)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async n1.run (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:114067)\n    at async loadSet (http://127.0.0.1:8010/static/js/specimen.js:202:5)\n    at async initMolstar (http://127.0.0.1:8010/static/js/specimen.js:187:5)"
-   ]
+   "axe_serious_critical": [],
+   "console_errors": []
   },
   {
    "plate": "III",
@@ -47,7 +30,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 140,
+   "fcp_ms": 236,
    "screenshot": "qc/screens/plate_III_desktop.png",
    "axe_serious_critical": [],
    "console_errors": []
@@ -58,7 +41,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 136,
+   "fcp_ms": 160,
    "screenshot": "qc/screens/plate_IV_desktop.png",
    "axe_serious_critical": [],
    "console_errors": []
@@ -69,7 +52,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 132,
+   "fcp_ms": 144,
    "screenshot": "qc/screens/plate_V_desktop.png",
    "axe_serious_critical": [],
    "console_errors": []
@@ -80,16 +63,9 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 144,
+   "fcp_ms": 268,
    "screenshot": "qc/screens/plate_VI_desktop.png",
-   "axe_serious_critical": [
-    {
-     "id": "nested-interactive",
-     "impact": "serious",
-     "n": 1,
-     "help": "Interactive controls must not be nested"
-    }
-   ],
+   "axe_serious_critical": [],
    "console_errors": []
   },
   {
@@ -98,10 +74,12 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 128,
+   "fcp_ms": 124,
    "screenshot": "qc/screens/plate_VII_desktop.png",
    "axe_serious_critical": [],
-   "console_errors": []
+   "console_errors": [
+    "Failed to load resource: the server responded with a status of 500 (INTERNAL SERVER ERROR)"
+   ]
   },
   {
    "plate": "About",
@@ -109,7 +87,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 188,
+   "fcp_ms": 272,
    "screenshot": "qc/screens/plate_About_desktop.png",
    "axe_serious_critical": [],
    "console_errors": []
@@ -120,7 +98,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 180,
+   "fcp_ms": 316,
    "label_overlaps": 0,
    "screenshot": "qc/screens/plate_I_mobile.png",
    "console_errors": []
@@ -131,20 +109,10 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 52,
+   "fcp_ms": 40,
    "molstar_initialised": true,
    "screenshot": "qc/screens/plate_II_mobile.png",
-   "console_errors": [
-    "Failed to load resource: the server responded with a status of 404 (NOT FOUND)",
-    "Error: Download failed with status code 404\n    at IWe (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112110)\n    at e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112782)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:116505)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4155:34028)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async Tot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:249937)\n    at async D6 (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:248064)\n    at async pot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:242110)",
-    "Error: Invalid data cell.\n    at i3.parseTrajectory (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7115:275846)\n    at http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:151523\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:238370)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:150863)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async n1.run (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:114067)\n    at async loadSet (http://127.0.0.1:8010/static/js/specimen.js:200:5)\n    at async initMolstar (http://127.0.0.1:8010/static/js/specimen.js:187:5)",
-    "Failed to load resource: the server responded with a status of 404 (NOT FOUND)",
-    "Error: Download failed with status code 404\n    at IWe (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112110)\n    at e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112782)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:116505)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4155:34028)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async Tot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:249937)\n    at async D6 (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:248064)\n    at async pot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:242110)",
-    "Error: Invalid data cell.\n    at i3.parseTrajectory (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7115:275846)\n    at http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:151523\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:238370)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:150863)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async n1.run (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:114067)\n    at async loadSet (http://127.0.0.1:8010/static/js/specimen.js:201:5)\n    at async initMolstar (http://127.0.0.1:8010/static/js/specimen.js:187:5)",
-    "Failed to load resource: the server responded with a status of 404 (NOT FOUND)",
-    "Error: Download failed with status code 404\n    at IWe (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112110)\n    at e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112782)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:116505)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4155:34028)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async Tot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:249937)\n    at async D6 (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:248064)\n    at async pot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:242110)",
-    "Error: Invalid data cell.\n    at i3.parseTrajectory (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7115:275846)\n    at http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:151523\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:238370)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:150863)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\n    at async n1.run (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:7669:114067)\n    at async loadSet (http://127.0.0.1:8010/static/js/specimen.js:202:5)\n    at async initMolstar (http://127.0.0.1:8010/static/js/specimen.js:187:5)"
-   ]
+   "console_errors": []
   },
   {
    "plate": "III",
@@ -152,7 +120,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 48,
+   "fcp_ms": 40,
    "screenshot": "qc/screens/plate_III_mobile.png",
    "console_errors": []
   },
@@ -162,7 +130,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 56,
+   "fcp_ms": 40,
    "screenshot": "qc/screens/plate_IV_mobile.png",
    "console_errors": []
   },
@@ -172,7 +140,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 32,
+   "fcp_ms": 44,
    "screenshot": "qc/screens/plate_V_mobile.png",
    "console_errors": []
   },
@@ -182,7 +150,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 44,
+   "fcp_ms": 40,
    "screenshot": "qc/screens/plate_VI_mobile.png",
    "console_errors": []
   },
@@ -194,7 +162,9 @@
    "horizontal_scroll": false,
    "fcp_ms": 40,
    "screenshot": "qc/screens/plate_VII_mobile.png",
-   "console_errors": []
+   "console_errors": [
+    "Failed to load resource: the server responded with a status of 500 (INTERNAL SERVER ERROR)"
+   ]
   },
   {
    "plate": "About",
@@ -202,15 +172,13 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 52,
+   "fcp_ms": 56,
    "screenshot": "qc/screens/plate_About_mobile.png",
    "console_errors": []
   }
  ],
  "failures": [
-  "II@desktop: console errors ['Failed to load resource: the server responded with a status of 404 (NOT FOUND)', 'Error: Download failed with status code 404\\n    at IWe (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112110)\\n    at e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112782)\\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:116505)\\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4155:34028)\\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\\n    at async Tot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:249937)\\n    at async D6 (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:248064)\\n    at async pot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:242110)']",
-  "II@desktop: axe ['link-name']",
-  "VI@desktop: axe ['nested-interactive']",
-  "II@mobile: console errors ['Failed to load resource: the server responded with a status of 404 (NOT FOUND)', 'Error: Download failed with status code 404\\n    at IWe (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112110)\\n    at e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:112782)\\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:47:116505)\\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\\n    at async e.f (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4155:34028)\\n    at async lz (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:35:61668)\\n    at async Tot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:249937)\\n    at async D6 (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:248064)\\n    at async pot (http://127.0.0.1:8010/static/vendor/molstar/molstar.5.11.0.js:4153:242110)']"
+  "VII@desktop: console errors ['Failed to load resource: the server responded with a status of 500 (INTERNAL SERVER ERROR)']",
+  "VII@mobile: console errors ['Failed to load resource: the server responded with a status of 500 (INTERNAL SERVER ERROR)']"
  ]
 }
