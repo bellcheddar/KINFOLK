@@ -1215,3 +1215,73 @@
 - 2026-09-28 18:11  pockets: scanned 25/131 domains
 - 2026-09-28 18:11  incident 17:35-17:44: 237 pass-E batches failed with MPS out of memory (other allocations 156 GB, limit 183 GB) after ~12 h in one process; the orchestrator treated them as ended and ran final phases, which also failed (spawned workers could not import kinfolk: hidden .pth flag back since 14:05). Fixed: PYTHONPATH via pixi activation, worker recycling every 40 batches with cache release, OOM retry in a fresh process, stall watchdog, failure-fraction guard; OOM records cleared; relaunched in tmux; false G6 (missing q5.json) withdrawn
 - 2026-09-28 18:12  pockets: scanned 50/131 domains
+- 2026-09-28 18:13  pockets: scanned 75/131 domains
+- 2026-09-28 18:14  pockets: scanned 100/131 domains
+- 2026-09-28 18:16  pockets: scanned 125/131 domains
+- 2026-09-28 18:16  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 18:16  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 18:16  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 18:16  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 18:16  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 18:16  pockets: 36450 pockets, 3713 ESMFold2 sites, 18 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 18:16  finish: pockets (backfill) ok in 6.5 min
+- 2026-09-28 18:16  bundle: SQLite 37.4 MB, structures 0.09 GB, total 0.13 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 18:16  finish: bundle (backfill) ok in 0.4 min
+- 2026-09-28 18:37  fold queue: recycling worker after 40 batches
+- 2026-09-28 18:38  fold queue: worker started on mps float32, loops 3, steps 100
+- 2026-09-28 19:05  fold queue: recycling worker after 40 batches
+- 2026-09-28 19:05  fold queue: worker started on mps float32, loops 3, steps 100
+- 2026-09-28 19:32  fold queue: recycling worker after 40 batches
+- 2026-09-28 19:33  fold queue: worker started on mps float32, loops 3, steps 100
+- 2026-09-28 20:03  fold queue: recycling worker after 40 batches
+- 2026-09-28 20:04  fold queue: worker started on mps float32, loops 3, steps 100
+- 2026-09-28 20:17  annotate: 50/522 domains
+- 2026-09-28 20:17  annotate: 100/522 domains
+- 2026-09-28 20:17  annotate: 150/522 domains
+- 2026-09-28 20:17  annotate: 200/522 domains
+- 2026-09-28 20:17  annotate: 250/522 domains
+- 2026-09-28 20:17  annotate: 300/522 domains
+- 2026-09-28 20:17  annotate: 350/522 domains
+- 2026-09-28 20:17  annotate: 400/522 domains
+- 2026-09-28 20:17  annotate: 450/522 domains
+- 2026-09-28 20:17  annotate: 500/522 domains
+- 2026-09-28 20:17  annotate: 18651 structures ({'pdb': np.int64(12022), 'esm2': np.int64(6112), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 20:17  finish: annotate (backfill) ok in 0.2 min
+- 2026-09-28 20:17  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(96), 'disagree': np.int64(80)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0506, 0.1015]}, 'esm_single': {'jsd': 0.0785, 'ci95': [0.0589, 0.1106]}, 'esm_ensemble': {'jsd': 0.0797, 'ci95': [0.0604, 0.1098]}}; motif repair rows 192
+- 2026-09-28 20:17  finish: summarise (backfill) ok in 0.1 min
+- 2026-09-28 20:17  pockets: 1211 new structures to scan over 173 domains
+- 2026-09-28 20:18  pockets: scanned 25/173 domains
+- 2026-09-28 20:18  pockets: scanned 50/173 domains
+- 2026-09-28 20:19  pockets: scanned 75/173 domains
+- 2026-09-28 20:20  pockets: scanned 100/173 domains
+- 2026-09-28 20:21  pockets: scanned 125/173 domains
+- 2026-09-28 20:21  pockets: scanned 150/173 domains
+- 2026-09-28 20:22  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-09-28 20:22  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-09-28 20:22  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-09-28 20:22  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-09-28 20:22  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-09-28 20:22  pockets: 40658 pockets, 4323 ESMFold2 sites, 21 candidate cryptic sites; controls recovered 3/5
+- 2026-09-28 20:22  finish: pockets (backfill) ok in 5.5 min
+- 2026-09-28 20:23  bundle: SQLite 45.7 MB, structures 0.09 GB, total 0.15 GB; 0 specimen JSON files over 150 KB
+- 2026-09-28 20:23  finish: bundle (backfill) ok in 0.4 min
+- 2026-09-28 20:41  fold queue: recycling worker after 40 batches
+- 2026-09-28 20:41  fold queue: worker started on mps float32, loops 3, steps 100
+- 2026-09-28 21:35  fold queue: MASTL:apo:1-7 failed (_LinAlgError: linalg.svd: (Batch element 0): The algorithm failed to converge because the input matrix is ill-conditioned or has too many repeated singular values (error code)
+- 2026-09-28 21:35  fold queue: all jobs complete
+- 2026-09-28 21:35  fold queue: supervisor finished
+- 2026-09-28 21:43  finish: fold queue complete (0.1% failed); running final phases
+- 2026-09-28 21:43  annotate: 50/522 domains
+- 2026-09-28 21:43  annotate: 100/522 domains
+- 2026-09-28 21:43  annotate: 150/522 domains
+- 2026-09-28 21:43  annotate: 200/522 domains
+- 2026-09-28 21:43  annotate: 250/522 domains
+- 2026-09-28 21:43  annotate: 300/522 domains
+- 2026-09-28 21:43  annotate: 350/522 domains
+- 2026-09-28 21:43  annotate: 400/522 domains
+- 2026-09-28 21:43  annotate: 450/522 domains
+- 2026-09-28 21:43  annotate: 500/522 domains
+- 2026-09-28 21:43  annotate: 19092 structures ({'pdb': np.int64(12022), 'esm2': np.int64(6553), 'afdb': np.int64(517)}), 0 failed
+- 2026-09-28 21:43  finish: annotate ok in 0.2 min
+- 2026-09-28 21:43  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(96), 'disagree': np.int64(80)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0518, 0.1017]}, 'esm_single': {'jsd': 0.0785, 'ci95': [0.0612, 0.1157]}, 'esm_ensemble': {'jsd': 0.0803, 'ci95': [0.0625, 0.1148]}}; motif repair rows 192
+- 2026-09-28 21:43  finish: summarise ok in 0.1 min
