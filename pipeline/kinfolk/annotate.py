@@ -272,7 +272,9 @@ def run(domains: list[str] | None = None) -> None:
     chains = pd.read_parquet(DATA / "pdb" / "chains.parquet")
     chains = chains[chains.passes_quality].copy()
     chains["res"] = pd.to_numeric(chains.resolution_rcsb.fillna(chains.resolution), errors="coerce")
-    fold = [r for r in Manifest("fold").records() if r.get("status") == "done"]
+    # The manifest is append-only, so a refolded batch has several records: the last wins.
+    _last = {r["id"]: r for r in Manifest("fold").records()}
+    fold = [r for r in _last.values() if r.get("status") == "done"]
     by_dom_fold: dict[str, list] = {}
     for r in fold:
         by_dom_fold.setdefault(r["domain_id"], []).append(r)

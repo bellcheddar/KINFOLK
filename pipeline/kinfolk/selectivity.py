@@ -113,7 +113,14 @@ def fingerprints() -> dict[str, dict[str, np.ndarray]]:
     jobs = []
     pdb = s[s.source == "pdb"].copy()
     pdb["res"] = pd.to_numeric(pdb.resolution, errors="coerce").fillna(9.9)
-    for d, g in pdb.sort_values("res").groupby("domain_id"):
+    # A KiSSim-lite fingerprint needs a resolved pocket, so the representative is the chain
+    # whose KLIFS pocket is best matched (in tenths, so near-ties go to the better resolution),
+    # then the best resolution, then struct_id. Resolution alone picked chains with half the
+    # pocket missing (LRRK2 at 2.7 A resolves 0.49 of it, 2.9 A resolves all of it), and ties on
+    # resolution fell to whichever chain the parallel annotation happened to write first.
+    pdb["ident10"] = (pd.to_numeric(pdb.pocket_identity, errors="coerce").fillna(0.0) * 10).astype(int)
+    order = pdb.sort_values(["ident10", "res", "struct_id"], ascending=[False, True, True])
+    for d, g in order.groupby("domain_id", sort=False):
         jobs.append((g.iloc[0].to_dict() | {"source": "pdb"}, cat.loc[d].to_dict()))
     for _, r in s[s.source == "afdb"].iterrows():
         jobs.append((r.to_dict(), cat.loc[r.domain_id].to_dict()))

@@ -1325,3 +1325,91 @@
 - 2026-11-17 11:23  app: Almanac Q5 now carries its own figure (rho per source with 95% intervals), as FINDINGS.md already pointed at /almanac#q5
 - 2026-11-17 11:23  deploy: kinfolk.mdeller.com live on a unix socket; 11 page checks and 16 visual QC checks pass against the droplet
 - 2026-11-17 11:25  gate G3 closed: https://kinfolk.mdeller.com live at 8062115, all pages 200, visual QC 16/16 against the droplet
+- 2026-11-17 11:51  fold queue: MASTL:apo:1-7 refolded on a trimmed construct (316 aa, insert 226 to 734 replaced by GSGS); 7 samples in 3.0 min
+- 2026-11-17 11:52  fold queue: MASTL:apo:0-0 refolded on the trimmed construct (pLDDT 84.6, was 55.1 on the full construct)
+- 2026-11-17 11:52  annotate: 50/522 domains
+- 2026-11-17 11:52  annotate: 100/522 domains
+- 2026-11-17 11:52  annotate: 150/522 domains
+- 2026-11-17 11:52  annotate: 200/522 domains
+- 2026-11-17 11:52  annotate: 250/522 domains
+- 2026-11-17 11:52  annotate: 300/522 domains
+- 2026-11-17 11:52  annotate: 350/522 domains
+- 2026-11-17 11:52  annotate: 400/522 domains
+- 2026-11-17 11:52  annotate: 450/522 domains
+- 2026-11-17 11:52  annotate: 500/522 domains
+- 2026-11-17 11:52  annotate: 19100 structures ({'pdb': np.int64(12022), 'esm2': np.int64(6561), 'afdb': np.int64(517)}), 0 failed
+- 2026-11-17 11:52  finish: annotate ok in 0.2 min
+- 2026-11-17 11:53  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(96), 'disagree': np.int64(80)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0512, 0.1019]}, 'esm_single': {'jsd': 0.0785, 'ci95': [0.0593, 0.1115]}, 'esm_ensemble': {'jsd': 0.0803, 'ci95': [0.0628, 0.1108]}}; motif repair rows 192
+- 2026-11-17 11:53  finish: summarise ok in 0.1 min
+- 2026-11-17 11:53  pockets: 7 new structures to scan over 1 domains
+- 2026-11-17 11:53  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-11-17 11:53  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-11-17 11:53  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-11-17 11:53  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-11-17 11:53  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-11-17 11:53  pockets: 42492 pockets, 4707 ESMFold2 sites, 20 candidate cryptic sites; controls recovered 3/5
+- 2026-11-17 11:53  finish: pockets ok in 0.2 min
+- 2026-11-17 11:54  selectivity: KiSSim-lite fingerprints PDB 304, AFDB 517, ESMFold2 522
+- 2026-11-17 11:54  selectivity: Davis mapped 257 wild-type domains x 68 inhibitors (122 targets unmapped or variant)
+- 2026-11-17 11:54  selectivity: Q5 Spearman {'pdb': 0.294, 'afdb': 0.311, 'esm2': 0.312} (CI {'pdb': [0.213, 0.372], 'afdb': [0.229, 0.385], 'esm2': [0.228, 0.388]}); fraction of PDB {'afdb': 1.059, 'esm2': 1.061}
+- 2026-11-17 11:54  phylo: pocket tree (pdb) drops 2 domain(s) with too few comparable KLIFS rows: EIF2AK4_C, LRRK2
+- 2026-11-17 11:54  phylo: pocket tree (pdb) 302 leaves; tanglegram crossings 16766 -> 11145
+- 2026-11-17 11:54  phylo: pocket tree (esm) drops 4 domain(s) with too few comparable KLIFS rows: PLK5, STK40, TAF1_C, TAF1_N
+- 2026-11-17 11:54  phylo: pocket tree (esm) 518 leaves; tanglegram crossings 34136 -> 28738
+- 2026-11-17 11:54  finish: selectivity + pocket trees ok in 0.4 min
+- 2026-11-17 11:54  induced fit: 31 complexes; mean DFG-out fraction apo 0.00 vs holo 1.00; median ligand RMSD 0.94
+- 2026-11-17 11:54  finish: induced fit ok in 0.0 min
+- 2026-11-17 11:54  findings: written data/findings.json and FINDINGS.md
+- 2026-11-17 11:54  finish: findings ok in 0.1 min
+- 2026-11-17 11:54  finish: bundle failed: sqlite3.IntegrityError: UNIQUE constraint failed: structure.struct_id
+- 2026-11-17 11:55  annotate: 50/522 domains
+- 2026-11-17 11:55  annotate: 100/522 domains
+- 2026-11-17 11:55  annotate: 150/522 domains
+- 2026-11-17 11:55  annotate: 200/522 domains
+- 2026-11-17 11:55  annotate: 250/522 domains
+- 2026-11-17 11:55  annotate: 300/522 domains
+- 2026-11-17 11:55  annotate: 350/522 domains
+- 2026-11-17 11:55  annotate: 400/522 domains
+- 2026-11-17 11:55  annotate: 450/522 domains
+- 2026-11-17 11:55  annotate: 500/522 domains
+- 2026-11-17 11:55  annotate: 19099 structures ({'pdb': np.int64(12022), 'esm2': np.int64(6560), 'afdb': np.int64(517)}), 0 failed
+- 2026-11-17 11:55  finish: annotate ok in 0.2 min
+- 2026-11-17 11:55  summarise: agreement AFDB {'none': np.int64(231), 'partial': np.int64(121), 'agree': np.int64(97), 'disagree': np.int64(71), 'missing': np.int64(2)}; ESMFold2 {'none': np.int64(231), 'partial': np.int64(115), 'agree': np.int64(96), 'disagree': np.int64(80)}; PCI {'afdb': {'jsd': 0.0684, 'ci95': [0.0512, 0.1019]}, 'esm_single': {'jsd': 0.0785, 'ci95': [0.0593, 0.1115]}, 'esm_ensemble': {'jsd': 0.0803, 'ci95': [0.0628, 0.1108]}}; motif repair rows 192
+- 2026-11-17 11:55  finish: summarise ok in 0.1 min
+- 2026-11-17 11:55  pockets: 0 new structures to scan over 0 domains
+- 2026-11-17 11:55  controls: ABL1: 6NPE B ligand KWD (19 heavy atoms, 13 residues, 0% in KLIFS)
+- 2026-11-17 11:55  controls: MAP2K1: 4MNE H ligand 573 (27 heavy atoms, 19 residues, 84% in KLIFS)
+- 2026-11-17 11:55  controls: PDPK1: 3ORZ C ligand 2A2 (19 heavy atoms, 7 residues, 29% in KLIFS); rejected ['DTD (additive)']
+- 2026-11-17 11:55  controls: EGFR: 4G5J A ligand 0WM (34 heavy atoms, 14 residues, 14% in KLIFS); rejected ['PE5 (additive)']
+- 2026-11-17 11:55  controls: AKT1: 4EJN A ligand 0R4 (43 heavy atoms, 19 residues, 58% in KLIFS)
+- 2026-11-17 11:55  pockets: 42492 pockets, 4707 ESMFold2 sites, 20 candidate cryptic sites; controls recovered 3/5
+- 2026-11-17 11:55  finish: pockets ok in 0.1 min
+- 2026-11-17 11:55  selectivity: KiSSim-lite fingerprints PDB 304, AFDB 517, ESMFold2 522
+- 2026-11-17 11:55  selectivity: Davis mapped 257 wild-type domains x 68 inhibitors (122 targets unmapped or variant)
+- 2026-11-17 11:55  selectivity: Q5 Spearman {'pdb': 0.291, 'afdb': 0.311, 'esm2': 0.312} (CI {'pdb': [0.21, 0.368], 'afdb': [0.229, 0.385], 'esm2': [0.228, 0.388]}); fraction of PDB {'afdb': 1.067, 'esm2': 1.069}
+- 2026-11-17 11:55  phylo: pocket tree (pdb) drops 3 domain(s) with too few comparable KLIFS rows: EIF2AK4_C, LRRK2, STK40
+- 2026-11-17 11:55  phylo: pocket tree (pdb) 301 leaves; tanglegram crossings 14767 -> 7772
+- 2026-11-17 11:55  phylo: pocket tree (esm) drops 4 domain(s) with too few comparable KLIFS rows: PLK5, STK40, TAF1_C, TAF1_N
+- 2026-11-17 11:55  phylo: pocket tree (esm) 518 leaves; tanglegram crossings 34136 -> 28738
+- 2026-11-17 11:55  finish: selectivity + pocket trees ok in 0.3 min
+- 2026-11-17 11:56  findings: written data/findings.json and FINDINGS.md
+- 2026-11-17 11:56  finish: findings ok in 0.1 min
+- 2026-11-17 11:56  bundle: SQLite 54.4 MB, structures 0.10 GB, total 0.16 GB; 0 specimen JSON files over 150 KB
+- 2026-11-17 11:56  finish: bundle ok in 0.4 min
+- 2026-11-17 11:57  selectivity: KiSSim-lite fingerprints PDB 304, AFDB 517, ESMFold2 522
+- 2026-11-17 11:57  selectivity: Davis mapped 257 wild-type domains x 68 inhibitors (122 targets unmapped or variant)
+- 2026-11-17 11:57  selectivity: Q5 Spearman {'pdb': 0.325, 'afdb': 0.311, 'esm2': 0.312} (CI {'pdb': [0.248, 0.397], 'afdb': [0.229, 0.385], 'esm2': [0.228, 0.388]}); fraction of PDB {'afdb': 0.956, 'esm2': 0.958}
+- 2026-11-17 11:57  phylo: pocket tree (pdb) drops 1 domain(s) with too few comparable KLIFS rows: EIF2AK4_C
+- 2026-11-17 11:57  phylo: pocket tree (pdb) 303 leaves; tanglegram crossings 22076 -> 8085
+- 2026-11-17 11:57  phylo: pocket tree (esm) drops 4 domain(s) with too few comparable KLIFS rows: PLK5, STK40, TAF1_C, TAF1_N
+- 2026-11-17 11:57  phylo: pocket tree (esm) 518 leaves; tanglegram crossings 34136 -> 28738
+- 2026-11-17 11:57  finish: selectivity + pocket trees ok in 0.3 min
+- 2026-11-17 11:57  findings: written data/findings.json and FINDINGS.md
+- 2026-11-17 11:57  finish: findings ok in 0.1 min
+- 2026-11-17 11:58  bundle: SQLite 54.4 MB, structures 0.10 GB, total 0.16 GB; 0 specimen JSON files over 150 KB
+- 2026-11-17 11:58  finish: bundle ok in 0.4 min
+- 2026-11-17 11:58  pipeline: MASTL refolded on a trimmed construct; Q4 candidates 24 -> 20 (the four MASTL sites were pockets against its disordered insert); Q5 PDB rho 0.30 -> 0.33 after fixing the representative rule
+- 2026-11-17 11:58  findings: written data/findings.json and FINDINGS.md
+- 2026-11-17 11:58  finish: findings ok in 0.1 min
+- 2026-11-17 11:59  bundle: SQLite 54.4 MB, structures 0.10 GB, total 0.16 GB; 0 specimen JSON files over 150 KB
+- 2026-11-17 11:59  finish: bundle ok in 0.4 min

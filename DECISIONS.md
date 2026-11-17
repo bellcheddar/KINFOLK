@@ -284,3 +284,51 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: The tanglegram is 303 rows tall inside a 760 px box, which axe flags as scrollable-region-focusable once the trees exist
 - How to reverse: Remove the tabindex in app/templates/resemblance.html
 
+## 2026-11-17 11:51  MASTL folded on a trimmed construct
+- Decision: Fold residues 25 to 225 joined by GSGS to 735 to 845 instead of the full 821-residue construct
+- Alternatives: Leave MASTL with the single sample it already had; fold on CPU (hours per sample); lower the sampling steps
+- Reason: ESMFold2's SVD fails to converge on the full construct on MPS, twice, and MASTL's non-conserved middle region is disordered in AlphaFold DB (pLDDT below 70 from 221 to 740), so it contributes nothing to the pocket while costing most of the compute
+- How to reverse: Delete data/esm2/models/MASTL/apo/s01 to s07 and refold the full construct on CPU
+
+## 2026-11-17 11:53  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-11-17 11:54  Tanglegram untangling
+- Decision: Greedy child swaps on the pocket tree against the fixed sequence tree (3 passes, accept only swaps that reduce crossings)
+- Alternatives: Rotate both trees; exact optimisation
+- Reason: Spec 6.3 asks for a greedy heuristic; the sequence tree stays in its canonical order
+- How to reverse: Change passes in phylo.untangle
+
+## 2026-11-17 11:55  Subpocket assignment
+- Decision: Map site residues to KLIFS regions and label front / gate / BP-I / BP-II by majority; < 30% of residues inside the 85 KLIFS positions = outside KLIFS (allosteric); ATP cleft = >= 50% inside KLIFS
+- Alternatives: KLIFS subpocket centroids (KiFrag)
+- Reason: Region-based and reproducible from the KLIFS numbering already computed
+- How to reverse: Edit SUBPOCKET in pockets.py
+
+## 2026-11-17 11:55  Tanglegram untangling
+- Decision: Greedy child swaps on the pocket tree against the fixed sequence tree (3 passes, accept only swaps that reduce crossings)
+- Alternatives: Rotate both trees; exact optimisation
+- Reason: Spec 6.3 asks for a greedy heuristic; the sequence tree stays in its canonical order
+- How to reverse: Change passes in phylo.untangle
+
+## 2026-11-17 11:57  Tanglegram untangling
+- Decision: Greedy child swaps on the pocket tree against the fixed sequence tree (3 passes, accept only swaps that reduce crossings)
+- Alternatives: Rotate both trees; exact optimisation
+- Reason: Spec 6.3 asks for a greedy heuristic; the sequence tree stays in its canonical order
+- How to reverse: Change passes in phylo.untangle
+
+## 2026-11-17 11:58  PDB representative for pocket fingerprints
+- Decision: Pick the chain whose KLIFS pocket identity is highest (in tenths), then the best resolution, then struct_id
+- Alternatives: Best resolution alone, as before; require a minimum pocket identity and drop domains that fail it
+- Reason: A KiSSim-lite fingerprint can only measure a pocket that is resolved. Resolution alone chose LRRK2 chains resolving 0.49 and 0.24 of the KLIFS pocket over a 2.9 A chain resolving all of it, and ties on resolution fell to whichever chain the parallel annotation wrote first, so the pocket tree changed between identical runs. Q5 PDB rho rises from 0.30 to 0.33 and the predicted-structure fraction falls from 1.04 to 0.96
+- How to reverse: Restore the sort in kinfolk.selectivity.fingerprints to resolution alone
+
+## 2026-11-17 11:58  Fold manifest records are deduplicated by id
+- Decision: annotate keeps the last record per job id
+- Alternatives: Rewrite the manifest in place when a batch is refolded
+- Reason: The manifest is append-only, so a refolded batch had two done records and its samples were annotated twice, which broke the bundle on a unique constraint
+- How to reverse: Revert the _last dict in kinfolk.annotate.run
+

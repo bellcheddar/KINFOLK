@@ -215,6 +215,14 @@ def write_md(F: dict) -> None:
               "- ESMFold2 ran with 3 recycling loops and 100 sampling steps in float32 on Apple MPS (see DECISIONS.md).",
               "- ABL1 with imatinib has no post-cutoff entry, so it is reported separately as \"memorisation possible\".",
               "- PLK5, TAF1_C and TAF1_N could not be placed in KLIFS numbering and are excluded from pocket metrics.",
+              "- MASTL was folded on a trimmed construct (residues 25 to 225, a GSGS linker, then 735 to 845): "
+              "ESMFold2 does not converge on its full 821-residue construct, and its non-conserved middle region "
+              "is disordered in AlphaFold DB. Its ensemble spread is therefore not strictly comparable with "
+              "kinases folded whole. Four candidate cryptic sites found in the earlier full-construct models, "
+              "spanning residues 26 to 844, were pockets against that collapsed insert and no longer appear.",
+              "- The PDB representative for a pocket fingerprint is the chain whose KLIFS pocket is best matched, "
+              "then the best resolution. Picking on resolution alone drew in chains with half the pocket "
+              "unresolved and lowered the PDB correlation in Q5 from 0.33 to 0.30.",
               "- Neighbour joining needs a complete distance matrix, so the pocket trees also drop domains whose "
               "fingerprints share fewer than 50 KLIFS rows with the rest: EIF2AK4_C from the PDB tree, and PLK5, "
               "STK40, TAF1_C and TAF1_N from the ESMFold2 tree (see data/phylo/pocket_tree_info.json).", ""]
