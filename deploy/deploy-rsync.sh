@@ -4,7 +4,7 @@
 #   bash deploy/deploy-rsync.sh
 #
 # Reads DROPLET_SSH (default root@mdeller.com) from .env. The SSH key comes from
-# ~/.ssh/config (Host mdeller.com 45.55.102.228) or SSH_KEY in .env.
+# ~/.ssh/config (Host mdeller.com) or SSH_KEY in .env.
 # Follows the vibe-coding Deploy rules: standard file modes on rsync, ownership
 # fixed before anything that can fail, pre-flight SSH checks, page-level checks.
 set -euo pipefail

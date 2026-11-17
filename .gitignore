@@ -28,3 +28,6 @@ data/**
 app/data/
 qc/screens/*.png
 .env
+
+# stray local scratch (dated directory dumps)
+/20??-??-??-*-ls.txt
