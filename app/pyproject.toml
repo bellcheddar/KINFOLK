@@ -1,0 +1,14 @@
+[project]
+name = "kinfolk-app"
+version = "1.0.0"
+description = "KINFOLK field guide: precomputed kinome atlas (Flask, read-only SQLite)"
+requires-python = ">=3.12"
+dependencies = [
+    "flask>=3.0",
+    "gunicorn>=22",
+    "jinja2>=3.1",
+    "orjson>=3.10",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "playwright>=1.45", "axe-playwright-python>=0.1.4"]

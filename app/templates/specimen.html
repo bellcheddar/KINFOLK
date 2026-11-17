@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='vendor/molstar/molstar.5.11.0.css') }}">
+{% endblock %}
+{% block content %}
+<section class="plate spec-head" aria-labelledby="spec-title" data-domain="{{ k.domain_id }}" id="specimen">
+  <div class="plate-head">
+    <div>
+      <div class="eyebrow">Plate II · Specimen card · <span class="mono">{{ k.domain_id }}</span></div>
+      <h1 id="spec-title">{{ k.gene }} <span class="muted" style="font-size:.55em">{{ k.name }}</span></h1>
+    </div>
+    <span class="qtag">Q1 · Q2 · Q3</span>
+  </div>
+  <p class="taxon">{{ k.grp }} › {{ k.family }} › <span class="mono">{{ k.uniprot }}</span> › <span class="mono">{{ k.dom_start }}–{{ k.dom_end }}</span>
+    {% if k.is_dark %} · <span class="chip">dark kinome</span>{% endif %}
+    {% if k.is_pseudo %} · <span class="chip">pseudokinase: {{ k.pseudo_evidence }}</span>{% endif %}
+  </p>
+  <div class="actions">
+    <label class="sr-only" for="compare">Compare with a relative</label>
+    <select id="compare" aria-label="Compare with a relative"><option value="">Compare with a relative…</option></select>
+    <a class="btn" id="gob-link" href="https://gobsmacked.mdeller.com/prepare" target="_blank" rel="noopener noreferrer">Send pocket to GOBSMACKED</a>
+  </div>
+</section>
+
+<div class="grid-2">
+  <section class="plate" aria-labelledby="note-title">
+    <h2 id="note-title">Observer's note</h2>
+    <p class="note" id="observer-note">…</p>
+    <h3 style="margin-top:18px">Field marks</h3>
+    <dl class="field-marks" id="field-marks"></dl>
+    <div id="agreement-chips" class="legend-inline"></div>
+  </section>
+  <section class="plate" aria-labelledby="compass-title">
+    <div class="plate-head"><h2 id="compass-title">Conformational compass</h2><span class="qtag">Q2</span></div>
+    <div class="chart" id="compass" role="img" aria-label="Scatter of D1 against D2 distances"></div>
+    <p class="muted" style="font-size:.85rem;margin:6px 0 0">D1: αC Glu(+4) Cα to DFG-Phe Cζ. D2: β3 Lys Cα to DFG-Phe Cζ (Kincore). Grey: every PDB chain in the family.</p>
+  </section>
+</div>
+
+<section class="plate" aria-labelledby="ribbon-title">
+  <div class="plate-head"><h2 id="ribbon-title">KLIFS ribbon</h2><span class="qtag">Q1</span></div>
+  <p class="lede">Cα deviation at each of the 85 KLIFS pocket positions from the nearest PDB state representative, in the pocket-core frame. Hover a cell to find it in the viewer; click a residue in the viewer to find it here.</p>
+  <div class="ribbon" id="ribbon" tabindex="0" role="region" aria-label="KLIFS ribbon, scrollable"></div>
+</section>
+
+<section class="plate" aria-labelledby="mol-title">
+  <div class="plate-head"><h2 id="mol-title">Three-way overlay</h2>
+    <div class="controls" style="margin:0">
+      <label class="ctl-label sr-only" for="mol-esm">ESMFold2 sample</label>
+      <select id="mol-esm" aria-label="ESMFold2 sample shown"></select>
+    </div>
+  </div>
+  <div class="molstar-host" id="molstar" role="region" aria-label="3D overlay of PDB representative, AlphaFold DB and ESMFold2 models"></div>
+  <div class="legend-inline" id="mol-legend"></div>
+</section>
+
+<div class="grid-3">
+  <section class="card" aria-labelledby="rooms-title"><h3 id="rooms-title">Hidden rooms</h3><div id="card-rooms"></div></section>
+  <section class="card" aria-labelledby="look-title"><h3 id="look-title">Look-alikes</h3><div id="card-look"></div></section>
+  <section class="card" aria-labelledby="range-title"><h3 id="range-title">Range</h3><div id="card-range"></div></section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/d3/d3.v7.9.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/molstar/molstar.5.11.0.js') }}"></script>
+<script src="{{ url_for('static', filename='js/specimen.js') }}"></script>
+{% endblock %}

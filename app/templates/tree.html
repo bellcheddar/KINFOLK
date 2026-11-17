@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="plate" aria-labelledby="tree-title">
+  <div class="plate-head">
+    <div>
+      <div class="eyebrow">Plate I</div>
+      <h1 id="tree-title">Family Tree</h1>
+    </div>
+    <span class="qtag">Q1 · Q2 · Q3</span>
+  </div>
+  <p class="lede">The human kinome as a phylogram of catalytic domains. Each tip carries three marks: a ring for PDB state coverage, a square for AlphaFold DB agreement and a triangle for ESMFold2 agreement with the experimental pocket. Groups start folded; open one to see its members.</p>
+
+  <div class="controls" role="group" aria-label="Tree controls">
+    <div>
+      <span class="ctl-label" id="lbl-layout">Layout</span>
+      <div class="seg" role="group" aria-labelledby="lbl-layout" id="ctl-layout">
+        <button type="button" data-v="phylo">Phylogram</button>
+        <button type="button" data-v="clado">Cladogram</button>
+        <button type="button" data-v="radial">Radial</button>
+      </div>
+    </div>
+    <div>
+      <label class="ctl-label" for="ctl-src">Tree from</label>
+      <select id="ctl-src">
+        <option value="seq">Sequence</option>
+        <option value="pocket_pdb">KLIFS pocket (KiSSim-lite, PDB)</option>
+        <option value="pocket_esm">KLIFS pocket (KiSSim-lite, ESMFold2)</option>
+        <option value="tangle">Tanglegram</option>
+      </select>
+    </div>
+    <div>
+      <label class="ctl-label" for="ctl-tips">Tips show</label>
+      <select id="ctl-tips">
+        <option value="agree">Agreement</option>
+        <option value="state">Kincore state</option>
+        <option value="cryptic">Cryptic pocket count</option>
+        <option value="dark">Dark kinome</option>
+      </select>
+    </div>
+    <div>
+      <span class="ctl-label" id="lbl-support">Bootstrap</span>
+      <div class="seg" role="group" aria-labelledby="lbl-support" id="ctl-support">
+        <button type="button" data-v="off">Hidden</button>
+        <button type="button" data-v="on">Support &lt; 70</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tree-wrap" id="tree-wrap">
+    <svg id="tree" role="application" tabindex="0"
+         aria-label="Kinome phylogram. Use arrow keys to move between tips, Enter to select, plus and minus to zoom."
+         aria-describedby="tree-help"></svg>
+    <div class="tree-toolbar">
+      <button class="btn" type="button" id="btn-fit">Fit all</button>
+      <button class="btn" type="button" id="btn-fit-group" disabled>Fit group</button>
+      <button class="btn" type="button" id="btn-expand">Open all</button>
+    </div>
+    <p id="tree-help" class="sr-only">Groups are folded into triangles; press Enter on a group to open it.</p>
+    <div id="tree-live" class="sr-only" aria-live="polite"></div>
+  </div>
+  <div class="legend-inline" id="tree-legend" aria-hidden="true"></div>
+</section>
+
+<section class="plate" id="docked" aria-labelledby="docked-title" hidden>
+  <div class="plate-head">
+    <div>
+      <div class="eyebrow">Selected specimen</div>
+      <h2 id="docked-title"></h2>
+    </div>
+    <a class="btn primary" id="docked-open" href="#">Open specimen card</a>
+  </div>
+  <div id="docked-body"></div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/d3/d3.v7.9.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/tree.js') }}"></script>
+{% endblock %}

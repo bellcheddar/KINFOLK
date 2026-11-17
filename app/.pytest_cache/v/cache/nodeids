@@ -1,0 +1,18 @@
+[
+  "tests/test_routes.py::test_404",
+  "tests/test_routes.py::test_every_specimen_json_loads_and_fits",
+  "tests/test_routes.py::test_pages[/]",
+  "tests/test_routes.py::test_pages[/about]",
+  "tests/test_routes.py::test_pages[/almanac]",
+  "tests/test_routes.py::test_pages[/api/dark]",
+  "tests/test_routes.py::test_pages[/api/kinases]",
+  "tests/test_routes.py::test_pages[/api/pseudo]",
+  "tests/test_routes.py::test_pages[/api/sites]",
+  "tests/test_routes.py::test_pages[/black-sheep]",
+  "tests/test_routes.py::test_pages[/dark]",
+  "tests/test_routes.py::test_pages[/resemblance]",
+  "tests/test_routes.py::test_pages[/rooms]",
+  "tests/test_routes.py::test_pages[/static/data/tree_sequence.json]",
+  "tests/test_routes.py::test_structures_are_gzip_encoded",
+  "tests/test_routes.py::test_twenty_random_kinases"
+]
