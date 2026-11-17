@@ -54,7 +54,7 @@ systemctl is-active kinfolk.service
 echo "--- pages via gunicorn on the droplet:"
 fail=0
 for p in / /k/ABL1 /resemblance /rooms /black-sheep /dark /almanac /about /api/kinases /api/summary/induced_fit; do
-  code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "http://127.0.0.1:8010$p")
+  code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 --unix-socket /run/kinfolk/kinfolk.sock "http://localhost$p")
   printf '%-26s %s\n' "$p" "$code"; [ "$code" = 200 ] || fail=1
 done
 exit $fail

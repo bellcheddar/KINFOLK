@@ -18,5 +18,5 @@ find "$D" -path "$D/app/.venv" -prune -o -name .env -prune -o -type d -exec chmo
 systemctl restart kinfolk.service
 sleep 2
 systemctl is-active kinfolk.service
-for p in / /k/ABL1 /almanac /about; do printf '%-10s %s\n' "$p" "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8010$p)"; done
+for p in / /k/ABL1 /almanac /about; do printf '%-10s %s\n' "$p" "$(curl -s -o /dev/null -w '%{http_code}' --unix-socket /run/kinfolk/kinfolk.sock http://localhost$p)"; done
 REMOTE_EOF

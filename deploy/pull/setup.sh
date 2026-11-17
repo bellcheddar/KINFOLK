@@ -25,6 +25,11 @@ if [[ ! -f /etc/nginx/sites-available/$SITE ]] || ! grep -q "ssl_certificate" "/
   curl -fsSL "$RAW/nginx-kinfolk.conf" -o "/etc/nginx/sites-available/$SITE"   # certbot adds TLS below
 fi
 ln -sf "/etc/nginx/sites-available/$SITE" "/etc/nginx/sites-enabled/$SITE"
+# Certbot owns the TLS lines in that file, so it is never re-downloaded once it has them.
+# Move any older TCP upstream onto the socket in place (the droplet runs several apps, and
+# 127.0.0.1:8010 belongs to one of them).
+sed -i 's|proxy_pass http://127\.0\.0\.1:8010;|proxy_pass http://unix:/run/kinfolk/kinfolk.sock;|' \
+  "/etc/nginx/sites-available/$SITE"
 systemctl daemon-reload
 systemctl enable kinfolk.service
 
@@ -41,8 +46,15 @@ fi
 systemctl enable --now kinfolk-pull.timer
 
 echo "==> Checks"
-sleep 2
-systemctl is-active kinfolk.service
+for _ in $(seq 1 30); do
+  systemctl is-active --quiet kinfolk.service && break
+  sleep 2
+done
+if ! systemctl is-active --quiet kinfolk.service; then
+  echo "kinfolk.service did not start:"
+  journalctl -u kinfolk.service -n 30 --no-pager
+  exit 1
+fi
 for p in / /k/ABL1 /almanac /about /static/version.txt; do
   printf '  %-22s %s\n' "$p" "$(curl -s -o /dev/null -w '%{http_code}' "https://$SITE$p")"
 done
