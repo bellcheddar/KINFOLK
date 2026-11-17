@@ -50,12 +50,12 @@
       "Bash(duckdb:*)",
       "Bash(gh repo create:*)",
       "Bash(gh repo view:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(ssh:*)",
+      "Bash(rsync:*)"
     ],
     "deny": [
-      "Bash(ssh:*)",
       "Bash(scp:*)",
-      "Bash(rsync:*)",
       "Bash(sudo:*)",
       "Bash(rm -rf /:*)",
       "Bash(rm -rf ~:*)",
