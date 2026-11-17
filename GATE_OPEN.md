@@ -1,31 +1,40 @@
-# Gate G3: one line left on the droplet
+# No gate is open
 
-G4 is closed. The repo is public at https://github.com/bellcheddar/KINFOLK, `main` is pushed
-(d6f8c86) and the live snapshot is on `live` (8a7721c, 3,258 files, 164 MB).
+G3 and G4 both closed on 2026-11-17. https://kinfolk.mdeller.com is live and the repo is
+public at https://github.com/bellcheddar/KINFOLK.
 
-## What is needed from Marc
+## How a release goes out now
 
-In the DigitalOcean web console for the droplet, as root, one line:
+    bash deploy/deploy.sh
+
+It runs the tests, pushes the commit to `main` and a snapshot of `app/` plus the data bundle to
+`live`, then waits for the droplet to publish it and checks every page. The droplet's
+`kinfolk-pull.timer` fetches `live` every minute; nothing inbound over SSH is needed. The last
+release went live about 50 seconds after the push.
+
+One-time droplet setup, should it ever be needed again (it is idempotent):
 
     curl -fsSL https://raw.githubusercontent.com/bellcheddar/KINFOLK/main/deploy/pull/setup.sh | bash
 
-It installs the service, the nginx site, the pull timer and the TLS certificate, and ends
-`KINFOLK_READY`. DNS already resolves kinfolk.mdeller.com to the droplet.
+Run it straight after a push and pin it, because raw.githubusercontent.com serves a branch path
+from cache for a few minutes and will otherwise install the previous files:
 
-## Then
+    curl -fsSL https://raw.githubusercontent.com/bellcheddar/KINFOLK/<sha>/deploy/pull/setup.sh \
+      | KINFOLK_REF=<sha> bash
 
-Nothing by hand. The droplet's `kinfolk-pull.timer` fetches `live` every minute and publishes it,
-so later releases need only `bash deploy/deploy.sh` on the Mac. Tell Claude when the console line
-has finished and it will check every page with `deploy/check_live.sh`.
+## What was settled during deployment
+
+- The droplet already runs other apps and one of them holds `127.0.0.1:8010`, so KINFOLK binds
+  `/run/kinfolk/kinfolk.sock` instead. Until that was found, nginx served chatMCD at
+  kinfolk.mdeller.com while `/static` came off disk and looked correct.
+- TLS is in place for kinfolk.mdeller.com and renews through certbot's scheduled task.
 
 ## State of the build
 
-- Phases 0 to 10 complete. Phase 4 finished this session: the pocket trees and the Plate III
-  tanglegram build (303 and 518 leaves), after neighbour joining was taught to drop domains
-  whose KLIFS fingerprints have too few comparable rows.
-- QC: 20 pipeline tests, 16 app tests, 16 of 16 page checks with no failures, axe clean,
-  all five science checks pass.
-- Outstanding: the one fold batch that failed on MASTL (821 residues) is folding again; when it
-  lands the atlas is rebuilt and redeployed, which the pull timer picks up on its own.
-- Pre-publication scan: no credentials. The droplet IP is in two earlier commits; it is public
-  through DNS, so the history was left intact.
+- Phases 0 to 10 complete. Phase 4 finished in this session: the pocket trees and the Plate III
+  tanglegram build (303 and 518 leaves). Plate VII's Q5 figure was added, so every question on
+  the Almanac now carries one.
+- QC: 20 pipeline tests, 16 app tests, 16 of 16 page checks with no failures, axe clean, all five
+  science checks pass, locally and against the droplet.
+- Outstanding: the fold batch that failed on MASTL (821 residues) is folding again on this Mac.
+  When it lands the atlas is rebuilt and redeployed; nothing on the droplet needs touching.

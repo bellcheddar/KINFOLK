@@ -1324,3 +1324,4 @@
 - 2026-11-17 11:08  gate G3: awaiting the one-time droplet setup line in the DigitalOcean console
 - 2026-11-17 11:23  app: Almanac Q5 now carries its own figure (rho per source with 95% intervals), as FINDINGS.md already pointed at /almanac#q5
 - 2026-11-17 11:23  deploy: kinfolk.mdeller.com live on a unix socket; 11 page checks and 16 visual QC checks pass against the droplet
+- 2026-11-17 11:25  gate G3 closed: https://kinfolk.mdeller.com live at 8062115, all pages 200, visual QC 16/16 against the droplet
