@@ -31,3 +31,6 @@ qc/screens/*.png
 
 # stray local scratch (dated directory dumps)
 /20??-??-??-*-ls.txt
+
+# setuptools build metadata (regenerated on every install)
+pipeline/kinfolk.egg-info/
