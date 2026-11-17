@@ -1320,3 +1320,5 @@
 - 2026-11-17 10:58  phylo: pocket trees and tanglegram built (pdb 303 leaves, esm 518); Phase 4 deliverable complete
 - 2026-11-17 10:58  env: tools/post_install.sh re-run after the October env rebuild; the macOS hidden flag on site-packages .pth files had silently disabled the editable kinfolk install
 - 2026-11-17 10:58  qc: pipeline tests 20 passed, app tests 16 passed, visual QC 16 checks 0 failures, science checks all pass
+- 2026-11-17 11:08  gate G4 closed: public repo created, main (d6f8c86) and live (8a7721c) pushed
+- 2026-11-17 11:08  gate G3: awaiting the one-time droplet setup line in the DigitalOcean console
