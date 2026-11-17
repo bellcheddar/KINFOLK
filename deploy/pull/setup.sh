@@ -3,9 +3,17 @@
 # Run as root from the DigitalOcean web console with one typed line:
 #   curl -fsSL https://raw.githubusercontent.com/bellcheddar/KINFOLK/main/deploy/pull/setup.sh | bash
 # The repo is public, so the droplet pulls over plain HTTPS: no deploy key, no inbound SSH.
+#
+# raw.githubusercontent.com caches a branch path for a few minutes, so a run straight after a
+# push can install the previous files. To pin the whole run to one commit, fetch the script by
+# its sha and pass the same sha in KINFOLK_REF:
+#   curl -fsSL https://raw.githubusercontent.com/bellcheddar/KINFOLK/<sha>/deploy/pull/setup.sh \
+#     | KINFOLK_REF=<sha> bash
 set -euo pipefail
-RAW=https://raw.githubusercontent.com/bellcheddar/KINFOLK/main/deploy
+REF="${KINFOLK_REF:-main}"
+RAW="https://raw.githubusercontent.com/bellcheddar/KINFOLK/$REF/deploy"
 SITE=kinfolk.mdeller.com
+echo "==> Installing from $REF"
 
 echo "==> Prerequisites"
 for b in git rsync curl nginx systemctl; do command -v "$b" >/dev/null || { echo "missing: $b"; exit 1; }; done
