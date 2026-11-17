@@ -47,11 +47,12 @@
       "Bash(gunicorn:*)",
       "Bash(flask:*)",
       "Bash(sqlite3:*)",
-      "Bash(duckdb:*)"
+      "Bash(duckdb:*)",
+      "Bash(gh repo create:*)",
+      "Bash(gh repo view:*)",
+      "Bash(git push:*)"
     ],
     "deny": [
-      "Bash(git push:*)",
-      "Bash(gh repo create:*)",
       "Bash(ssh:*)",
       "Bash(scp:*)",
       "Bash(rsync:*)",
