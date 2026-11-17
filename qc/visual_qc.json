@@ -6,7 +6,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 476,
+   "fcp_ms": 412,
    "label_overlaps": 0,
    "screenshot": "qc/screens/plate_I_desktop.png",
    "axe_serious_critical": [],
@@ -18,7 +18,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 236,
+   "fcp_ms": 264,
    "molstar_initialised": true,
    "screenshot": "qc/screens/plate_II_desktop.png",
    "axe_serious_critical": [],
@@ -30,7 +30,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 124,
+   "fcp_ms": 152,
    "screenshot": "qc/screens/plate_III_desktop.png",
    "axe_serious_critical": [],
    "console_errors": []
@@ -41,7 +41,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 156,
+   "fcp_ms": 148,
    "screenshot": "qc/screens/plate_IV_desktop.png",
    "axe_serious_critical": [],
    "console_errors": []
@@ -52,7 +52,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 136,
+   "fcp_ms": 132,
    "screenshot": "qc/screens/plate_V_desktop.png",
    "axe_serious_critical": [],
    "console_errors": []
@@ -63,7 +63,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 136,
+   "fcp_ms": 144,
    "screenshot": "qc/screens/plate_VI_desktop.png",
    "axe_serious_critical": [],
    "console_errors": []
@@ -74,7 +74,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 148,
+   "fcp_ms": 136,
    "screenshot": "qc/screens/plate_VII_desktop.png",
    "axe_serious_critical": [],
    "console_errors": []
@@ -85,7 +85,7 @@
    "viewport": "desktop",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 148,
+   "fcp_ms": 180,
    "screenshot": "qc/screens/plate_About_desktop.png",
    "axe_serious_critical": [],
    "console_errors": []
@@ -96,7 +96,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 300,
+   "fcp_ms": 192,
    "label_overlaps": 0,
    "screenshot": "qc/screens/plate_I_mobile.png",
    "console_errors": []
@@ -118,7 +118,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 48,
+   "fcp_ms": 40,
    "screenshot": "qc/screens/plate_III_mobile.png",
    "console_errors": []
   },
@@ -128,7 +128,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 68,
+   "fcp_ms": 48,
    "screenshot": "qc/screens/plate_IV_mobile.png",
    "console_errors": []
   },
@@ -138,7 +138,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 32,
+   "fcp_ms": 40,
    "screenshot": "qc/screens/plate_V_mobile.png",
    "console_errors": []
   },
@@ -148,7 +148,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 60,
+   "fcp_ms": 68,
    "screenshot": "qc/screens/plate_VI_mobile.png",
    "console_errors": []
   },
@@ -158,7 +158,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 32,
+   "fcp_ms": 48,
    "screenshot": "qc/screens/plate_VII_mobile.png",
    "console_errors": []
   },
@@ -168,7 +168,7 @@
    "viewport": "mobile",
    "status": 200,
    "horizontal_scroll": false,
-   "fcp_ms": 60,
+   "fcp_ms": 68,
    "screenshot": "qc/screens/plate_About_mobile.png",
    "console_errors": []
   }

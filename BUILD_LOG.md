@@ -1322,3 +1322,5 @@
 - 2026-11-17 10:58  qc: pipeline tests 20 passed, app tests 16 passed, visual QC 16 checks 0 failures, science checks all pass
 - 2026-11-17 11:08  gate G4 closed: public repo created, main (d6f8c86) and live (8a7721c) pushed
 - 2026-11-17 11:08  gate G3: awaiting the one-time droplet setup line in the DigitalOcean console
+- 2026-11-17 11:23  app: Almanac Q5 now carries its own figure (rho per source with 95% intervals), as FINDINGS.md already pointed at /almanac#q5
+- 2026-11-17 11:23  deploy: kinfolk.mdeller.com live on a unix socket; 11 page checks and 16 visual QC checks pass against the droplet

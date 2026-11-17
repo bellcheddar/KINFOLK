@@ -112,6 +112,47 @@
       </tbody></table></div>`;
   }).catch(() => pending(document.getElementById("fig-q4"), "Positive controls"));
 
+  // ---------------------------------------------------------------- Q5
+  (function () {
+    const q = D.q5 || {};
+    const el = document.getElementById("fig-q5");
+    if (!el) return;
+    if (!q.rho) return pending(el, "Selectivity correlations");
+    const srcs = [["pdb", "PDB", "circle"], ["afdb", "AlphaFold DB", "square"], ["esm2", "ESMFold2", "triangle"]]
+      .filter(([s]) => q.rho[s] !== undefined);
+    const W = 560, H = 60 + srcs.length * 54, mg = { l: 140, r: 40, t: 20, b: 40 };
+    const lo = Math.min(0, ...srcs.map(([s]) => (q.rho_ci95[s] || [0])[0]));
+    const hi = Math.max(0.1, ...srcs.map(([s]) => (q.rho_ci95[s] || [0, 0])[1]));
+    const x = d3.scaleLinear().domain([lo, hi]).nice().range([mg.l, W - mg.r]);
+    const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+    svg.append("g").attr("transform", `translate(0,${H - mg.b})`).call(d3.axisBottom(x).ticks(5));
+    svg.append("line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", mg.t).attr("y2", H - mg.b).attr("stroke", C.rule);
+    svg.append("text").attr("x", (mg.l + W - mg.r) / 2).attr("y", H - 6).attr("text-anchor", "middle")
+      .attr("font-size", 12).text("Spearman \u03c1 with Davis co-inhibition");
+    srcs.forEach(([s, label, shape], i) => {
+      const y = mg.t + 24 + i * 54, [a, b] = q.rho_ci95[s];
+      svg.append("text").attr("x", mg.l - 10).attr("y", y + 4).attr("text-anchor", "end").attr("font-size", 13).text(label);
+      svg.append("line").attr("x1", x(a)).attr("x2", x(b)).attr("y1", y).attr("y2", y).attr("stroke", C.ink).attr("stroke-width", 2);
+      const cx = x(q.rho[s]);
+      const fill = s === "pdb" ? "#fff" : s === "afdb" ? C.afdb : C.esm;
+      if (shape === "circle") svg.append("circle").attr("cx", cx).attr("cy", y).attr("r", 7).attr("fill", fill).attr("stroke", C.ink).attr("stroke-width", 2);
+      else if (shape === "square") svg.append("rect").attr("x", cx - 7).attr("y", y - 7).attr("width", 14).attr("height", 14).attr("fill", fill).attr("stroke", C.ink);
+      else svg.append("path").attr("d", `M${cx},${y - 8}l7,12h-14z`).attr("fill", fill).attr("stroke", C.ink);
+      svg.append("text").attr("x", x(b) + 8).attr("y", y + 4).attr("font-family", "JetBrains Mono, monospace")
+        .attr("font-size", 11).text(q.rho[s].toFixed(2));
+    });
+    const f = q.fraction_of_pdb || {};
+    const note = document.getElementById("q5-note");
+    if (note) {
+      note.textContent = `${q.n_kinases} kinases, ${q.n_pairs} pairs. Predicted-structure correlation as a fraction `
+        + "of the PDB correlation: "
+        + Object.entries(f).map(([s, v]) =>
+            `${s === "esm2" ? "ESMFold2" : "AlphaFold DB"} ${v.toFixed(2)} `
+            + `(95% CI ${q.fraction_of_pdb_ci95[s].join(" to ")})`).join("; ")
+        + ". Fingerprints are KiSSim-lite.";
+    }
+  })();
+
   // ---------------------------------------------------------------- Q6
   K.json("/api/summary/induced_fit").then((rows) => {
     const el = document.getElementById("fig-q6");
