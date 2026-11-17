@@ -1,10 +1,10 @@
 # KINFOLK progress
 
-Updated: 2026-11-17 11:25
+Updated: 2026-11-17 12:02
 
 | Phase | Name | Status | % |
 |------|------|--------|---|
-| 0-8 | Pipeline | Done | 100 |
+| 0-8 | Pipeline | Done; fold queue 1327/1327, none failed | 100 |
 | 4 | Phylogeny | Pocket trees and tanglegram built | 100 |
 | 9 | Web app | QC clean locally and live | 100 |
 | 10 | Polish, handover and deploy | Live at https://kinfolk.mdeller.com | 100 |

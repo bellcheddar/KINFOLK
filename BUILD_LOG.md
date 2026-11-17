@@ -1413,3 +1413,4 @@
 - 2026-11-17 11:58  finish: findings ok in 0.1 min
 - 2026-11-17 11:59  bundle: SQLite 54.4 MB, structures 0.10 GB, total 0.16 GB; 0 specimen JSON files over 150 KB
 - 2026-11-17 11:59  finish: bundle ok in 0.4 min
+- 2026-11-17 12:02  deploy: live at 75fc56d with the rebuilt atlas; 11 page checks and 16 visual QC checks pass against the droplet
