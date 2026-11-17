@@ -214,5 +214,8 @@ def write_md(F: dict) -> None:
               "- Pocket fingerprints are KiSSim-lite, a reimplementation following the KiSSim design; kissim itself could not be installed.",
               "- ESMFold2 ran with 3 recycling loops and 100 sampling steps in float32 on Apple MPS (see DECISIONS.md).",
               "- ABL1 with imatinib has no post-cutoff entry, so it is reported separately as \"memorisation possible\".",
-              "- PLK5, TAF1_C and TAF1_N could not be placed in KLIFS numbering and are excluded from pocket metrics.", ""]
+              "- PLK5, TAF1_C and TAF1_N could not be placed in KLIFS numbering and are excluded from pocket metrics.",
+              "- Neighbour joining needs a complete distance matrix, so the pocket trees also drop domains whose "
+              "fingerprints share fewer than 50 KLIFS rows with the rest: EIF2AK4_C from the PDB tree, and PLK5, "
+              "STK40, TAF1_C and TAF1_N from the ESMFold2 tree (see data/phylo/pocket_tree_info.json).", ""]
     (ROOT / "FINDINGS.md").write_text("\n".join(lines))

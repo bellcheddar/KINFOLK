@@ -266,3 +266,21 @@ Each entry: decision, alternatives, reason, how to reverse.
 - Reason: Region-based and reproducible from the KLIFS numbering already computed
 - How to reverse: Edit SUBPOCKET in pockets.py
 
+## 2026-11-17 10:52  Tanglegram untangling
+- Decision: Greedy child swaps on the pocket tree against the fixed sequence tree (3 passes, accept only swaps that reduce crossings)
+- Alternatives: Rotate both trees; exact optimisation
+- Reason: Spec 6.3 asks for a greedy heuristic; the sequence tree stays in its canonical order
+- How to reverse: Change passes in phylo.untangle
+
+## 2026-11-17 10:58  Pocket trees with incomplete distance matrices
+- Decision: Drop the domain with the most NaN distances, repeatedly, until the matrix is complete, then run neighbour joining and record the dropped names in pocket_tree_info.json
+- Alternatives: Impute missing distances with the matrix maximum; lower the 50-row threshold in fp_distance; skip the pocket trees entirely
+- Reason: A NaN appears when two KiSSim-lite fingerprints share fewer than 50 KLIFS rows, and in practice it is caused by a few domains that map to almost no KLIFS positions (EIF2AK4_C for PDB; PLK5, STK40, TAF1_C, TAF1_N for ESMFold2). Dropping them leaves 303 and 518 leaves with real distances, where imputation would invent branch lengths
+- How to reverse: Change kinfolk.phylo.drop_incomparable, or relax the row threshold in kinfolk.selectivity.fp_distance
+
+## 2026-11-17 10:58  Tanglegram scroll region focusable
+- Decision: Give the Plate III tanglegram container tabindex 0 so keyboard users can scroll it
+- Alternatives: Shrink the figure to fit; move the scroll to the page
+- Reason: The tanglegram is 303 rows tall inside a 760 px box, which axe flags as scrollable-region-focusable once the trees exist
+- How to reverse: Remove the tabindex in app/templates/resemblance.html
+

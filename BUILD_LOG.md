@@ -1311,3 +1311,12 @@
 - 2026-09-28 21:47  gate G3 opened
 - 2026-09-28 23:30  findings: written data/findings.json and FINDINGS.md
 - 2026-09-28 23:30  bundle: SQLite 54.3 MB, structures 0.10 GB, total 0.16 GB; 0 specimen JSON files over 150 KB
+- 2026-11-17 10:52  phylo: pocket tree (pdb) drops 1 domain(s) with too few comparable KLIFS rows: EIF2AK4_C
+- 2026-11-17 10:52  phylo: pocket tree (pdb) 303 leaves; tanglegram crossings 30069 -> 7519
+- 2026-11-17 10:52  phylo: pocket tree (esm) drops 4 domain(s) with too few comparable KLIFS rows: PLK5, STK40, TAF1_C, TAF1_N
+- 2026-11-17 10:52  phylo: pocket tree (esm) 518 leaves; tanglegram crossings 49305 -> 28722
+- 2026-11-17 10:53  bundle: SQLite 54.3 MB, structures 0.10 GB, total 0.16 GB; 0 specimen JSON files over 150 KB
+- 2026-11-17 10:58  findings: written data/findings.json and FINDINGS.md
+- 2026-11-17 10:58  phylo: pocket trees and tanglegram built (pdb 303 leaves, esm 518); Phase 4 deliverable complete
+- 2026-11-17 10:58  env: tools/post_install.sh re-run after the October env rebuild; the macOS hidden flag on site-packages .pth files had silently disabled the editable kinfolk install
+- 2026-11-17 10:58  qc: pipeline tests 20 passed, app tests 16 passed, visual QC 16 checks 0 failures, science checks all pass

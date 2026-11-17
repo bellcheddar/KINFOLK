@@ -165,6 +165,26 @@ def sequence_tree() -> dict:
 
 
 # ------------------------------------------------------------------ NJ + tanglegram
+def drop_incomparable(names: list[str], dist: np.ndarray) -> tuple[list[str], np.ndarray, list[str]]:
+    """Neighbour joining needs a complete matrix. A pair is NaN when the two fingerprints
+    share fewer than 50 KLIFS rows (selectivity.fp_distance), which in practice is caused by
+    a handful of domains that map to almost no KLIFS positions. Drop the worst offender
+    repeatedly until no NaN is left, and return the names dropped."""
+    keep = list(range(len(names)))
+    dropped: list[str] = []
+    d = dist.copy()
+    while True:
+        sub = d[np.ix_(keep, keep)]
+        nan = np.isnan(sub)
+        if not nan.any():
+            break
+        worst = int(np.argmax(nan.sum(1)))
+        dropped.append(names[keep[worst]])
+        keep.pop(worst)
+    out = d[np.ix_(keep, keep)]
+    return [names[i] for i in keep], out, dropped
+
+
 def nj_tree(names: list[str], dist: np.ndarray) -> Tree:
     from skbio import DistanceMatrix
     from skbio.tree import nj
@@ -230,6 +250,10 @@ def pocket_trees(similarity: dict[str, tuple[list[str], np.ndarray]]) -> dict:
     index = {d: i for i, d in enumerate(cat.domain_id)}
     info = {}
     for source, (names, dist) in similarity.items():
+        names, dist, dropped = drop_incomparable(names, dist)
+        if dropped:
+            log(f"phylo: pocket tree ({source}) drops {len(dropped)} domain(s) with too few comparable "
+                f"KLIFS rows: {', '.join(sorted(dropped))}")
         t = nj_tree(names, dist)
         keep = set(names)
         seq_sub = Phylo.read(PHY / "tree_sequence.nwk", "newick")
@@ -238,7 +262,8 @@ def pocket_trees(similarity: dict[str, tuple[list[str], np.ndarray]]) -> dict:
                 seq_sub.prune(leaf)
         before, after = untangle(seq_sub, t)
         export(t, f"tree_pocket_{source}", index)
-        info[source] = {"leaves": len(names), "crossings_before": before, "crossings_after": after}
+        info[source] = {"leaves": len(names), "crossings_before": before, "crossings_after": after,
+                        "dropped": sorted(dropped)}
         log(f"phylo: pocket tree ({source}) {len(names)} leaves; tanglegram crossings {before} -> {after}")
     (PHY / "pocket_tree_info.json").write_text(json.dumps(info, indent=1))
     decision("Tanglegram untangling", "Greedy child swaps on the pocket tree against the fixed sequence tree "
